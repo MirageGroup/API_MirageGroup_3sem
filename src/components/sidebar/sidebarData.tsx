@@ -17,6 +17,12 @@ export const sidebarData = [
         icon: <IoIcons.IoIosPaper/>,
         cName: 'nav-text'
     },
+    {
+        title: 'ISOs',
+        path: '/iso',
+        icon: <IoIcons.IoMdClipboard/>,
+        cName: 'nav-text'
+    },
     // {
     //     title: 'Tarefas',
     //     path: '/card',
