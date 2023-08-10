@@ -16,7 +16,6 @@ function App() {
         <UserProvider>
             <Router>
                 <Routes>
-                    <Route path='*' element={<InvalidRoute></InvalidRoute>} />
                     <Route path="/login" element={<LoginCheck> <LoginScreen /> </LoginCheck>} />
                 </Routes>
                 <Sidebar />
@@ -25,6 +24,7 @@ function App() {
                     <Route path="/iso" element={<ProtectedRoute><IsoScreen/></ProtectedRoute>} />
                     <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
                     <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
+                    <Route path='*' element={<InvalidRoute></InvalidRoute>} />
                 </Routes>
                 <Routes>
                 </Routes>
