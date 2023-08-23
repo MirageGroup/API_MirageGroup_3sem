@@ -1,0 +1,38 @@
+header{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    .div_titulo{
+        font-weight: 800;
+        margin-right: 10px;
+        width: 30%;
+    }
+    h4{
+        margin: 15px;
+    }
+
+}
+.header_button{
+
+    margin-right: 1em;
+    appearance: none;
+    border: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* Estilos para indicar que o botão é clicável */
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .header_button:hover{
+    transition: 1s ;
+    background-color: var(--background-hover);
+    border: var(--border);
+
+
+  }
