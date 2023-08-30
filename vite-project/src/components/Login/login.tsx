@@ -3,11 +3,19 @@ import React from 'react'
 import './login_style.scss'
 import imagemFoda from '../../assets/doge_image.jpg';
 
+
+
 export function Login(){
+
+   const [isLogin,setIsLogin] = UseState()
+
+
     return(
         <div className='login_wrapper'>
-            <img className='login_img' src={imagemFoda} alt='imagem muito foda'></img>
-            <h2>Login</h2>
+            <div className="buttons">
+            <button className='mode_button'>Home</button>
+            <button className='mode_button'>Cadastro</button>
+            </div>
             <form>
                 <div className='input_wrapper'>
                     <label htmlFor='input_email'>Email</label>

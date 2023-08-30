@@ -1,0 +1,21 @@
+.screen{
+    width: 100vw;
+    height: 100vh;
+    background-color:#414F4A;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .screen_img{
+        width: 30%;
+        min-width: 300px;
+
+    }
+
+    @media only screen and (max-width : 700px) {
+        .screen_img{
+            display: none;
+        }
+    }
+}
+
