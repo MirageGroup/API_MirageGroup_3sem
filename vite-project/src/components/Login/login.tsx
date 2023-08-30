@@ -14,10 +14,10 @@ export function Login(){
         return (
             <div className='login_wrapper'>
                 <div className="buttons">
-                <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+                <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
                 <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
                 </div>
-                <h1>LOGIN</h1>
+                <h1 className='titulo'>LOGIN</h1>
                 <form>
                     <div className='input_wrapper'>
                         <label htmlFor='input_email'>Email</label>
@@ -36,10 +36,10 @@ export function Login(){
         return(
             <div className='login_wrapper'>
             <div className="buttons">
-            <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+            <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
             <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
             </div>
-            <h1>CADASTRO</h1>
+            <h1 className='titulo'>CADASTRO</h1>
             <form>
                 <div className='input_wrapper'>
                     <label htmlFor='input_email'>Email</label>

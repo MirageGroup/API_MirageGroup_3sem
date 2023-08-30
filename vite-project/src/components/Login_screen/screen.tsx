@@ -1,6 +1,6 @@
 import React from 'react'
 import './screen.scss'
-import ImagemLogin from '../../assets/login-screen-image.svg';
+import ImagemLogin from '../../assets/logo.png';
 import { Login } from '../Login/login';
 
 export function Screen(){

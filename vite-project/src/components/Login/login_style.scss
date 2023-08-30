@@ -8,7 +8,7 @@
     justify-content: center;
     align-content: center;
     padding: 4em;
-    border: 2px solid #93B786 ;
+    border: 2px solid #6db951 ;
 
 
     .buttons{
@@ -18,8 +18,8 @@
         .mode_button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
+            background-color: #6db951;
+            border: 1px solid #6db951;
             width: 30%;
             height: 2.5em;
             transition: 0.5s;
@@ -27,8 +27,24 @@
             min-width: 80px;
             }
     }
-    
 
+    .titulo{
+        color: white;
+        display: flex;
+        justify-content: center;
+        @keyframes blink {
+            0% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0.5;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+            animation: blink 1s step-start infinite;
+        }
     img {
         border-radius: 50%;
         width: 180px; /* Defina um tamanho adequado para a imagem */
@@ -55,11 +71,11 @@
                 margin-bottom: 0.5em;
             }
             input{
-                background-color: #93B786;
+                background-color: #6db951;
                 border-radius: 8px;
                 outline: none;
                 padding: 1em;
-                border: 1px solid #93B786;
+                border: 1px solid #6db951;
                 cursor: pointer;
                 transition: 0.5s;
 
@@ -73,8 +89,8 @@
         button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
+            background-color: #6db951;
+            border: 1px solid #6db951;
             width: 30%;
             height: 2.5em;
             transition: 0.5s;
@@ -88,6 +104,5 @@
         }
     }
 
-    
 }
 
