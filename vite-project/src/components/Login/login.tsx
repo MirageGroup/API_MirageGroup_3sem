@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import React from 'react'
 import './login_style.scss'
+import { Recovery_screen } from '../Recover_screen/screen'
 
 
 
@@ -15,7 +16,7 @@ export function Login(){
             <div className='login_wrapper'>
                 <div className="buttons">
                 <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
-                <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
+                <button className='mode_button' onClick={() => setLoginMode("recuperar")}>Recuperação</button>
                 </div>
                 <h1 className='titulo'>LOGIN</h1>
                 <form>
@@ -32,28 +33,20 @@ export function Login(){
             </div>
         )
     }
-    else if(login_mode == "cadastro"){
+    else if(login_mode == "recuperar"){
         return(
             <div className='login_wrapper'>
             <div className="buttons">
             <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
-            <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
+            <button className='mode_button' onClick={() => setLoginMode("recuperar")}>Recuperação</button>
             </div>
-            <h1 className='titulo'>CADASTRO</h1>
+            <h1 className='titulo'>Recuperar Acesso</h1>
             <form>
                 <div className='input_wrapper'>
-                    <label htmlFor='input_email'>Email</label>
-                    <input placeholder='digite seu email' id='input_email'></input>
+                    <label htmlFor='input_email'>digite o email da conta:</label>
+                    <input placeholder='email' id='input_email'></input>
                 </div>
-                <div className='input_wrapper'>
-                    <label htmlFor='input_senha'>Senha</label>
-                    <input placeholder='digite sua senha' id='input_senha'></input>
-                </div>
-                <div className='input_wrapper'>
-                    <label htmlFor='input_senha'>Confirmar Senha</label>
-                    <input placeholder='digite sua senha' id='input_senha'></input>
-                </div>
-                <button>Cadastrar</button>                
+                <button >Enviar</button>                
             </form>
         </div>
         )
