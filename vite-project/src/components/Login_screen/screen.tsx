@@ -8,8 +8,8 @@ export function Screen(){
     return(
         <div className="screen">
             <img className='screen_img' src={ImagemLogin} alt="login_img" />
+            {/* <Login></Login> */}
             <Login></Login>
-            
         </div>
 
         

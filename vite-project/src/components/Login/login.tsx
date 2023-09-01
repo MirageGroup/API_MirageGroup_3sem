@@ -46,10 +46,28 @@ export function Login(){
                     <label htmlFor='input_email'>digite o email da conta:</label>
                     <input placeholder='email' id='input_email'></input>
                 </div>
-                <button >Enviar</button>                
+                <button onClick={() => setLoginMode("nova_senha")}>Enviar</button>                
             </form>
         </div>
         )
+    }
+    else if(login_mode == "nova_senha") {
+        return (
+            <div className='login_wrapper'>
+            <h1 className='titulo'>Recuperar Acesso</h1>
+            <form>
+              <div className='input_wrapper'>
+                  <label htmlFor='input_email'>Nova senha:</label>
+                  <input placeholder='digite seu email' id='input_email'></input>
+              </div>
+              <div className='input_wrapper'>
+                  <label htmlFor='input_senha'>Confirmação de senha:</label>
+                  <input placeholder='digite sua senha' id='input_senha'></input>
+              </div>
+              <button onClick={() => setLoginMode("login")}>Retornar ao Login</button>
+            </form>
+            </div> 
+          )
     }
     
 }
