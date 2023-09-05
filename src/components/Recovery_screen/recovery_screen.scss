@@ -1,5 +1,5 @@
 .login_wrapper{
-    border-radius: 40px;
+    border-radius: 45px;
     width: 30%;
     height: 70%;
     display: flex;
@@ -8,49 +8,13 @@
     justify-content: center;
     align-content: center;
     padding: 4em;
-    border: 2px solid #93B786 ;
-
-
-    .buttons{
-        display: flex;
-        justify-content: space-around   ;
-
-        .mode_button{
-            margin: 0.5em;
-            border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
-            width: 30%;
-            height: 2.5em;
-            transition: 0.5s;
-            cursor: pointer;
-            min-width: 80px;
-            }
-    }
+    border: 4px solid #6db951 ;
 
     .titulo{
         color: white;
         display: flex;
         justify-content: center;
-        @keyframes blink {
-            0% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0.5;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
-            animation: blink 1s step-start infinite;
         }
-    img {
-        border-radius: 50%;
-        width: 180px; /* Defina um tamanho adequado para a imagem */
-        height: 180px; /* Mantenha a mesma altura para manter a proporção */
-        align-self: center; /* Para centralizar a imagem horizontalmente */
-    }
 
     form{
         display: flex;
@@ -65,39 +29,36 @@
             min-width: 150px;
             
         
-        
             label{
                 color: #9AF0E8;
                 margin-bottom: 0.5em;
             }
             input{
-                background-color: #93B786;
+                background-color: #6db951;
                 border-radius: 8px;
                 outline: none;
                 padding: 1em;
-                border: 1px solid #93B786;
+                border: none;
                 cursor: pointer;
                 transition: 0.5s;
 
             }
             input:hover{
                 filter: brightness(140%);
-            }
-            
+            }  
         }
 
         button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
-            width: 30%;
+            background-color: #6db951;
+            border: none;
+            width: 40%;
             height: 2.5em;
             transition: 0.5s;
             cursor: pointer;
             min-width: 80px;
-
-             
+   
         }
         button:hover {
             filter: brightness(140%);
