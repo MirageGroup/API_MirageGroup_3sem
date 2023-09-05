@@ -15,10 +15,10 @@ export function Login(){
         return (
             <div className='login_wrapper'>
                 <div className="buttons">
-                <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
-                <button className='mode_button' onClick={() => setLoginMode("recuperar")}>Recuperação</button>
+                <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+                <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
                 </div>
-                <h1 className='titulo'>LOGIN</h1>
+                <h1>LOGIN</h1>
                 <form>
                     <div className='input_wrapper'>
                         <label htmlFor='input_email'>Email</label>
@@ -46,7 +46,33 @@ export function Login(){
                     <label htmlFor='input_email'>digite o email da conta:</label>
                     <input placeholder='email' id='input_email'></input>
                 </div>
-                <button onClick={() => setLoginMode("nova_senha")}>Enviar</button>                
+                <button onClick={() => setLoginMode("nova_senha")}>Enviar</button>
+             </form>
+        </div>
+        )
+    }
+    else if(login_mode == "cadastro"){
+        return(
+            <div className='login_wrapper'>
+            <div className="buttons">
+            <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+            <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
+            </div>
+            <h1>CADASTRO</h1>
+            <form>
+                <div className='input_wrapper'>
+                    <label htmlFor='input_email'>Email</label>
+                    <input placeholder='digite seu email' id='input_email'></input>
+                </div>
+                <div className='input_wrapper'>
+                    <label htmlFor='input_senha'>Senha</label>
+                    <input placeholder='digite sua senha' id='input_senha'></input>
+                </div>
+                <div className='input_wrapper'>
+                    <label htmlFor='input_senha'>Confirmar Senha</label>
+                    <input placeholder='digite sua senha' id='input_senha'></input>
+                </div>
+                <button>Cadastrar</button>                
             </form>
         </div>
         )
