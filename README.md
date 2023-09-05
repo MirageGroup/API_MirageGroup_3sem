@@ -1,8 +1,12 @@
 # API_MirageGroup_3sem
 Repositório do projeto de API do 3º semestre.
 
-##Comandos para inicialização
-  #Instalar 
+<h1>Comandos para inicialização</h1>
+  <div>
+    Instalar 
     -npm install
-  #Rodar projeto
+  </div>
+  <div>
+  Rodar projeto
     -npm run dev
+  </div>
