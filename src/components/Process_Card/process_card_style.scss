@@ -6,13 +6,53 @@
 
     .input_line{
         display: flex;
+        gap: 20px;
+        
     }
     .input_wrapper{
         display: flex;
         flex-direction: column;
         align-items: initial;
-        width: 30%;
+        margin-bottom: 1em;
+        width: 40%;
+        
+
+        input{
+            background-color: #D9D9D9;
+            border-radius: 10px;
+            outline: none;
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+        
     }
 
+    .lower_card_container{
+        display: flex;
+        gap: 20px;
+        width: 100%;
 
+
+
+        .description_wrapper{
+            width:40%;
+
+            .input_wrapper{
+
+                display: flex;
+                flex-direction: column;
+                align-items: initial;
+                margin-bottom: 1em;
+                width: 100%;
+    
+            }
+
+
+        }
+
+    }
+
+ 
 }

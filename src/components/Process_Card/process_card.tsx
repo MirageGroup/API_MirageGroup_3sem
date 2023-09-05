@@ -1,4 +1,5 @@
 import './process_card_style.scss'
+import vetor from '../../assets/Vector.png';
 
 
 export function Process_card(){
@@ -19,11 +20,39 @@ export function Process_card(){
                 </div>
             </div>
 
-            <div className="input_wrapper">
-                <label htmlFor="contribuidores">Contribuidores</label>
-                <input id="contribuidores"></input>
+            <div className='lower_card_container'>
+
+                <div className='description_wrapper'>
+
+                    <div className="input_wrapper">
+                        <label htmlFor="contribuidores">Contribuidores</label>
+                        <input id="contribuidores"></input>
+                    </div>
+
+                    <div className="input_wrapper">
+                        <label htmlFor="contribuidores">Descrição</label>
+                        <input id="Descrição"></input>
+                    </div>
+
+                    
+
             </div>
+
+                <div className='icons_container'>
+                    <div className='icons_line'>
+                        <img src={vetor}></img>
+                    </div>
+
+                    <div className='procedimentos'>
+                        procedimentos
+                    </div>
+
+                </div>
             
+            </div>
+
         </div>
+
+    
     )
 }
