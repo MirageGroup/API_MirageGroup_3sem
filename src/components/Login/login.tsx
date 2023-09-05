@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import React from 'react'
 import './login_style.scss'
-import { Recovery_screen } from '../Recover_screen/screen'
+import { Recovery_screen } from '../Recovery_screen/screen'
 
 
 
