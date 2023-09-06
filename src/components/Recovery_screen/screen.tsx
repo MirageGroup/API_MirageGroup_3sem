@@ -1,4 +1,4 @@
-import './screen.scss'
+import './recovery_screen.scss'
 
 export function Recovery_screen() {
     return (
