@@ -3,6 +3,7 @@
     width: 50%;
     padding: 1em;
     border-radius: 15px;
+    height: auto;
 
     .input_line{
         display: flex;
@@ -16,6 +17,7 @@
         margin-bottom: 1em;
         width: 40%;
         
+        
 
         input{
             background-color: #D9D9D9;
@@ -27,6 +29,26 @@
             border: 1px solid rgba(0, 0, 0, 0.6);
         }
         
+        #Descrição{
+            height: 20em;
+        }
+    }
+
+    .dropdown_wrapper{
+        width: 100%;
+        height: 8%;
+        margin-bottom: 1em;
+        background-color: #D9D9D9 ;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        
+        select{
+            outline: none;
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }
     }
 
     .lower_card_container{
@@ -49,10 +71,25 @@
     
             }
 
+            
 
         }
 
+        .icons_line{
+            margin-bottom: 20px;
+            display: flex;
+            gap: 0.8em;
+        }
+
     }
+
+    label{
+        margin-bottom: 5px;
+        font-weight: 400px;
+
+    }
+
+    
 
  
 }

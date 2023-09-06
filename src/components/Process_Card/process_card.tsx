@@ -1,8 +1,12 @@
 import './process_card_style.scss'
 import vetor from '../../assets/Vector.png';
+import { useState } from 'react';
 
 
 export function Process_card(){
+
+    const [selectedContributor, setSelectedContributor] = useState('');
+    const contributorOptions = ["Gustavo", "Pedro", "Hugo","Vinicius","Victor","Jaqueline","Hugo", "Gustavo Henrique" , "Thiago"];
 
     return(
         <div className="card_wrapper">
@@ -15,7 +19,7 @@ export function Process_card(){
                 </div>
 
                 <div className="input_wrapper">
-                    <label htmlFor="responsavel">responsavel</label>
+                    <label htmlFor="responsavel">Responsavel</label>
                     <input id="responsavel"></input>
                 </div>
             </div>
@@ -24,10 +28,16 @@ export function Process_card(){
 
                 <div className='description_wrapper'>
 
-                    <div className="input_wrapper">
-                        <label htmlFor="contribuidores">Contribuidores</label>
-                        <input id="contribuidores"></input>
-                    </div>
+                    <select className='dropdown_wrapper' id="contribuidores" value={selectedContributor} onChange={(e) => setSelectedContributor(e.target.value)}>
+                        <option value="">Select a contributor</option>
+                        {contributorOptions.map((contributor, index) => (
+                            <option key={index} value={contributor}>
+                            {contributor}
+                            </option>
+                        ))}
+                        
+                    </select>
+
 
                     <div className="input_wrapper">
                         <label htmlFor="contribuidores">Descrição</label>
@@ -40,6 +50,10 @@ export function Process_card(){
 
                 <div className='icons_container'>
                     <div className='icons_line'>
+                        <img src={vetor}></img>
+                        <img src={vetor}></img>
+                        <img src={vetor}></img>
+                        <img src={vetor}></img>
                         <img src={vetor}></img>
                     </div>
 
