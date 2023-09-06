@@ -1,15 +1,15 @@
 .login_wrapper{
     border-radius: 40px;
-    width: 30%;
+    width: 25%;
     height: 70%;
     display: flex;
     flex-direction: column;
-    background-color: #414F4A;
+    background-color: #58595B;
+    border: 1px solid;
     justify-content: center;
     align-content: center;
     padding: 4em;
-    border: 2px solid #93B786 ;
-
+    
 
     .buttons{
         display: flex;
@@ -18,8 +18,8 @@
         .mode_button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
+            background-color: #53C4CD;
+            border: 1px solid;
             width: 30%;
             height: 2.5em;
             transition: 0.5s;
@@ -27,7 +27,10 @@
             min-width: 80px;
             }
     }
-
+    h1 {
+        color: #9AF0E8;
+        font-weight: 450;
+    }
     .titulo{
         color: white;
         display: flex;
@@ -61,7 +64,7 @@
             display: flex;
             flex-direction: column;
             margin: 1em;
-            width: 70%;
+            width: 100%;
             min-width: 150px;
             
         
@@ -69,13 +72,15 @@
             label{
                 color: #9AF0E8;
                 margin-bottom: 0.5em;
+                text-align: left;
+                margin-left: 5px;
             }
             input{
-                background-color: #93B786;
+                background-color: #292A2D;
                 border-radius: 8px;
                 outline: none;
                 padding: 1em;
-                border: 1px solid #93B786;
+                border: 1px solid;
                 cursor: pointer;
                 transition: 0.5s;
 
@@ -86,12 +91,18 @@
             
         }
 
+        span {
+            color: #53C4CD;
+            font-weight: 700;
+            cursor:pointer;
+        }
+
         button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
-            width: 30%;
+            background-color: #53C4CD;
+            border: 1px solid;
+            width: 20%;
             height: 2.5em;
             transition: 0.5s;
             cursor: pointer;

@@ -15,10 +15,10 @@ export function Login(){
         return (
             <div className='login_wrapper'>
                 <div className="buttons">
-                <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+                <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
                 <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
                 </div>
-                <h1>LOGIN</h1>
+                <h1>Login</h1>
                 <form>
                     <div className='input_wrapper'>
                         <label htmlFor='input_email'>Email</label>
@@ -28,7 +28,10 @@ export function Login(){
                         <label htmlFor='input_senha'>Senha</label>
                         <input placeholder='digite sua senha' id='input_senha'></input>
                     </div>
-                    <button>Confirmar</button>                
+                    <button>Confirmar</button>
+                    <div>
+                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>clique aqui</span></p>
+                    </div>            
                 </form>
             </div>
         )
@@ -58,7 +61,7 @@ export function Login(){
             <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
             <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
             </div>
-            <h1>CADASTRO</h1>
+            <h1>Cadastro</h1>
             <form>
                 <div className='input_wrapper'>
                     <label htmlFor='input_email'>Email</label>
