@@ -27,9 +27,10 @@ export function Process_card(){
             <div className='lower_card_container'>
 
                 <div className='description_wrapper'>
-
+                    
+                    <label htmlFor="responsavel">Responsavel</label>
                     <select className='dropdown_wrapper' id="contribuidores" value={selectedContributor} onChange={(e) => setSelectedContributor(e.target.value)}>
-                        <option value="">Select a contributor</option>
+                        <option value=""></option>
                         {contributorOptions.map((contributor, index) => (
                             <option key={index} value={contributor}>
                             {contributor}
