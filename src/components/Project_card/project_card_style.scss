@@ -1,0 +1,26 @@
+
+.card_wrapper{
+    width: 15%;
+    border-radius: 10px;
+    height: 230px;
+    text-align: center;
+    h4{
+        color: #53C4CD;
+    }
+}
+
+
+.main_card{
+    background-color: #292A2D;
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    img{
+        padding: 0.6em;
+    }
+}
