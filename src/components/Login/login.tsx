@@ -15,8 +15,8 @@ export function Login(){
         return (
             <div className='login_wrapper'>
                 <div className="buttons">
-                <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
-                <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
+                {/* <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
+                <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button> */}
                 </div>
                 <h1>Login</h1>
                 <form>
@@ -29,8 +29,8 @@ export function Login(){
                         <input placeholder='digite sua senha' id='input_senha'></input>
                     </div>
                     <button>Confirmar</button>
-                    <div>
-                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>clique aqui</span></p>
+                    <div className='paragraph'>
+                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>cadastrar</span></p>
                     </div>            
                 </form>
             </div>
@@ -58,8 +58,8 @@ export function Login(){
         return(
             <div className='login_wrapper'>
             <div className="buttons">
-            <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
-            <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button>
+            {/* <button className='mode_button' onClick={() => setLoginMode("login")}>login</button>
+            <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button> */}
             </div>
             <h1>Cadastro</h1>
             <form>
@@ -75,7 +75,10 @@ export function Login(){
                     <label htmlFor='input_senha'>Confirmar Senha</label>
                     <input placeholder='digite sua senha' id='input_senha'></input>
                 </div>
-                <button>Cadastrar</button>                
+                <button>Cadastrar</button>
+                <div className='paragraph'>
+                    <p>Já tem uma conta? <span onClick={() => setLoginMode("login")}>fazer login</span></p>
+                </div>            
             </form>
         </div>
         )
