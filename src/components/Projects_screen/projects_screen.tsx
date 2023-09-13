@@ -14,6 +14,17 @@ export function ProjectScreen(){
     { id: 3, name: "projeto3", finished: false },
     { id: 4, name: "projeto4", finished: true },
     { id: 5, name: "projeto5", finished: false },
+    { id: 1, name: "projeto1", finished: true },
+    { id: 2, name: "projeto2", finished: true },
+    { id: 3, name: "projeto3", finished: false },
+    { id: 4, name: "projeto4", finished: true },
+    { id: 5, name: "projeto5", finished: true },
+    { id: 1, name: "projeto1", finished: true },
+    { id: 2, name: "projeto2", finished: true },
+    { id: 3, name: "projeto3", finished: false },
+    { id: 4, name: "projeto4", finished: true },
+    { id: 5, name: "projeto5", finished: false },
+    
     ]
 
     return(
