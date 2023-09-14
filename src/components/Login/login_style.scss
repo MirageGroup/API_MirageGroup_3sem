@@ -120,5 +120,27 @@
         
     }
 
+    .dropdown_wrapper{
+        width: 100%;
+        padding: 1em;
+        background-color: #292A2D ;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        color: gray;
+        
+        select{
+            outline: none;
+            border:1px solid rgba(0, 0, 0, 0.6);
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }
+
+        option{
+            color: white;
+        }
+    }
+
 }
 

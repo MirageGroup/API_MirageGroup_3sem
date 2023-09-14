@@ -12,8 +12,7 @@ function App() {
 
   return (
   <>
-  {/* <Screen></Screen> */}
-  <Background></Background>
+  {<Screen></Screen> }
   </>
   
     
