@@ -7,7 +7,6 @@ import { Recovery_screen } from '../Recovery_screen/screen';
 export function Screen(){
     return(
         <div className="screen">
-            <img className='screen_img' src={ImagemLogin} alt="login_img" />
             <Login></Login>
         </div>
 
