@@ -34,7 +34,7 @@ export function Login(){
                     </div>
                     <button>Confirmar</button>
                     <div className='paragraph'>
-                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>cadastrar</span></p>
+                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>Cadastrar</span></p>
                     </div>            
                 </form>
             </div>
@@ -95,7 +95,7 @@ export function Login(){
                 </div>
                 <button>Cadastrar</button>
                 <div className='paragraph'>
-                    <p>Já tem uma conta? <span onClick={() => setLoginMode("login")}>fazer login</span></p>
+                    <p>Já tem uma conta? <span onClick={() => setLoginMode("login")}>Fazer login</span></p>
                 </div>            
             </form>
         </div>
