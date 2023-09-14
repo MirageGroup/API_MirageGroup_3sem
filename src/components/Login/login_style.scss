@@ -1,15 +1,15 @@
 .login_wrapper{
     border-radius: 40px;
-    width: 30%;
+    width: 25%;
     height: 70%;
     display: flex;
     flex-direction: column;
-    background-color: #414F4A;
+    background-color: #58595B;
+    border: 1px solid;
     justify-content: center;
     align-content: center;
     padding: 4em;
-    border: 2px solid #93B786 ;
-
+    
 
     .buttons{
         display: flex;
@@ -18,8 +18,8 @@
         .mode_button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
+            background-color: #53C4CD;
+            border: 1px solid;
             width: 30%;
             height: 2.5em;
             transition: 0.5s;
@@ -27,8 +27,27 @@
             min-width: 80px;
             }
     }
-    
-
+    h1 {
+        color: #53C4CD;
+        font-weight: 450;
+    }
+    .titulo{
+        color: white;
+        display: flex;
+        justify-content: center;
+        @keyframes blink {
+            0% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0.5;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+            animation: blink 1s step-start infinite;
+        }
     img {
         border-radius: 50%;
         width: 180px; /* Defina um tamanho adequado para a imagem */
@@ -45,21 +64,23 @@
             display: flex;
             flex-direction: column;
             margin: 1em;
-            width: 70%;
+            width: 100%;
             min-width: 150px;
             
         
         
             label{
-                color: #9AF0E8;
+                color: #53C4CD;
                 margin-bottom: 0.5em;
+                text-align: left;
+                margin-left: 5px;
             }
             input{
-                background-color: #93B786;
+                background-color: #292A2D;
                 border-radius: 8px;
                 outline: none;
                 padding: 1em;
-                border: 1px solid #93B786;
+                border: 1px solid;
                 cursor: pointer;
                 transition: 0.5s;
 
@@ -70,12 +91,21 @@
             
         }
 
+        span {
+            color: #53C4CD;
+            font-weight: 700;
+            cursor:pointer;
+        }
+        .paragraph {
+            margin-top: 1.5em;
+        }
+
         button{
             margin: 0.5em;
             border-radius: 5px;
-            background-color: #93B786;
-            border: 1px solid #93B786;
-            width: 30%;
+            background-color: #53C4CD;
+            border: 1px solid;
+            width: 20%;
             height: 2.5em;
             transition: 0.5s;
             cursor: pointer;
@@ -86,8 +116,31 @@
         button:hover {
             filter: brightness(140%);
         }
+
+        
     }
 
-    
+    .dropdown_wrapper{
+        width: 100%;
+        padding: 1em;
+        background-color: #292A2D ;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        color: gray;
+        
+        select{
+            outline: none;
+            border:1px solid rgba(0, 0, 0, 0.6);
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }
+
+        option{
+            color: white;
+        }
+    }
+
 }
 
