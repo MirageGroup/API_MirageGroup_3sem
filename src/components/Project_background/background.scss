@@ -10,9 +10,11 @@ body {
         border-radius: 20px;
         flex-direction: row;    
         justify-content: space-between;
+        width: 85%;
+
         .project-name {
             position: absolute;
-            left: 35px;
+            left: 30px;
             top: -3px;
             font-size: 30px;
             font-weight: 500;
