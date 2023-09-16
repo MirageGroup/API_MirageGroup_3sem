@@ -15,8 +15,8 @@ function App() {
   return (
   <>
    {/* <Screen></Screen>  */}
-    {/* <Background label="Projeto #1"></Background> */}
-    <Column></Column>
+    <Background label="Projeto #1"></Background>
+    {/* <Column></Column> */}
   </>
   
     
