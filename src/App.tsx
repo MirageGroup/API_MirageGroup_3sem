@@ -8,13 +8,15 @@ import { Screen } from './components/Login_screen/screen'
 import { Process_card } from './components/Process_Card/process_card'
 import { Recovery_screen } from './components/Recovery_screen/screen'
 import { Background } from './components/Project_background/background'
+import { Column } from './components/Column/column'
 
 function App() {
 
   return (
   <>
-   <Screen></Screen> 
-
+   {/* <Screen></Screen>  */}
+    {/* <Background label="Projeto #1"></Background> */}
+    <Column></Column>
   </>
   
     
