@@ -2,15 +2,18 @@ body {
     height: 92%;
 
     .background-wrapper {
-        padding: 4em;
+        padding: 3em;
         margin: 2em;
         background-color: #58595B;
+        border-radius: 20px;
         position: relative;
         display: flex;
-        border-radius: 20px;
+        
         flex-direction: row;    
+        
         justify-content: space-between;
-        width: 85%;
+        width: 80%;
+        height: 85%;
 
         .project-name {
             position: absolute;

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './column.scss'
+import {Add_card} from '../Add_card/add_card';
 
-export function Column () {
+export function Column ({nome}) {
 
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -16,11 +17,43 @@ export function Column () {
         <>
             <div className='container' onScroll={handleScroll}>
                 <section className='title-container'>
-                    <h4 className='title'>A Fazer</h4>
+                    <h4 className='title'>{nome}</h4>
                 </section>
                 <div className='card-container'>
+
                     <div className='card-wrapper'>
-                    
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
+                    <Add_card></Add_card>
                     </div>
                 </div>
             </div>
