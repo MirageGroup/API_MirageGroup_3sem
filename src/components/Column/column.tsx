@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './column.scss'
+import './column.scss';
 import {Add_card} from '../Add_card/add_card';
+import {Card} from '../components/Card/card';
 
 export function Column ({nome}) {
 
@@ -22,38 +23,7 @@ export function Column ({nome}) {
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
-                    <Add_card></Add_card>
+                        <Card></Card>
                     </div>
                 </div>
             </div>
