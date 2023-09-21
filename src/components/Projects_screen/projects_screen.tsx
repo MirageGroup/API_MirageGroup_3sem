@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ProjectCard } from "../Project_card/project_card";
 import './projects_screen_style.scss'
 import { Process_card } from "../Process_Card/process_card";
+import * as FaIcons from "react-icons/fa";
+import { FiX } from "react-icons/fi";
 
 export function ProjectScreen(){
 
@@ -79,8 +81,11 @@ export function ProjectScreen(){
                 <div className="modalBackdrop">
                     <div className="modalCenter">
                         <div className="modal">
+                            <div className="modal_icons">
+                                <FiX onClick={closeModal} size={30}></FiX>
+
+                            </div>
                         <Process_card></Process_card>
-                        <button onClick={closeModal}>Fechar Modal</button>
                         </div>
                     </div>
                 </div>
