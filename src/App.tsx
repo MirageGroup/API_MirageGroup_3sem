@@ -9,17 +9,18 @@ import { Process_card } from './components/Process_Card/process_card'
 import { Recovery_screen } from './components/Recovery_screen/screen'
 import { ProjectScreen } from './components/Projects_screen/projects_screen'
 import { Background } from './components/Project_background/background'
+import { Sidebar } from './components/sidebar/sidebar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
   return (
-  <>
-  <ProjectScreen></ProjectScreen>
-   <Screen></Screen> 
-
-  </>
-  
-    
+    <Router>
+      <Sidebar></Sidebar>
+      <Routes>
+        <Route path='/screen' Component={Screen}/>
+      </Routes>
+    </Router>
   )
 }
 
