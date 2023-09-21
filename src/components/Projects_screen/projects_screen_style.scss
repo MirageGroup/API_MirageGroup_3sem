@@ -64,7 +64,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly dark background */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +75,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .modal_icons{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        svg{
+            height: 20%;
+            color: #53C4CD;
+            align-self: flex-end;
+        }
+        svg:hover{
+            cursor: pointer;
+        }
+
+        
+    }
   }
   
 

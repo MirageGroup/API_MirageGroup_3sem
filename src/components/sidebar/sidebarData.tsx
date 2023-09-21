@@ -1,14 +1,13 @@
-import React from 'react'
+
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
-import { Link } from 'react-router-dom';
 import './sidebar-style.scss';
 
 export const sidebarData = [
     {
         title: 'Página Inicial',
-        path: '/',
+        path: '/home',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },
