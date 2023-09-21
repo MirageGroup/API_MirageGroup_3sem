@@ -39,18 +39,20 @@
     border-radius: 4px;
     position: relative;
     right: 28px;
-    span, svg, path {
+    a, svg, span {
+        width: 100%;
         text-decoration: none;
         color: #53C4CD;
         font-size: 16px;
-        width: 50%;
-        height: 50%;
+        height: 70%;
         display: flex;
         align-items: center;
         padding: 0 1px;
         border-radius: 4px;
+        justify-content: left;
     }
 }
+
 .nav-text:hover {
     background-color: black;
     border-radius: 10px;

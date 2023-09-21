@@ -18,8 +18,6 @@ function App() {
       <Sidebar></Sidebar>
       <Routes>
         <Route path='/screen' Component={Screen}/>
-        {/* <Route path='/login' Component={Login}/> */}
-        {/* <Route path='/processcard' Component={}/> */}
       </Routes>
     </Router>
    
