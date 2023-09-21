@@ -20,6 +20,7 @@
     justify-content: center;
     position: fixed;
     top: 0;
+    left: -100%;
     transition: 850ms; 
 }
 
@@ -30,7 +31,7 @@
 
 .nav-text {
     display: flex;
-    justify-content: right;
+    justify-content: left;
     align-items: center;
     padding: 8px 0px 8px 10px;
     list-style: none;
@@ -51,6 +52,7 @@
 .nav-text:hover {
     background-color: black;
     border-radius: 10px;
+    padding-right: 3px;
 }
 
 .nav-menu-itens {
@@ -67,5 +69,5 @@
 }
 
 span {
-    margin: 15px;
+    margin: 1px;
 }
