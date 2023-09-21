@@ -17,7 +17,8 @@ function App() {
     <Router>
       <Sidebar></Sidebar>
       <Routes>
-        <Route path='/'/>
+        <Route path='/screen' Component={Screen}/>
+        <Route path='/login' Component={Login}/>
       </Routes>
     </Router>
    

@@ -14,7 +14,7 @@
 
 .nav-menu {
     background-color: #292A2D;
-    width: 250px;
+    width: 200px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -31,13 +31,15 @@
 
 .nav-text {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding: 8px 0px 8px 10px;
+    padding: 8px 10px 8px 10px;
     list-style: none;
     height: 60px;
     border-radius: 4px;
-    span, svg {
+    position: relative;
+    right: 28px;
+    span, svg, path {
         text-decoration: none;
         color: #53C4CD;
         font-size: 16px;
@@ -45,14 +47,13 @@
         height: 50%;
         display: flex;
         align-items: center;
-        padding: 0 12px;
+        padding: 0 1px;
         border-radius: 4px;
     }
 }
 .nav-text:hover {
     background-color: black;
     border-radius: 10px;
-    padding-right: 3px;
 }
 
 .nav-menu-itens {
@@ -66,8 +67,4 @@
     display: flex;
     justify-content: start;
     align-items: center;
-}
-
-span {
-    margin: 1px;
 }

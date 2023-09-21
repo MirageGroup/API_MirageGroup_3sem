@@ -7,7 +7,7 @@ import './sidebar-style.scss';
 
 export const sidebarData = [
     {
-        title: 'Pagina Inicial',
+        title: 'Página Inicial',
         path: '/',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
@@ -26,7 +26,7 @@ export const sidebarData = [
     },
     {
         title: 'Cadastro',
-        path: '/cadastro',
+        path: '/Screen',
         icon: <IoIcons.IoMdPeople/>,
         cName: 'nav-text'
     }
