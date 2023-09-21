@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './column.scss';
 import {Add_card} from '../Add_card/add_card';
-import {Card} from '../components/Card/card';
+import {Card} from '../Card/card'
 
 export function Column ({nome}) {
 
