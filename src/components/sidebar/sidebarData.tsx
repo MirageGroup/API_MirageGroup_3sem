@@ -7,7 +7,7 @@ import './sidebar-style.scss';
 export const sidebarData = [
     {
         title: 'Página Inicial',
-        path: '/home',
+        path: '/',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     },

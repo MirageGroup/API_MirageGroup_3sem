@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/screen' Component={Screen}/>
         <Route path='/project_screen' Component={ProjectScreen}/>
-        <Route path='/home' Component={Home_page}/>
+        <Route path='/' Component={Home_page}/>
         <Route path='/screen' Component={Screen}/>
       </Routes>
     </Router>
