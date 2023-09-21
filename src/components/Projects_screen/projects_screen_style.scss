@@ -15,6 +15,35 @@
         color: #53C4CD;
         margin: 2px;
     }
+
+
+    .screen_title{
+        h1{
+            color: #53C4CD;
+        }
+        p{
+            color: #53C4CD;
+        }
+        button{
+            
+
+            border-radius: 5px;
+            background-color: #53C4CD;
+            border: 1px solid;
+            width: 10%;
+            height: 2.5em;
+            transition: 0.5s;
+            cursor: pointer;
+            min-width: 80px;
+                
+        }
+        button:hover{
+            filter: brightness(140%);
+        }
+    }
+
+
+
 }
 
 
@@ -28,3 +57,25 @@
     margin: 2.4em 0;
 
 }
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's above other content */
+  }
+  
+  .modalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+

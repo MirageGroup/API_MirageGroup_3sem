@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { ProjectCard } from "../Project_card/project_card";
 import './projects_screen_style.scss'
+import { Process_card } from "../Process_Card/process_card";
 
 export function ProjectScreen(){
 
@@ -27,8 +29,28 @@ export function ProjectScreen(){
     
     ]
 
+    const [isModalOpen, setIsModalOpen] = useState(false); 
+
+
+    const openModal = () => {
+        setIsModalOpen(true);
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
+
+
+
     return(
         <div className="screen_wrapper">
+
+            <div className="screen_title">
+                <h1>Bem vindo a lista de projetos</h1>
+                <p>aqui você pode ver todas as listas de projetos</p>
+                <button onClick={openModal}>criar projeto</button>
+
+            </div>
             <div className="list_container">
                 <h3>Em andamento</h3>
                 <span></span>
@@ -37,7 +59,7 @@ export function ProjectScreen(){
                         (projeto) => projeto.finished? <ProjectCard name={projeto.name}></ProjectCard>:null  
                         )
                     }
-                </div>
+            </div>
 
             </div>
 
@@ -52,9 +74,17 @@ export function ProjectScreen(){
                 </div>
 
             </div>
-            
-            
-            
+
+            {isModalOpen && (
+                <div className="modalBackdrop">
+                    <div className="modalCenter">
+                        <div className="modal">
+                        <Process_card></Process_card>
+                        <button onClick={closeModal}>Fechar Modal</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

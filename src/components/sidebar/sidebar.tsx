@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { sidebarData } from './sidebarData';
 import './sidebar-style.scss';
 import { IconContext } from 'react-icons';
+import * as IoIcons from "react-icons/io";
 
 export function Sidebar() {
   const [navbar, setnavbar] = useState(false)
@@ -16,6 +17,9 @@ export function Sidebar() {
       <div className='navbar'>
         <Link to="#" className='menu-bars'>
           <FaIcons.FaBars onClick={showNavbar}/>
+        </Link>
+        <Link className="icone_cadastro" to="/screen">
+          <IoIcons.IoMdPeople />
         </Link>
       </div>
       <nav className={navbar ? 'nav-menu active' : 'nav-menu'}>

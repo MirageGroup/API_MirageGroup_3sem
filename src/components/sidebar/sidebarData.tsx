@@ -14,7 +14,7 @@ export const sidebarData = [
     },
     {
         title: 'Processos',
-        path: '/processcard',
+        path: '/project_screen',
         icon: <IoIcons.IoIosPaper/>,
         cName: 'nav-text'
     },
