@@ -4,6 +4,7 @@
     border: 1px solid;
     border-radius: 10px;
     position: relative;
+    margin: 15px 10px;
 
     .color {
         position: absolute;
@@ -24,6 +25,8 @@
         gap: 6em;
         height: 85px;
         
+        font-weight: 550;
+
         .name-paragraph {
             position: absolute;
             top: 0.01em;
@@ -33,13 +36,13 @@
         .date {
             position: absolute;
             top: 0.01em;
-            left: 250px;
+            left: 300px;
         }
 
         .picture {
             position:absolute;
-            left: 400px;
-            top: 7px;
+            left: 455px;
+            top: 5px;
         }
         
     }
@@ -51,7 +54,7 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        gap: 22em;
+        gap: 25em;
         margin-left: 1em;
         margin-bottom: 5px;;
     }
