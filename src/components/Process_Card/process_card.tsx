@@ -9,7 +9,7 @@ export function Process_card(){
     const contributorOptions = ["Gustavo", "Pedro", "Hugo","Vinicius","Victor","Jaqueline","Hugo", "Gustavo Henrique" , "Thiago"];
 
     return(
-        <div className="card_wrapper">
+        <div className="card_wrapper_process">
             <h1>Novo Projeto</h1>
 
             <div className='input_line'>
