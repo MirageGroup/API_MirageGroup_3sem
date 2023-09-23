@@ -1,0 +1,58 @@
+.super-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 10px;
+    position: relative;
+
+    .color {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        background-color: red;
+        border-radius: 30px;
+        width: 7px;
+        height: 85%;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 6em;
+        height: 85px;
+        
+        .name-paragraph {
+            position: absolute;
+            top: 0.01em;
+            left: 25px;
+        }
+
+        .date {
+            position: absolute;
+            top: 0.01em;
+            left: 250px;
+        }
+
+        .picture {
+            position:absolute;
+            left: 400px;
+            top: 7px;
+        }
+        
+    }
+
+    .icons-container {
+        display: flex;
+        
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 22em;
+        margin-left: 1em;
+        margin-bottom: 5px;;
+    }
+}
