@@ -16,9 +16,9 @@ function App() {
 
   return (
   <>
-    {/* <Screen></Screen>  */}
+    <Screen></Screen> 
     {/* <Background nome="Projeto #1"></Background> */}
-    <Column></Column>
+    {/* <Column></Column> */}
     
   </>
   
