@@ -6,6 +6,7 @@ import { sidebarData } from './sidebarData';
 import './sidebar-style.scss';
 import { IconContext } from 'react-icons';
 import * as IoIcons from "react-icons/io";
+import { logoionic } from '../../img/logoionic.png'
 
 export function Sidebar() {
   const [navbar, setnavbar] = useState(false)
@@ -18,6 +19,7 @@ export function Sidebar() {
         <Link to="#" className='menu-bars'>
           <FaIcons.FaBars onClick={showNavbar}/>
         </Link>
+        <img src={logoionic}/>
         <Link className="icone_cadastro" to="/screen">
           <IoIcons.IoMdPeople />
         </Link>

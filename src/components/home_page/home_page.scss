@@ -5,7 +5,23 @@
     display: flex;
     justify-content: center;
     gap: 2%;
+    button{
+            
+        border-radius: 5px;
+        background-color: #53C4CD;
+        border: 1px solid;
+        width: 40%;
+        height: 3.5em;
+        transition: 0.5s;
+        cursor: pointer;
+        min-width: 80px;
+        top: 40px;
+        position: relative;
+    }
 
+    button:hover {
+        filter: brightness(140%);
+    }
 
     .main_title{
 

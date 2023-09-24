@@ -1,9 +1,16 @@
 import './process_card_style.scss'
 import vetor from '../../assets/Vector.png';
 import { useState } from 'react';
+import { FiX } from "react-icons/fi";
 
 
 export function Process_card(){
+
+    const [isModalOpen, setIsModalOpen] = useState(false); 
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
 
     const [selectedContributor, setSelectedContributor] = useState('');
     const contributorOptions = ["Gustavo", "Pedro", "Hugo","Vinicius","Victor","Jaqueline","Hugo", "Gustavo Henrique" , "Thiago"];
@@ -59,10 +66,30 @@ export function Process_card(){
                     </div>
 
                     <div className='procedimentos'>
-                        procedimentos
+                        Procedimentos
                     </div>
-
+                    
                 </div>
+
+                <div className='concluir'>
+                    <button onClick={closeModal}>Cancelar</button>
+                    <button onClick={closeModal}>Concluir</button>
+                </div>
+                
+
+                {isModalOpen && (
+                <div className="modalBackdrop">
+                    <div className="modalCenter">
+                        <div className="modal">
+                            <div className="modal_icons">
+                                <FiX onClick={closeModal} size={30}></FiX>
+
+                            </div>
+                        <Process_card></Process_card>
+                        </div>
+                    </div>
+                </div>
+            )}
             
             </div>
 
