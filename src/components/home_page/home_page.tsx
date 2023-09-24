@@ -35,7 +35,7 @@ export function Home_page(){
                                 <FiX onClick={closeModal} size={30}></FiX>
 
                             </div>
-                        <Process_card></Process_card>
+                        <Process_card close_modal_function = {closeModal}></Process_card>
                         </div>
                     </div>
                 </div>

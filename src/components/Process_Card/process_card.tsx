@@ -4,13 +4,8 @@ import { useState } from 'react';
 import { FiX } from "react-icons/fi";
 
 
-export function Process_card(){
+export function Process_card({close_modal_function}:any){
 
-    const [isModalOpen, setIsModalOpen] = useState(false); 
-    
-      const closeModal = () => {
-        setIsModalOpen(false);
-      };
 
     const [selectedContributor, setSelectedContributor] = useState('');
     const contributorOptions = ["Gustavo", "Pedro", "Hugo","Vinicius","Victor","Jaqueline","Hugo", "Gustavo Henrique" , "Thiago"];
@@ -72,12 +67,12 @@ export function Process_card(){
                 </div>
 
                 <div className='concluir'>
-                    <button onClick={closeModal}>Cancelar</button>
-                    <button onClick={closeModal}>Concluir</button>
+                    <button onClick={close_modal_function}>Cancelar</button>
+                    <button onClick={close_modal_function}>Concluir</button>
                 </div>
                 
 
-                {isModalOpen && (
+                {/* {isModalOpen && (
                 <div className="modalBackdrop">
                     <div className="modalCenter">
                         <div className="modal">
@@ -89,7 +84,7 @@ export function Process_card(){
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
             
             </div>
 
