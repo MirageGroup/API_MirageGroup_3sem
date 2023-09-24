@@ -12,19 +12,19 @@ export const sidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Processos',
+        title: 'Projetos',
         path: '/project_screen',
         icon: <IoIcons.IoIosPaper/>,
         cName: 'nav-text'
     },
+    // {
+    //     title: 'Tarefas',
+    //     path: '/tarefas',
+    //     icon: <FaIcons.FaPaperclip/>,
+    //     cName: 'nav-text'
+    // },
     {
-        title: 'Tarefas',
-        path: '/tarefas',
-        icon: <FaIcons.FaPaperclip/>,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Cadastro',
+        title: 'Minha conta',
         path: '/screen',
         icon: <IoIcons.IoMdPeople/>,
         cName: 'nav-text'

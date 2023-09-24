@@ -6,7 +6,7 @@ import { sidebarData } from './sidebarData';
 import './sidebar-style.scss';
 import { IconContext } from 'react-icons';
 import * as IoIcons from "react-icons/io";
-import { logoionic } from '../../img/logoionic.png'
+import  logoionic from '../../img/logoionic.png'
 
 export function Sidebar() {
   const [navbar, setnavbar] = useState(false)
