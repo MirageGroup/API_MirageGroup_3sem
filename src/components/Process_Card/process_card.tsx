@@ -2,13 +2,46 @@ import './process_card_style.scss'
 import vetor from '../../assets/Vector.png';
 import { useState } from 'react';
 import { FiX } from "react-icons/fi";
+import axios from 'axios';
 
 
 export function Process_card({close_modal_function}:any){
 
 
+    const [projectName, setProjectName] = useState('');
+    const [responsible, setResponsible] = useState('');
+    const [description, setDescription] = useState('');
     const [selectedContributor, setSelectedContributor] = useState('');
-    const contributorOptions = ["Gustavo", "Pedro", "Hugo","Vinicius","Victor","Jaqueline","Hugo", "Gustavo Henrique" , "Thiago"];
+    const [startDate, setStartDate] = useState(''); // State for the start date
+    const [endDate, setEndDate] = useState(''); // State for the end date
+    const contributorOptions = ["Gustavo", "Pedro", "Hugo", "Vinicius", "Victor", "Jaqueline", "Hugo", "Gustavo Henrique", "Thiago"];
+
+    const handleSubmit = async () => {
+
+        const data = {
+            name: projectName,
+            description,
+            date_created: startDate, // Use startDate as date_created
+            date_finish: endDate,   // Use endDate as date_finish
+        };
+      console.log(data)
+  
+      try {
+        const response = await axios.post('http://localhost:8000/process/create', data);
+        console.log('Data sent successfully:', response.data);
+  
+        // Optionally, reset the form fields and state
+        setProjectName('');
+        setResponsible('');
+        setDescription('');
+        setSelectedContributor('');
+        setStartDate('');
+        setEndDate('');
+      } catch (error) {
+        console.error('Error sending data:', error);
+      }
+    };
+
 
     return(
         <div className="card_wrapper_process">
@@ -17,12 +50,20 @@ export function Process_card({close_modal_function}:any){
             <div className='input_line'>
                 <div className="input_wrapper">
                     <label htmlFor="input_nome">Nome do Projeto</label>
-                    <input id="input_nome"></input>
+                    <input id="input_nome" onChange={(e)=>setProjectName(e.target.value)}></input>
                 </div>
 
-                <div className="input_wrapper">
-                    <label htmlFor="responsavel">Responsavel</label>
-                    <input id="responsavel"></input>
+                <div className='date_input'>
+                    <div className="input_wrapper">
+                        <label htmlFor="data_inicio">Data de Início</label>
+                        <input type="date" id="data_inicio" value={startDate} onChange={(e) => setStartDate(e.target.value)}></input>
+                    </div>
+
+                    <div className="input_wrapper">
+                        <label htmlFor="data_fim">Data de Término</label>
+                        <input type="date" id="data_fim" value={endDate} onChange={(e) => setEndDate(e.target.value)}></input>
+                    </div>
+
                 </div>
             </div>
 
@@ -44,7 +85,7 @@ export function Process_card({close_modal_function}:any){
 
                     <div className="input_wrapper">
                         <label htmlFor="contribuidores">Descrição</label>
-                        <input id="Descrição"></input>
+                        <input id="Descrição" onChange={(e)=>setDescription(e.target.value)} ></input>
                     </div>
 
                     
@@ -61,15 +102,17 @@ export function Process_card({close_modal_function}:any){
                     </div>
 
                     <div className='procedimentos'>
-                        Procedimentos
+                        Procedimentos:
                     </div>
                     
                 </div>
 
                 <div className='concluir'>
                     <button onClick={close_modal_function}>Cancelar</button>
-                    <button onClick={close_modal_function}>Concluir</button>
+                    <button onClick={handleSubmit}>Concluir</button>
                 </div>
+                
+
                 
 
                 {/* {isModalOpen && (
