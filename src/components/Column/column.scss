@@ -1,6 +1,11 @@
 $scrollPercentage: 10;
 
 .container {
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    caret-color: transparent;
+
     margin:0px;
     border: 1px solid;
     position: relative;
@@ -19,7 +24,7 @@ $scrollPercentage: 10;
 
     .title-container {
         width: 100%;
-        height: 50px;
+        height: 5vh;
 
         .title {
             padding: 1em;
@@ -27,17 +32,16 @@ $scrollPercentage: 10;
             text-align: left;
             background-color: black;
             color:aliceblue;
-            font-size: large;
+
+            font-weight: 500;
+            font-size: 1em;
             
         }
     }
     .card-container {
-
+        
         .card-wrapper {
             width: 100%;
-
-            padding-bottom: 20em;
-            
         }
     }
     

@@ -7,7 +7,7 @@ export function New_task() {
             
             <div className='form-container'>
                 <div className='form-title'><h3>Nova Tarefa</h3></div>
-                <div className='close-button'><AiOutlineClose size={20}/></div>
+                <div className='close-button'><AiOutlineClose size={30}/></div>
                 <form>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa'/>
                     <input type="text" name="responsible-name" className='responsible-name' placeholder='Responsável principal'/>
@@ -26,7 +26,7 @@ export function New_task() {
                         <label>Data Limite:</label>
                         <input type="date" />
                     </div>
-                    <textarea placeholder='Descrição' rows={15} cols={30}>
+                    <textarea placeholder='Descrição' rows={24} cols={30}>
 
                     </textarea>
                 </form>

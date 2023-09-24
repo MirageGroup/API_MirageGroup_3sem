@@ -9,7 +9,7 @@ export function Background () {
             <section><p className='project-name'>Projeto 1</p></section>
             {/* close button */}
             <div>
-                <GrClose size={40} className='button'/>
+                <GrClose size={35} className='button'/>
             </div>
             {/* content */}
                 <Column nome="A fazer"></Column>
