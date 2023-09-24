@@ -1,8 +1,10 @@
 body {
-    height: 92%;
-
+    height: 99%;
+    
     .background-wrapper {
-        padding: 3em;
+        padding-top: 90px;
+        padding-right: 120px;
+        
         margin: 2em;
         background-color: #58595B;
         border-radius: 20px;
@@ -11,7 +13,8 @@ body {
         
         flex-direction: row;    
         
-        justify-content: space-between;
+
+        justify-content: space-evenly;
         width: 80%;
         height: 85%;
 

@@ -23,11 +23,12 @@ export function Column ({nome}) {
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
+                        
+                        <Card></Card>
+                        <Card></Card>
+                        <Card></Card>
+                        <Card></Card>
                         <Add_card></Add_card>
-                        <Card></Card>
-                        <Card></Card>
-                        <Card></Card>
-                        <Card></Card>
                     </div>
                 </div>
             </div>

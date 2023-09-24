@@ -23,7 +23,8 @@ function App() {
         <Route path='/' Component={Home_page}/>
         <Route path='/screen' Component={Screen}/>
       </Routes>
-    </Router>
+    </Router> 
+    
   )
 }
 
