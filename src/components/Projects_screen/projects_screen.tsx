@@ -49,8 +49,8 @@ export function ProjectScreen(){
 
             <div className="screen_title">
                 <h1>Bem vindo a lista de projetos</h1>
-                <p>aqui você pode ver todas as listas de projetos</p>
-                <button onClick={openModal}>criar projeto</button>
+                <p>Aqui você pode ver todas as listas de projetos</p>
+                <button onClick={openModal}>Criar projeto</button>
 
             </div>
             <div className="list_container">
