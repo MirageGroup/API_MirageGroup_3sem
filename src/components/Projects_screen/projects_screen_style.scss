@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .screen_wrapper{
     background-color: #0D0E12;
     width: 98%;
@@ -19,11 +25,15 @@
 
 
     .screen_title{
+        font-family: 'Poppins', sans-serif;
         h1{
             color: #53C4CD;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
         }
         p{
             color: #53C4CD;
+            font-family: 'Poppins', sans-serif;
         }
         button{
             
@@ -32,10 +42,11 @@
             background-color: #53C4CD;
             border: 1px solid;
             width: 10%;
-            height: 2.5em;
+            height: 3em;
             transition: 0.5s;
             cursor: pointer;
             min-width: 80px;
+            font-weight: bolder;
                 
         }
         button:hover{
