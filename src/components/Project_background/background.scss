@@ -1,8 +1,10 @@
 body {
-    height: 92%;
-
+    height: 99%;
+    overflow: hidden;
     .background-wrapper {
-        padding: 3em;
+        padding-top: 7vh;
+        padding-right: 3vw;
+        
         margin: 2em;
         background-color: #58595B;
         border-radius: 20px;
@@ -11,30 +13,28 @@ body {
         
         flex-direction: row;    
         
-        justify-content: space-between;
+
+        justify-content: space-evenly;
         width: 80%;
         height: 85%;
 
         .project-name {
             position: absolute;
-            left: 30px;
-            top: -3px;
-            font-size: 30px;
+            left: 2vw;
+            top: -1vh;
+            font-size: 1.9em;
             font-weight: 500;
         }
 
         .button{
             position: absolute;
             padding: 1.5em;
-            right: -2px;
-            top: -3px;
+            right: -0.8vw;
+            top: -1.7vh;
             
             cursor: pointer;
         }
 
-        .button:hover {
-            
-        }
         
     }
 }
