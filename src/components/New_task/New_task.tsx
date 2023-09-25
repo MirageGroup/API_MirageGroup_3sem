@@ -14,21 +14,19 @@ export function New_task() {
                     <label>Nível de Prioridade</label>
                     <div className='priority-buttons'>
                         <input type="radio" id="verde" name="prioridade" value="verde"/>
-                        <label className="verde" ></label>
+                        <label className="green" ></label>
             
                         <input type="radio" id="amarelo" name="prioridade" value="amarelo"/>
-                        <label className="amarelo" ></label>
+                        <label className="yellow" ></label>
                         
                         <input type="radio" id="vermelho" name="prioridade" value="vermelho"/>
-                        <label className="vermelho" ></label>
+                        <label className="red" ></label>
                     </div>
                     <div className='date-container'>
                         <label>Data Limite:</label>
                         <input type="date" />
                     </div>
-                    <textarea placeholder='Descrição' rows={24} cols={30}>
-
-                    </textarea>
+                    <textarea placeholder='Descrição' rows={23} cols={30}></textarea>
                 </form>
             </div>
         </>

@@ -21,7 +21,7 @@
         background-color: red;
         border-radius: 30px;
         width: 0.3vw;
-        height:89%;
+        height:80%;
     }
 
     .card-container {
@@ -31,9 +31,9 @@
         justify-content: center;
         align-items: center;
         gap: 6em;
-        height: 10vh;
+        height: 7vh;
         
-        font-weight: 470;
+        font-weight: 550;
 
         .name-paragraph {
             position: absolute;
@@ -44,7 +44,7 @@
         .date {
             position: absolute;
             top: 0.01em;
-            left: 42%;
+            left: 50%;
         }
 
         .picture {

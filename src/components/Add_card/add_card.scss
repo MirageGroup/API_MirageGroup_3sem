@@ -9,22 +9,56 @@ div {
     .card {
         display: flex;
         flex-direction: row;
-        background-color: #58595B;
 
-        margin: 10px 4px;
-        border-radius: 10px;
+        margin: 0.1em 0.5em;
+        border-radius: 5px;
+        justify-content: space-between;
         align-items: center;
-        width: 98%;
+        
+
+        .add-button {
+            background-color: #58595B; 
+            filter: brightness(170%);
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 3em;
+            margin: 0.2em;
+
+            width: 100%;
+
+
+        }
 
         .plus-icon {
-            margin-right: 5em;
-            margin-left: 1em;
-            
+            margin: 0.1em;
+            margin-left: -3em;  
         }
 
         .text {
             text-align: center;
-            font-weight: 550;
+            font-weight: 450;
+        }
+
+        .trash-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 15%;
+            background-color: #58595B;
+            filter: brightness(170%);
+            gap: 5em;
+            border-radius: 10px;
+
+            padding: 0.9em;
+
+            cursor: pointer;
+            box-shadow: none;
+            border: none;
         }
     }
 }
