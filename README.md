@@ -2,6 +2,7 @@
 <html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system">
   <head>
   
+  
 <p align="center" dir="auto" name="topo"> 
     <a href="#desafios-do-projeto">Desafios do Projeto</a> | 
     <a href="#levantamento">Levantamento de Requisitos</a> |  
@@ -20,7 +21,15 @@
 
 <h3 align="center" dir="auto">Repositório do projeto de API do 3º semestre do MirageGroup, da turma de ADS da Fatec SJC 2023.</h3>
 
+<section align="center"> 
+<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
 
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+
+<img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">
+
+<img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white">
+</section>
 
 <div align="center" dir="auto">
 <h3>### Entregas de Sprints</h3>
