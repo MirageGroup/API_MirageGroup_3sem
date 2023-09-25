@@ -16,19 +16,19 @@ import { New_task } from './components/New_task/New_task'
 function App() {
 
   return (
-    <Router>
-      <Sidebar></Sidebar>
-      <Routes>
-        <Route path='/screen' Component={Screen}/>
-        <Route path='/project_screen' Component={ProjectScreen}/>
-        <Route path='/' Component={Home_page}/>
-        <Route path='/screen' Component={Screen}/>
-      </Routes>
-    </Router> 
+    // <Router>
+    //   <Sidebar></Sidebar>
+    //   <Routes>
+    //     <Route path='/screen' Component={Screen}/>
+    //     <Route path='/project_screen' Component={ProjectScreen}/>
+    //     <Route path='/' Component={Home_page}/>
+    //     <Route path='/screen' Component={Screen}/>
+    //   </Routes>
+    // </Router> 
 
     // <New_task></New_task>
 
-    // <Background></Background>
+    <Background></Background>
 
     // <Card></Card>
   )
