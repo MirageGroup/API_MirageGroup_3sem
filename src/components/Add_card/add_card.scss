@@ -17,7 +17,8 @@ div {
         
 
         .add-button {
-            background-color: #58595B;  
+            background-color: #58595B; 
+            filter: brightness(170%);
             border-radius: 10px;
 
             display: flex;
@@ -49,6 +50,7 @@ div {
 
             width: 15%;
             background-color: #58595B;
+            filter: brightness(170%);
             gap: 5em;
             border-radius: 10px;
 
