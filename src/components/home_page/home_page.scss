@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .home_wrapper{
     background-color: #0D0E12;
     width: 100%;
@@ -5,7 +11,24 @@
     display: flex;
     justify-content: center;
     gap: 2%;
+    button{
+            
+        border-radius: 5px;
+        background-color: #53C4CD;
+        border: 1px solid;
+        width: 40%;
+        height: 3.5em;
+        transition: 0.5s;
+        cursor: pointer;
+        min-width: 80px;
+        top: 40px;
+        position: relative;
+        font-weight: bolder;
+    }
 
+    button:hover {
+        filter: brightness(140%);
+    }
 
     .main_title{
 
@@ -13,15 +36,20 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: 5%;
+        margin-bottom: 6%;
 
         h1{
             margin: 0;
             color: #53C4CD;
-            font-size: 6em;
+            font-size: 7em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
         }
         h2{
             color: #53C4CD;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+            font-size: 2em;
         }
     
         svg{

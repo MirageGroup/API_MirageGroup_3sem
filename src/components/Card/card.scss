@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 .super-container {
     display: flex;
     flex-direction: column;
@@ -5,6 +12,7 @@
     border-radius: 0.7em;
     position: relative;
     margin: 15px 10px;
+    background-color: #58595B;
 
     .color {
         position: absolute;
