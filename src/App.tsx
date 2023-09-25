@@ -23,6 +23,7 @@ function App() {
         <Route path='/project_screen' Component={ProjectScreen}/>
         <Route path='/' Component={Home_page}/>
         <Route path='/screen' Component={Screen}/>
+        <Route path='/card' Component={Card}/>
       </Routes>
     </Router> 
 

@@ -19,7 +19,7 @@ export const sidebarData = [
     },
     // {
     //     title: 'Tarefas',
-    //     path: '/tarefas',
+    //     path: '/card',
     //     icon: <FaIcons.FaPaperclip/>,
     //     cName: 'nav-text'
     // },
