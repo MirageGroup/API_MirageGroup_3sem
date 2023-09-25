@@ -19,7 +19,8 @@
 <h1>Gestor de Projetos - Mirage Group</h1>  
 </div>
 
-<h3 align="center" dir="auto">Repositório do projeto de API do 3º semestre do MirageGroup, da turma de ADS da Fatec SJC 2023.</h3>
+<h3 align="center" dir="auto">Repositório de Front-end do projeto de API do 3º semestre do MirageGroup, da turma de ADS da Fatec SJC 2023.</h3>
+<h3 align="center">Para acessar o repositório de Back-end, <a href="https://github.com/MirageGroup/API_MirageGroup_3semestre-_back">clique aqui</a>.</h3>
 
 <section align="center"> 
 <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
