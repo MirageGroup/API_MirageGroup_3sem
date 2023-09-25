@@ -8,7 +8,8 @@
     <a href="#prototipo">Protótipo</a> | 
     <a href="#planejamento">Planejamento</a> |
     <a href="#org-equipe">Organização da Equipe</a> | 
-    <a href="#org-repo">Organização do Repositório</a>
+    <a href="#org-repo">Organização do Repositório</a> | 
+    <a href="empresa">Empresa Parceira</a> | 
 </p>
 <p align="center" dir="auto" name="topo">
 
@@ -57,7 +58,15 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 
 <br>
 
+<span id="user-empresa">
+<h2 align="center" dir="auto"><a id="user-content-busts_in_silhouette-empresa-de-classes" class="anchor" aria-hidden="true" href="#busts_in_silhouette-empresa-de-classes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><g-emoji class="g-emoji" alias="busts_in_silhouette" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8"></g-emoji> Empresa Parceira</h2>
 
+![Empresa Parceira](https://github.com/MirageGroup/API_MirageGroup_3sem/blob/master/docs/IonicHealthLogo.png)
+
+<p dir="auto">A empresa parceira que propôs o desafio para nós foi a Ionic Health. A IONIC Health é uma empresa 100% brasileira, especializada em inovação e transformação para a saúde. A empresa precisava de uma plataforma para rastrear o progresso, assegurando a conformidade e gerando evidências para cada etapas regulatórias.
+</p>
+
+<p dir="auto">→ <a href="#topo">Voltar ao topo</a></p>
 
 
 <!-- <h2 align="center">O Projeto</h2>
@@ -78,14 +87,14 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 
 <br>
  
-![MirageGroup](https://raw.githubusercontent.com/MirageGroup/API_MirageGroup_2sem/master/docs/Desafios_API.png)
+![MirageGroup](https://github.com/MirageGroup/API_MirageGroup_3sem/blob/master/docs/DesafioDoProjeto.png)
 
 <p dir="auto">→ <a href="#topo">Voltar ao topo</a></p>
 <span id="user-content-levantamento">
 <h2 align="center" dir="auto"><a id="user-content-pencil-levantamento-de-requisitos" class="anchor" aria-hidden="true" href="#pencil-levantamento-de-requisitos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><g-emoji class="g-emoji" alias="memo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png">📝</g-emoji> Levantamento de Requisitos</h2>
 <p dir="auto">Antes de desenvolver o projeto, é necessário entender as necessidades do cliente. Isso é feito através da definição de requisitos e da comunicação constante com o cliente. Com base nisso, é criado um backlog do produto, que lista as principais funcionalidades. Também são criados sprint backlogs e user stories para auxiliar na organização das tarefas da equipe durante o desenvolvimento. Essas etapas garantem que o projeto atenda às expectativas e necessidades do cliente.</p>
 
-<h3><g-emoji class="g-emoji" alias="pushpin" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cc.png"></g-emoji> Para verificar os backlogs das sprints e do produto, <a href="https://docs.google.com/spreadsheets/d/1V_c0ld_nKe4g7i_MdmroHyh1VEmcWOaUu1696Ro1hKg/edit?usp=sharing">clique aqui</a>.</h3>
+<h3><g-emoji class="g-emoji" alias="pushpin" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cc.png"></g-emoji> Para verificar os backlogs das sprints e do produto, <a href="https://fatecspgov-my.sharepoint.com/:x:/g/personal/luis_cardoso6_fatec_sp_gov_br/EcdBD5pkOglLl0YypgFv_yoBjXe6UFfRML20ka62sdO9XA?e=54AqGK">clique aqui</a>.</h3>
 </ul>
 
 
@@ -93,14 +102,14 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 <span id="user-content-planejamento">
 <h2 align="center" dir="auto"><a id="user-content-busts_in_silhouette-planejamento-de-classes" class="anchor" aria-hidden="true" href="#busts_in_silhouette-planejamento-de-classes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><g-emoji class="g-emoji" alias="busts_in_silhouette" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</g-emoji> Planejamento</h2>
 
-![Planejamento](https://raw.githubusercontent.com/MirageGroup/API_MirageGroup_2sem/master/docs/Planejamentos_API.png)
+![Planejamento](https://github.com/MirageGroup/API_MirageGroup_3sem/blob/master/docs/PlanejamentoDasSprints.png)
 
 <p dir="auto">→ <a href="#topo">Voltar ao topo</a></p>
 <span id="user-content-prototipo">
 <h2 align="center" dir="auto"><a id="user-content-desktop_computer-protótipo" class="anchor" aria-hidden="true" href="#desktop_computer-protótipo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><g-emoji class="g-emoji" alias="desktop_computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a5.png">✏️</g-emoji> Protótipo</h2>
-<p dir="auto">Após definir o wireframe, o trabalho de codificação começou, convertendo os desenhos em arquivos de JavaSwing. O protótipo já apresenta cores, tipografia e exemplos de resultados de busca, oferecendo a experiência esperada para o usuário ao interagir com o produto final..</p>
+<p dir="auto">Após receber o projeto gráfico do cliente começamos a prototipagem do projeto</p>
 <ul dir="auto">
-<li> A primeira fase do protótipo dinâmico foi realizada usando o Figma, e você pode acessá-lo através <a href="https://www.figma.com/file/7A2kfdx0NGFgIC6Kr9HNVP/Prototipo?node-id=0-1&t=Cq5QvALK6oE8nmmQ-0" rel="nofollow">deste link</a>.</li>
+<li> A primeira fase do protótipo dinâmico foi realizada usando o Figma, , e você pode acessá-lo através <a href="https://www.figma.com/file/EYOOdanWIVdDu6WX3z6o5Z/API-3%C2%B0-Semestre?type=design&node-id=0%3A1&mode=design&t=DT8Vj2HqbhtAE70S-1" rel="nofollow">deste link</a>.</li>
 </ul>
 
 <span id="user-content-org-equipe">
@@ -129,14 +138,15 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 
 |    Função    | Nome                     |                     GitHub                     |                    Linkedin                    |
 | :----------: | :----------------------- | :--------------------------------------------: | :--------------------------------------------: |
-| Scrum Master | Victor Guilherme Branco  |    [GitHub](https://github.com/VictorGuui)     | [Linkedin](https://www.linkedin.com/in/victor-branco-323386190/)|
-|   PO         | Gustavo Henrique Pereira |    [GitHub](https://github.com/gustavohpereira)| [Linkedin](https://www.linkedin.com/in/gustavohpa/) |
+| Scrum Master | Thiago de Freitas        |    [GitHub](https://github.com/ThiagoCanedo)   | [Linkedin](https://www.linkedin.com/in/thiago-de-freitas-14273818b/)|
+|   PO         | Luís Antonio Cardoso     |    [GitHub](https://github.com/LuisSCardoso)   | [Linkedin](https://www.linkedin.com/in/luis-antonio-souza-cardoso-3928b51a0/) |
 |   Dev Team   | Hugo Henrique da Silva   |    [GitHub](https://github.com/Hugohs98)       | [Linkedin](https://www.linkedin.com/in/hugohsilva/)|
 |   Dev Team   | Gustavo Alves dos Santos |    [GitHub](https://github.com/ogustavoalves)  | [Linkedin](https://www.linkedin.com/in/gustavo-alves-073640248/) |
-|   Dev Team   | Thiago de Freitas        |    [GitHub](https://github.com/ThiagoCanedo)   | [Linkedin](https://www.linkedin.com/in/thiago-de-freitas-14273818b/)|
-|   Dev Team   | Luís Antonio             |    [GitHub](https://github.com/LuisSCardoso)   | [Linkedin](https://www.linkedin.com/in/luis-antonio-souza-cardoso-3928b51a0/) |
+|   Dev Team   | Victor Guilherme Branco  |    [GitHub](https://github.com/VictorGuui)     | [Linkedin](https://www.linkedin.com/in/victor-branco-323386190/)|
+|   Dev Team   | Gustavo Henrique Pereira |    [GitHub](https://github.com/gustavohpereira)| [Linkedin](https://www.linkedin.com/in/gustavohpa/) |
 |   Dev Team   | Pedro Henrique Pucci     |    [GitHub](https://github.com/pedro11pucci)   | [Linkedin](https://www.linkedin.com/in/pedro-p-122962234/)|
 |   Dev Team   | Vinicius Henrique        |    [GitHub](https://github.com/vinicius123henrique321) | [Linkedin](https://www.linkedin.com/in/vinicius-henrique-1a016524a/)|
+|   Dev Team   | Jacqueline Bezerra       |    [GitHub](https://github.com/jxqlnm)         | [Linkedin](https://www.linkedin.com/in/jacqueline-mariane)|
 </div>
 
 
