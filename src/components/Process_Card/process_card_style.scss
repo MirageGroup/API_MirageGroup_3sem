@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .card_wrapper_process{
     background-color: #58595B;
     padding: 1em;
     border-radius: 15px;
     height: auto;
-    width: 50vw;
+    width: 45vw;
+    font-family: 'Poppins', sans-serif;
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: bolder;
+    }
 
     color: #53C4CD;
 
@@ -88,6 +99,7 @@
     label{
         margin-bottom: 5px;
         font-weight: 400px;
+        font-family: 'Poppins', sans-serif;
 
     }
 
@@ -97,18 +109,27 @@
             background-color: #53C4CD;
             border: 1px solid;
             width: 40%;
-            height: 3.5em;
+            height: 4em;
             transition: 0.5s;
             cursor: pointer;
             min-width: 80px;
-            top: 320px;
-            left: 150px;
+            top: 36vh;
+            left: 15vh;
             position: relative;
-            margin-left: 20px;
+            margin-left: 1vh;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
         }
     
         button:hover {
             filter: brightness(140%);
+        }
+
+        .procedimentos {
+            p {
+                font-family: 'Poppins', sans-serif;
+            }
+            
         }
     }
 

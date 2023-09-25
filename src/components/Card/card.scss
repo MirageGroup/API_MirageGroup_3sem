@@ -2,18 +2,18 @@
     display: flex;
     flex-direction: column;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 0.7em;
     position: relative;
     margin: 15px 10px;
 
     .color {
         position: absolute;
-        left: 12px;
-        top: 10px;
+        left: 0.5vw;
+        top: 1vh;
         background-color: red;
         border-radius: 30px;
-        width: 7px;
-        height: 85%;
+        width: 0.3vw;
+        height:89%;
     }
 
     .card-container {
@@ -23,9 +23,9 @@
         justify-content: center;
         align-items: center;
         gap: 6em;
-        height: 85px;
+        height: 10vh;
         
-        font-weight: 550;
+        font-weight: 470;
 
         .name-paragraph {
             position: absolute;
@@ -36,13 +36,13 @@
         .date {
             position: absolute;
             top: 0.01em;
-            left: 300px;
+            left: 42%;
         }
 
         .picture {
             position:absolute;
-            left: 455px;
-            top: 5px;
+            left: 91%;
+            top: 0.5vh;
         }
         
     }
@@ -54,8 +54,8 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        gap: 25em;
+        gap: 83%;
         margin-left: 1em;
-        margin-bottom: 5px;;
+        margin-bottom: 1%;;
     }
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
 .navbar {
     background-color: #292A2D;
     height: 80px;
@@ -6,6 +8,8 @@
     align-items: center;
     img {
         width: 10%;
+        top: -0.5em;
+        position: relative;
     }
 }
 
@@ -17,7 +21,7 @@
 
 .nav-menu {
     background-color: #292A2D;
-    width: 200px;
+    width: 220px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -46,14 +50,16 @@
         width: 100%;
         text-decoration: none;
         color: #53C4CD;
-        font-size: 16px;
+        font-size: 18px;
         height: 70%;
         display: flex;
         align-items: center;
         padding: 0 1px;
         border-radius: 4px;
         justify-content: left;
+        font-weight: bold;
         cursor: pointer;
+        font-family: 'Poppins', sans-serif;
     }
 }
 
