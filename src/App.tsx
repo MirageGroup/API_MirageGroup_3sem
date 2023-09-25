@@ -26,9 +26,9 @@ function App() {
     //   </Routes>
     // </Router> 
 
-    // <New_task></New_task>
+    <New_task></New_task>
 
-    <Background></Background>
+    // <Background></Background>
 
     // <Card></Card>
   )

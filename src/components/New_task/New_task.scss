@@ -1,6 +1,6 @@
 .form-container{
         margin: 1em;
-
+        
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -35,76 +35,78 @@
         }
 
         form {
-        font-size: 1.2em;
-        caret-color:transparent;
-        display: flex;
-        flex-direction: column;
-        
-        gap: 1em;
-        width: 95%;
-
-        justify-content: center;
-        align-items: flex-start;
-
-        .responsible-name, .task-name {
-            width: 96%;
-            border: none;
-            padding: 0.7em;
-            border-radius: 3px;
-
-            caret-color: auto;
-        }
-
-
-        textarea::placeholder, input::placeholder,  {
-           font-size: 1.3em; 
-        }
-
-        .date-container {
+            font-size: 1.2em;
+            caret-color:transparent;
             display: flex;
-            flex-direction: row;
-            gap: 0.5em;
-
-            align-items: flex-end;
-        }
-        
-        input[type="date"] {
-            font-size: 1em;
-        }
-
-        .priority-buttons input[type="radio"] {
-            display: none;
-        }
-
-        .priority-buttons label {
-            display: inline-block;
-            margin-right: 0.5em;
-            width: 2.188em;
-            height: 20px;
-            cursor: pointer;
-            border-radius: 10%;
-            caret-color: transparent;
-        }
-
-        .verde {
-            background-color: green;
-        }
-
-        .amarelo {
-            background-color: yellow;
-        }
-
-        .vermelho {
-            background-color: red;
-        }
-
-        textarea {
+            flex-direction: column;
+            
+            gap: 1em;
             width: 95%;
-            border: none;
-            padding: 1em;
-            border-radius: 3px;
-            caret-color: auto;
-        }
 
-    }
+            justify-content: center;
+            align-items: flex-start;
+
+            .responsible-name, .task-name {
+                width: 96%;
+                border: none;
+                padding: 0.7em;
+                border-radius: 3px;
+                font-size: 0.8em;
+
+                caret-color: auto;
+            }
+
+
+            textarea::placeholder, input::placeholder,  {
+                font-size: 1.3em; 
+            }
+
+            .date-container {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5em;
+
+                align-items: flex-end;
+            }
+            
+            input[type="date"] {
+                font-size: 0.9em;
+            }
+
+            .priority-buttons input[type="radio"] {
+                display: none;
+            }
+
+            .priority-buttons label {
+                display: inline-block;
+                margin-right: 0.5em;
+                width: 2.188em;
+                height: 20px;
+                cursor: pointer;
+                border-radius: 10%;
+                caret-color: transparent;
+            }
+
+            .green {
+                background-color: green;
+            }
+
+            .yellow {
+                background-color: yellow;
+            }
+
+            .red {
+                background-color: red;
+            }
+
+            textarea {
+                width: 95%;
+                border: none;
+                padding: 1em;
+                border-radius: 3px;
+                caret-color: auto;
+                font-size: 0.7em;
+            }
+        }
+    
 }
