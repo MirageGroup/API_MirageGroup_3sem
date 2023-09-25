@@ -27,6 +27,7 @@ export function Process_card({close_modal_function}:any){
       console.log(data)
   
       try {
+        close_modal_function()
         const response = await axios.post('http://localhost:8000/process/create', data);
         console.log('Data sent successfully:', response.data);
   
@@ -39,7 +40,10 @@ export function Process_card({close_modal_function}:any){
         setEndDate('');
       } catch (error) {
         console.error('Error sending data:', error);
+        close_modal_function()
       }
+
+      
     };
 
 

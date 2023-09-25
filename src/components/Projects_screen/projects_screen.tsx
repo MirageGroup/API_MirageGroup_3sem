@@ -11,29 +11,7 @@ export function ProjectScreen(){
 
 
 
-    let lista_projetos = [
-    { id: 1, name: "projeto1", finished: true },
-    { id: 2, name: "projeto2", finished: true },
-    { id: 3, name: "projeto3", finished: false },
-    { id: 4, name: "projeto4", finished: true },
-    { id: 5, name: "projeto5", finished: true },
-    { id: 1, name: "projeto1", finished: true },
-    { id: 2, name: "projeto2", finished: true },
-    { id: 3, name: "projeto3", finished: false },
-    { id: 4, name: "projeto4", finished: true },
-    { id: 5, name: "projeto5", finished: false },
-    { id: 1, name: "projeto1", finished: true },
-    { id: 2, name: "projeto2", finished: true },
-    { id: 3, name: "projeto3", finished: false },
-    { id: 4, name: "projeto4", finished: true },
-    { id: 5, name: "projeto5", finished: true },
-    { id: 1, name: "projeto1", finished: true },
-    { id: 2, name: "projeto2", finished: true },
-    { id: 3, name: "projeto3", finished: false },
-    { id: 4, name: "projeto4", finished: true },
-    { id: 5, name: "projeto5", finished: false },
-    
-    ]
+
     const fetchProcesses = async () => {
         try {
           const response = await axios.get('http://localhost:8000/process/findall');
@@ -73,6 +51,8 @@ export function ProjectScreen(){
       ]
 
     const [isModalOpen, setIsModalOpen] = useState(false); 
+
+    
 
 
     const openModal = () => {
@@ -124,9 +104,8 @@ export function ProjectScreen(){
                         <div className="modal">
                             <div className="modal_icons">
                                 <FiX onClick={closeModal} size={30}></FiX>
-
                             </div>
-                        <Process_card></Process_card>
+                            <Process_card close_modal_function = {closeModal}></Process_card>
                         </div>
                     </div>
                 </div>
