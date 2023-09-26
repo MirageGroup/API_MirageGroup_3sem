@@ -16,6 +16,7 @@ $scrollPercentage: 10;
 
     border-radius: 0.5em;
     border: none;
+    box-shadow: 2px 2px 3px;
 
     //deals with the scroll
     max-height: 80vh; /* Define a altura máxima da coluna */
@@ -32,6 +33,7 @@ $scrollPercentage: 10;
         justify-content: space-between;
 
         margin: 0.5vh 0vh;
+
         .title {
             padding: 0.8em;
             margin:0px;
@@ -41,13 +43,24 @@ $scrollPercentage: 10;
 
             font-weight: 400;
             font-size: 1.1em;
-            
         }
 
         .dots-menu {
+            display: flex;
+            align-items: center;
+            justify-items: center;
             color:white;
             margin: 0em 0.7em;
+
+            cursor: pointer;
         }
+
+        
+    }
+    .horizontal-line {
+        width: 92%;
+
+        margin-top: 0.01vh;
     }
     .card-container {
         
