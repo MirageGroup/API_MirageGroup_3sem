@@ -6,13 +6,13 @@ export function Add_card() {
         <>
             <div className='card-container'>
                 <div className='card'>
-                    <div className="add-button">
+                    <button className="add-button">
                         <div className='plus-icon'><AiOutlinePlus size={30} /></div>
                         <p className='text'>adicionar nova tarefa</p>
-                    </div>
+                    </button>
 
                     <button className='trash-button'>
-                        <AiFillFileAdd size={25}/>
+                        <AiFillFileAdd size={22}/>
                     </button>
                 </div>
                 
