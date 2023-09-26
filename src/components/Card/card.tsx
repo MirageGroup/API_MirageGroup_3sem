@@ -13,12 +13,12 @@ export function Card () {
                     
                     <div className='name-paragraph'><p>Nome do Card</p></div>
                     <div className='date'><p>dd/mm/aaaa hh:mm</p></div>
-                    <div className='picture'><BiSolidUserCircle size={30}/></div>
+                    <div className='picture'><BiSolidUserCircle size={29}/></div>
                 </div>
 
                 <div className='icons-container'>
                     <div className='add-file'><AiFillFileAdd size={25}/></div>
-                    <div className='trash'><FaRegTrashCan size={22}/></div>
+                    <div className='trash'><FaRegTrashCan size={19}/></div>
                 </div>
                 
             </section>
