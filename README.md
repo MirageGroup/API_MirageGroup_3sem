@@ -48,6 +48,8 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 → [Voltar ao topo](#topo)
 </div>
 
+[<img src="https://img.youtube.com/vi/lc2X6gtJVtY/maxresdefault.jpg" width="600" height="400" />](https://youtu.be/lc2X6gtJVtY)
+
 <h1>Comandos para inicialização</h1>
   <div>
     <h2>Instalar: </h2>
