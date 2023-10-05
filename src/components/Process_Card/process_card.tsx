@@ -16,13 +16,15 @@ export function Process_card({close_modal_function}:any){
     const [endDate, setEndDate] = useState(''); // State for the end date
     const contributorOptions = ["Gustavo", "Pedro", "Hugo", "Vinicius", "Victor", "Jaqueline", "Hugo", "Gustavo Henrique", "Thiago"];
 
+    console.log(endDate)
+
     const handleSubmit = async () => {
 
         const data = {
             name: projectName,
             description,
-            date_created: startDate, // Use startDate as date_created
-            date_finish: endDate,   // Use endDate as date_finish
+            deadline: endDate,   // Use endDate as date_finish
+            state: "Não iniciado"
         };
       console.log(data)
   
@@ -58,13 +60,9 @@ export function Process_card({close_modal_function}:any){
                 </div>
 
                 <div className='date_input'>
-                    <div className="input_wrapper">
-                        <label htmlFor="data_inicio">Data de Início</label>
-                        <input type="date" id="data_inicio" value={startDate} onChange={(e) => setStartDate(e.target.value)}></input>
-                    </div>
 
                     <div className="input_wrapper">
-                        <label htmlFor="data_fim">Data de Término</label>
+                        <label htmlFor="data_fim">Prazo</label>
                         <input type="date" id="data_fim" value={endDate} onChange={(e) => setEndDate(e.target.value)}></input>
                     </div>
 
