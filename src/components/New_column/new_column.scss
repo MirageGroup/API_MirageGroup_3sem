@@ -1,0 +1,39 @@
+.button-wrapper {
+    width: 7.5vw;
+    height: 5vh;
+    margin: 0.5em;
+
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    gap: 1.5em;
+    border-radius: 10px;
+    background-color: grey;
+    filter: brightness(155%);
+   
+    min-width: 10vw;
+    max-width: 15vw;
+
+    font-size: 1em;
+    font-weight: 850;
+
+    &:hover {
+        filter: brightness(125%);
+    }
+
+    &:active {
+        color:white;
+    }
+
+    .plus-icon{
+        display: flex;
+        align-items: center;
+        margin-left: -2em;
+    }
+}
+

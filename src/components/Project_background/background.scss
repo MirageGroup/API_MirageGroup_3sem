@@ -2,8 +2,6 @@ body {
     height: 99%;
     overflow: hidden;
 
-    
-
     .background-wrapper {
         padding-top: 7vh;
         padding-right: 3vw;
@@ -21,17 +19,52 @@ body {
         width: 80%;
         height: 85%;
         
-        
+        .title-wrapper {
+            width: fit-content;
+            height: fit-content;
 
-        
+            .project-name {
+                position: absolute;
+                left: 2vw;
+                top: -1vh;
+                font-size: 1.9em;
+                font-weight: 600;
+
+                color: white;
+            }
+
+            .new-column-button {
+                position: absolute;
+                left: 8.5vw;
+                top: 1.2vh;
+            }
+        }
+
+        .close-button{
+            position: absolute;
+            padding: 1.5em;
+            right: -0.6vw;
+            top: -1.5vh;
+
+            border: none;
+            background-color: #58595B;
+
+            cursor: pointer;
+
+            color: white;
+            
+        }
+
         .content-wrapper {
             margin-left: 3em;
+            margin-top: 0.5em;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             gap: 0.5em;
             overflow-x: auto;
-            white-space: nowrap;
+            
+            min-width: 90%;
 
             /* Estilização da barra de rolagem */
             &::-webkit-scrollbar {
@@ -52,31 +85,10 @@ body {
                 background: #555; /* Cor do "ponteiro" quando o mouse passa por cima */
               }
         }
+        
+        
 
-        .project-name {
-            position: absolute;
-            left: 2vw;
-            top: -1vh;
-            font-size: 1.9em;
-            font-weight: 600;
-
-            color: white;
-        }
-
-        .close-button{
-            position: absolute;
-            padding: 1.5em;
-            right: -0.6vw;
-            top: -1.5vh;
-
-            border: none;
-            background-color: #58595B;
-
-            cursor: pointer;
-
-            color: white;
-            
-        }
+        
 
 
         
