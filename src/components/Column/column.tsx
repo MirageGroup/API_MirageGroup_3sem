@@ -32,6 +32,8 @@ export function Column ({nome}) {
                         <Card></Card>
                         <Card></Card>
                         <Card></Card>
+                        <Card></Card>
+                        
                         <Add_card></Add_card>
                     </div>
                 </div>

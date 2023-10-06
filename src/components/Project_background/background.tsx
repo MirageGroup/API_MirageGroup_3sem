@@ -12,9 +12,32 @@ export function Background () {
                 <IoMdClose size={40} className='button'/>
             </button>
             {/* content */}
+            <div className='content-wrapper'>
                 <Column nome="A fazer"></Column>
                 <Column nome="Fazendo"></Column>
                 <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="A fazer"></Column>
+                <Column nome="Fazendo"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="A fazer"></Column>
+                <Column nome="Fazendo"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+                <Column nome="Feito"></Column>
+            </div>
         </body>
     )
 }

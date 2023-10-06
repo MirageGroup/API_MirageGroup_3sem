@@ -2,6 +2,8 @@ body {
     height: 99%;
     overflow: hidden;
 
+    
+
     .background-wrapper {
         padding-top: 7vh;
         padding-right: 3vw;
@@ -20,6 +22,36 @@ body {
         height: 85%;
         
         
+
+        
+        .content-wrapper {
+            margin-left: 3em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0.5em;
+            overflow-x: auto;
+            white-space: nowrap;
+
+            /* Estilização da barra de rolagem */
+            &::-webkit-scrollbar {
+                height: 0.7em; /* Altura da barra de rolagem */
+              }
+            
+              &::-webkit-scrollbar-track {
+                background: #f1f1f1; /* Cor da área de fundo da barra de rolagem */
+                border-radius: 6px; /* Borda da área de fundo */
+              }
+            
+              &::-webkit-scrollbar-thumb {
+                background: #888; /* Cor do "ponteiro" da barra de rolagem */
+                border-radius: 6px; /* Borda do "ponteiro" */
+              }
+            
+              &::-webkit-scrollbar-thumb:hover {
+                background: #555; /* Cor do "ponteiro" quando o mouse passa por cima */
+              }
+        }
 
         .project-name {
             position: absolute;
