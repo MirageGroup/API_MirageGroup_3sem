@@ -21,7 +21,9 @@ export function Column ({nome}) {
                 <section className='title-container'>
                     <h4 className='title'>{nome}</h4>
                     <div className='dots-menu'><BiDotsHorizontalRounded size={35}/></div>
+                    
                 </section>
+                <hr className='horizontal-line'/>
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
@@ -30,6 +32,8 @@ export function Column ({nome}) {
                         <Card></Card>
                         <Card></Card>
                         <Card></Card>
+                        <Card></Card>
+
                         <Add_card></Add_card>
                     </div>
                 </div>

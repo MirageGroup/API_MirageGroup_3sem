@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
 .form-container{
         margin: 1em;
-        
+        position: relative;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -12,24 +19,29 @@
 
         border-radius: 3.5%;
 
-        background-color: #D7D7D7;
+        background-color: #292A2D;
 
         justify-content: flex-start;
 
         h3 {
             font-weight: 500;
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-bottom: -15px;
             caret-color: transparent;
+
+            color: white;
         }
 
         .close-button {
             position: relative;
-            left: 36.2em;
-            top: -2.313em;
+            left: 29.7vw;
+            top: -4.5vh;
+            border: none;
 
             font-weight: 700;
             caret-color: transparent;
+            background-color: #292A2D;
+            color: white;
 
             cursor: pointer;
         }
@@ -39,8 +51,10 @@
             caret-color:transparent;
             display: flex;
             flex-direction: column;
-            
-            gap: 1em;
+
+            color: white;
+
+            gap: 0.9em;
             width: 95%;
 
             justify-content: center;
@@ -53,12 +67,22 @@
                 border-radius: 3px;
                 font-size: 0.8em;
 
+                background-color: #58595B;
+                color: white;
+
                 caret-color: auto;
             }
-
+            
+            .priority {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2em; 
+            }
 
             textarea::placeholder, input::placeholder,  {
-                font-size: 1.3em; 
+                font-size: 1.1em; 
+
+                color: white;
             }
 
             .date-container {
@@ -66,11 +90,16 @@
                 flex-direction: row;
                 gap: 0.5em;
 
+                
                 align-items: flex-end;
             }
             
             input[type="date"] {
                 font-size: 0.9em;
+                color: white;
+                background-color: #58595B;
+
+                border: none;
             }
 
             .priority-buttons input[type="radio"] {
@@ -106,6 +135,9 @@
                 border-radius: 3px;
                 caret-color: auto;
                 font-size: 0.7em;
+
+                background-color: #58595B;
+                color: white;
             }
         }
     
