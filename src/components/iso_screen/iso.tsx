@@ -3,7 +3,7 @@ import PlusImage from '../../assets/plus-solid.png';
 import { Process_card } from '../Process_Card/process_card';
 import { FiX } from 'react-icons/fi';
 import { useState } from 'react';
-import { IsoForm } from '../../isoFormulary/isoForm';
+import { IsoForm } from '../isoFormulary/isoForm';
 
 export function IsoScreen(){
 
