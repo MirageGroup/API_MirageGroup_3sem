@@ -37,6 +37,7 @@
     border-radius: 30px;
     background-color: #D9D9D9;
     width: 80%;
+    cursor: pointer;
 
     h3{
         margin: 0px;
@@ -54,10 +55,18 @@
 
 }
 
+.iso_card:hover{
+   scale: 1.05;
+   transition: 0.5s;
+}
+
 .iso_selected{
     background-color:#D9D9D9;
     width: 40%;
     height: 80%;
     border-radius: 25px;
     padding: 2%;
+}
+.selected{
+    border: 5px solid #53C4CD;
 }
