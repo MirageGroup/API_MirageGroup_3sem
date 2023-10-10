@@ -42,9 +42,9 @@ export function IsoScreen(){
 
 
 
-    const [iso_selected, set_iso_selected] = useState<{ nome: string; descricao: string,index:number}>({
-        nome: 'Selecione uma iso',
-        descricao: '',
+    const [iso_selected, set_iso_selected] = useState<{ name: string; description: string,index:number}>({
+        name: 'Selecione uma iso',
+        description: '',
         index:0
       });
 
@@ -61,7 +61,7 @@ export function IsoScreen(){
 
 
       function handle_iso_click(iso_name: string,iso_description: string,index:number){
-        set_iso_selected({"nome": iso_name,"descricao": iso_description,index})
+        set_iso_selected({"name": iso_name,"description": iso_description,index})
 
       }
 
@@ -76,7 +76,7 @@ export function IsoScreen(){
                         <BsPlus size = {35}></BsPlus>
                     </button>
                     {iso_list.map((iso_card, index) => (
-                        <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.nome, iso_card.descricao,index)}>
+                        <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.name, iso_card.description,index)}>
                             <div className='iso_card_title'></div>
                                 <h3>{iso_card.name}</h3>
                                 <hr></hr>
@@ -88,8 +88,8 @@ export function IsoScreen(){
             </div>
 
             <div className='iso_selected'>
-                <h1>{iso_selected.nome}</h1>
-                <p>{iso_selected.descricao}</p>
+                <h1>{iso_selected.name}</h1>
+                <p>{iso_selected.description}</p>
             </div>
 
             {isModalOpen && (
