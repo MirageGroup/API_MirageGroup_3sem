@@ -4,6 +4,7 @@ import { Process_card } from '../Process_Card/process_card';
 import { FiX } from 'react-icons/fi';
 import { useState } from 'react';
 import { IsoForm } from '../isoFormulary/isoForm';
+import {BsPlus} from 'react-icons/bs'
 
 export function IsoScreen(){
 
@@ -30,6 +31,9 @@ export function IsoScreen(){
             {'nome': "iso 2", "descricao": "descricao 1"},
             {'nome': "iso 3", "descricao": "descricao 1"},
             {'nome': "iso 4", "descricao": "descricao 1"},
+            {'nome': "iso 4", "descricao": "descricao 1"},
+            {'nome': "iso 4", "descricao": "descricao 1"}
+
         
       ]
 
@@ -42,19 +46,22 @@ export function IsoScreen(){
     return(
 
         <div className="iso_screen_wrapper">
-            <div className='iso_list'>
-                <button onClick={openModal}>
-                    <img src={PlusImage}></img>
-                </button>
-                {iso_list.map((iso_card, index) => (
-                       <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.nome, iso_card.descricao,index)}>
-                         <div className='iso_card_title'></div>
-                            <h3>{iso_card.nome}</h3>
-                            <hr></hr>
-                         <p>{iso_card.descricao}</p>
-                        </div>
 
-                        ))}
+            <div className="iso_list_container">
+                <div className='iso_list'>
+                    <button onClick={openModal}>
+                        <BsPlus size = {35}></BsPlus>
+                    </button>
+                    {iso_list.map((iso_card, index) => (
+                        <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.nome, iso_card.descricao,index)}>
+                            <div className='iso_card_title'></div>
+                                <h3>{iso_card.nome}</h3>
+                                <hr></hr>
+                            <p>{iso_card.descricao}</p>
+                            </div>
+
+                            ))}
+                </div>
             </div>
 
             <div className='iso_selected'>
