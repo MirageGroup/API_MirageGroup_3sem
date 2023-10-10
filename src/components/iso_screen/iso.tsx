@@ -2,11 +2,45 @@ import './iso_style.scss'
 import PlusImage from '../../assets/plus-solid.png';
 import { Process_card } from '../Process_Card/process_card';
 import { FiX } from 'react-icons/fi';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IsoForm } from '../isoFormulary/isoForm';
 import {BsPlus} from 'react-icons/bs'
+import axios from 'axios';
 
 export function IsoScreen(){
+
+    const [iso_list,set_iso_list] = useState<any[]>([])
+
+    const fetchProcesses = async () => {
+        try {
+          const response = await axios.get('http://localhost:8000/iso/getall');
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching processes:', error);
+          throw error;
+        }
+      };
+
+
+    useEffect(() => {
+        // Function to fetch and update processes
+        const updateisos = async () => {
+          try {
+            const updatedList = await fetchProcesses();
+            set_iso_list(updatedList);
+          } catch (error) {
+            // Handle any errors
+          }
+        };
+      
+        // Poll for updates every 5 seconds (adjust the interval as needed)
+        const pollInterval = setInterval(updateisos, 300);
+      
+        // Clean up the interval when the component unmounts
+        return () => clearInterval(pollInterval);
+      }, []); // The empty dependency array ensures this effect runs only once on component mount
+
+
 
     const [iso_selected, set_iso_selected] = useState<{ nome: string; descricao: string,index:number}>({
         nome: 'Selecione uma iso',
@@ -25,17 +59,6 @@ export function IsoScreen(){
         setIsModalOpen(false);
       };
 
-      let iso_list = [
-        
-            {'nome': "iso 1", "descricao": "descricao 1"},
-            {'nome': "iso 2", "descricao": "descricao 1"},
-            {'nome': "iso 3", "descricao": "descricao 1"},
-            {'nome': "iso 4", "descricao": "descricao 1"},
-            {'nome': "iso 4", "descricao": "descricao 1"},
-            {'nome': "iso 4", "descricao": "descricao 1"}
-
-        
-      ]
 
       function handle_iso_click(iso_name: string,iso_description: string,index:number){
         set_iso_selected({"nome": iso_name,"descricao": iso_description,index})
@@ -55,9 +78,9 @@ export function IsoScreen(){
                     {iso_list.map((iso_card, index) => (
                         <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.nome, iso_card.descricao,index)}>
                             <div className='iso_card_title'></div>
-                                <h3>{iso_card.nome}</h3>
+                                <h3>{iso_card.name}</h3>
                                 <hr></hr>
-                            <p>{iso_card.descricao}</p>
+                            <p>{iso_card.description}</p>
                             </div>
 
                             ))}

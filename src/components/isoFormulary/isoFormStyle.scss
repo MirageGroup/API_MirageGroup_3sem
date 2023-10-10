@@ -56,9 +56,13 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #53C4CD;
+    background-color: #53c5cdaf;
+    transition: 0.5s;
 }
 
 .selected{
     border: 5px solid #53C4CD;
+    transition: 0.5s;
 }
+
+
