@@ -1,15 +1,19 @@
 import './New_task.scss';
 import {AiOutlineClose} from 'react-icons/ai'
 import {IoMdClose} from 'react-icons/io'
+import React, { useState } from 'react';
 
 
 export function New_task() {
+
+    
     return (
+        
         <>
             
             <div className='form-container'>
                 <div className='form-title'><h3>Nova Tarefa</h3></div>
-                <button className='close-button'><IoMdClose size={35} className='button'/></button>
+                <button className='close-button-form' ><IoMdClose size={35} className='button'/></button>
                 <form>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa'/>
 
@@ -34,7 +38,7 @@ export function New_task() {
                         <input type="date" />
                     </div>
 
-                    <textarea placeholder='Descrição' rows={15} cols={30}></textarea>
+                    <textarea placeholder='Descrição' rows={12} cols={30}></textarea>
                     
                 </form>
             </div>

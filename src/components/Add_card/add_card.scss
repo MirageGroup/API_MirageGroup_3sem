@@ -37,6 +37,10 @@ div {
             height: 5vh;
             cursor: pointer;
             
+            &:hover {
+                filter: brightness(120%);
+            }
+
         }
 
         .plus-icon {
@@ -71,6 +75,11 @@ div {
             cursor: pointer;
             box-shadow: 2px 2px 2px black;
             border: none;
+
+            &:hover {
+                filter: brightness(120%);
+            }
+            
         }
     }
 }

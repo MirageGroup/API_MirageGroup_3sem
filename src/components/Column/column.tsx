@@ -8,14 +8,19 @@ export function Column ({nome}) {
 
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
-    const handleScroll = (e) => {
+    const handleScroll = (e: any) => {
         const element = e.target;
         const scrollHeight = element.scrollHeight - element.clientHeight;
         const percentage = (element.scrollTop / scrollHeight) * 100;
         setScrollPercentage(percentage);
     };
+
+    type cardProps = {
+            
+    }
     
     return (
+
         <>
             <div className='container' onScroll={handleScroll}>
                 <section className='title-container'>
@@ -28,11 +33,7 @@ export function Column ({nome}) {
 
                     <div className='card-wrapper'>
                         
-                        <Card></Card>
-                        <Card></Card>
-                        <Card></Card>
-                        <Card></Card>
-                        <Card></Card>
+                        
 
                         <Add_card></Add_card>
                     </div>

@@ -2,8 +2,12 @@ import {IoMdClose} from 'react-icons/io'
 import './background.scss'
 import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
+import { New_task } from '../New_task/New_task'
 
 export function Background () {
+    
+    
+
     return (
         <body className="background-wrapper">
             {/* title */}
@@ -22,8 +26,10 @@ export function Background () {
                 <Column nome="A fazer"></Column>
                 <Column nome="A fazer"></Column>
                 <Column nome="A fazer"></Column>
-                
-                
+
+                <div className='form-wrapper'>
+                    <New_task></New_task>
+                </div>
             </div>
         </body>
     )
