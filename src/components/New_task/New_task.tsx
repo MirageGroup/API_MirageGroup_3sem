@@ -4,16 +4,20 @@ import {IoMdClose} from 'react-icons/io'
 import React, { useState } from 'react';
 
 
-export function New_task() {
+export function New_task({ onCloseForm }) {
 
-    
+    const [isFormVisible, setIsFormVisible] = useState(false);
+
+    const handleToggleForm = () => {
+      setIsFormVisible(!isFormVisible);
+    };
     return (
         
         <>
             
             <div className='form-container'>
                 <div className='form-title'><h3>Nova Tarefa</h3></div>
-                <button className='close-button-form' ><IoMdClose size={35} className='button'/></button>
+                <button className='close-button-form' onClick={handleToggleForm}><IoMdClose size={35} className='button'/></button>
                 <form>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa'/>
 
@@ -40,8 +44,12 @@ export function New_task() {
 
                     <textarea placeholder='Descrição' rows={12} cols={30}></textarea>
                     
+                    <button type="submit">Adicionar Tarefa</button>
+
                 </form>
             </div>
+            
+            
         </>
     )
 }

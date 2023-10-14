@@ -4,7 +4,11 @@ import {Add_card} from '../Add_card/add_card';
 import {Card} from '../Card/card'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 
-export function Column ({nome}) {
+interface interfaceProps {
+    nome:string
+}
+
+export function Column (props : interfaceProps) {
 
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -15,16 +19,14 @@ export function Column ({nome}) {
         setScrollPercentage(percentage);
     };
 
-    type cardProps = {
-            
-    }
+    
     
     return (
-
+        
         <>
             <div className='container' onScroll={handleScroll}>
                 <section className='title-container'>
-                    <h4 className='title'>{nome}</h4>
+                    <h4 className='title'>{props.nome}</h4>
                     <div className='dots-menu'><BiDotsHorizontalRounded size={35}/></div>
                     
                 </section>
@@ -35,7 +37,7 @@ export function Column ({nome}) {
                         
                         
 
-                        <Add_card></Add_card>
+                        <Add_card ></Add_card>
                     </div>
                 </div>
             </div>
