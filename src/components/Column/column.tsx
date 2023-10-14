@@ -5,7 +5,9 @@ import {Card} from '../Card/card'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 
 interface interfaceProps {
-    nome:string
+    nome:string,
+    openModal : () => void;
+    
 }
 
 export function Column (props : interfaceProps) {
@@ -34,10 +36,7 @@ export function Column (props : interfaceProps) {
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
-                        
-                        
-
-                        <Add_card ></Add_card>
+                        <Add_card openModal={props.openModal}></Add_card>
                     </div>
                 </div>
             </div>

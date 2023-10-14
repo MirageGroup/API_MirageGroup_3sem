@@ -3,16 +3,16 @@ import {AiFillFileAdd} from 'react-icons/ai'
 import {AiOutlinePlus} from 'react-icons/ai'
 
 interface AddCardProps {
-    onAddClick: () => void;
+    openModal: () => void;
 }
 
-export function Add_card({onAddClick}: AddCardProps) {
+export function Add_card(props : AddCardProps) {
     
     return (
         <>
             <div className='card-container'>
                 <div className='card'>
-                    <button className="add-button" onClick={onAddClick}>
+                    <button className="add-button" onClick={props.openModal}>
                         <div className='plus-icon'><AiOutlinePlus size={30} /></div>
                         <p className='text'>adicionar nova tarefa</p>
                     </button>

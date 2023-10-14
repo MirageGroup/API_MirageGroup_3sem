@@ -2,19 +2,23 @@ import {IoMdClose} from 'react-icons/io'
 import './background.scss'
 import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
-import { New_task } from '../New_task/New_task'
+import { New_task } from '../New_task/new_task'
 import { useState } from 'react'
 
 export function Background () {
     
-    const [isFormVisible, setIsFormVisible] = useState(false);
-
-    const handleToggleForm  = () => {
-        setIsFormVisible(!isFormVisible);
-    }
-      
     const colunas = [{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}, {nome:"fazendo2"}]
     
+    const [isModalOpen, setIsModalOpen] = useState(true);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
+
     return (
         
 
@@ -31,13 +35,13 @@ export function Background () {
             </button>
             {/* content */}
             <div className='content-wrapper'>
-                {colunas.map((item, index) => (<Column nome={item.nome} key={index}></Column>))}
+                {colunas.map((item, index) => (<Column openModal={openModal} nome={item.nome} key={index}></Column>))}
                 
         
 
-                {isFormVisible && (
+                {isModalOpen && (
                     <div className='form-wrapper'>
-                        <New_task onCloseForm={handleToggleForm}></New_task>
+                        <New_task closeModal={closeModal}></New_task>
                     </div>
                 )}
 

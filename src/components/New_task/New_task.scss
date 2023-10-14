@@ -8,23 +8,28 @@
 
 .form-container{
         
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    padding: 0.5em 3em 1em;
 
-        margin: 1em;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 50%;
-        height: 100%;
-        padding: 0.5em 3em 1em;
+    border-radius: 3.5%;
+    border: 0.5px solid #fff;
 
-        border-radius: 3.5%;
 
-        background-color: #292A2D;
-        filter: brightness(120%);
-        justify-content: flex-start;
+    background-color: #292A2D;
+    filter: brightness(120%);
+    justify-content: flex-start;
+
+    &:hover {
+       
+    }
 
         h3 {
             font-weight: 500;
@@ -47,6 +52,10 @@
             color: white;
 
             cursor: pointer;
+
+            &:active {
+                color: aqua;
+            }
         }
 
         form {
@@ -142,6 +151,26 @@
                 background-color: #58595B;
                 color: white;
             }
+
+            .submit-button {
+                background-color: #58595B;
+                color: #FFF;
+                border: 1px solid #fff;
+                border-radius: 5px;
+                filter: brightness(80%);
+
+                margin-left: 50%;
+                width: 12em;
+                height: 3em;
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+
+                &:active {
+                  border-color: aqua;
+                  color: aqua;
+                }
+            }
         }
-    
 }
