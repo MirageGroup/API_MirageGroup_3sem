@@ -4,6 +4,7 @@ import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
 import { New_task } from '../New_task/New_task'
 import { useState } from 'react'
+import { FiX } from 'react-icons/fi'
 
 export function Background () {
     
@@ -14,6 +15,9 @@ export function Background () {
     }
       
     const colunas = [{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}, {nome:"fazendo2"}]
+
+
+
     
     return (
         
@@ -40,6 +44,8 @@ export function Background () {
                         <New_task onCloseForm={handleToggleForm}></New_task>
                     </div>
                 )}
+
+           
 
                 
             </div>
