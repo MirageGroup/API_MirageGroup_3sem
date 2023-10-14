@@ -14,7 +14,10 @@ export function Background () {
         setIsFormVisible(!isFormVisible);
     }
       
-    const colunas = [{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}, {nome:"fazendo2"}]
+
+    const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
+
+
 
 
 
@@ -27,7 +30,7 @@ export function Background () {
             <div className='title-wrapper'> 
                 <p className='project-name'>Projeto 1</p>
 
-                <div className='new-column-button'><New_column></New_column></div>
+                <div className='new-column-button'><New_column column_list={column_list} set_column = {set_column_list}></New_column></div>
             </div>
             {/* close button */}
             <button className='close-button'>
@@ -35,7 +38,7 @@ export function Background () {
             </button>
             {/* content */}
             <div className='content-wrapper'>
-                {colunas.map((item, index) => (<Column nome={item.nome} key={index}></Column>))}
+                {column_list.map((item, index) => (<Column nome={item.nome} key={index}></Column>))}
                 
         
 
