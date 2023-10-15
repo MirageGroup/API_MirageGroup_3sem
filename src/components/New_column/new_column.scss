@@ -2,7 +2,7 @@
     width: 7.5vw;
     height: 5vh;
     margin: 0.5em;
-
+    overflow: hidden;
     border: none;
 
     display: flex;
@@ -11,13 +11,13 @@
     align-items: center;
     align-content: center;
 
-    gap: 1.5em;
+    gap: 1.0em;
     border-radius: 10px;
     background-color: grey;
     filter: brightness(155%);
    
-    min-width: 10vw;
-    max-width: 15vw;
+    min-width: 9vw;
+    max-width: 10vw;
 
     font-size: 1em;
     font-weight: 850;
@@ -33,7 +33,7 @@
     .plus-icon{
         display: flex;
         align-items: center;
-        margin-left: -2em;
+        margin-left: -1em;
     }
 }
 
