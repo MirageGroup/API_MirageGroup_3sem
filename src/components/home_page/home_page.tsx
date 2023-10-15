@@ -20,8 +20,9 @@ export function Home_page(){
     return(
         <div className="home_wrapper">
             <div className='main_title'>
-                <h1>Bem Vindo</h1>
-                <h2>Crie e monitore projetos</h2>
+                <h2>Bem Vindo ao</h2>
+                <h1>CAMISA</h1>
+                <h2>Controle de Atividades e Missões de Projetos</h2>
                 <FaIcons.FaCheckCircle></FaIcons.FaCheckCircle>
                 <button onClick={openModal}>Criar novo projeto</button>
 
