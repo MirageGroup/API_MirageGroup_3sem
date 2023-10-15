@@ -38,7 +38,7 @@ export function New_column (props:new_column_props) {
         <>
             <button className='button-wrapper' onClick={openModal}>
                 <div className='plus-icon'><AiOutlinePlus size={30} /></div>
-                <p className='text'>nova coluna</p>
+                <p className='text'>Nova coluna</p>
             </button>
 
             {isModalOpen && (

@@ -49,7 +49,7 @@ export function Kanban_screen () {
       }, []); // The empty dependency array ensures this effect runs only once on component mount
 
 
-    const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
+    const [column_list, set_column_list] = useState([{nome:"A fazer"}, {nome:"Fazendo"}, {nome:"Feito"}]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -67,7 +67,9 @@ export function Kanban_screen () {
             <div className='title-wrapper'> 
                 <h2 className='project-name'>{params.name}</h2>
 
-                <div className='new-column-button'><New_column column_list={column_list} set_column = {set_column_list}></New_column></div>
+                <div className='new-column-button'>
+                  <New_column column_list={column_list} set_column = {set_column_list}></New_column>
+                </div>
             </div>
 
             {/* content */}

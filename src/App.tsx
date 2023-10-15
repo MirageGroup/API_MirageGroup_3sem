@@ -19,15 +19,15 @@ function App() {
   return (
     <Router>
       <Sidebar></Sidebar>
-      <Routes>
-        <Route path='/screen' Component={Screen}/>
-        <Route path='/project_screen' Component={ProjectScreen}/>
-        <Route path='/' Component={Home_page}/>
-        <Route path='/screen' Component={Screen}/>
-        <Route path='/iso' Component={IsoScreen}/>
-        <Route path='/kanban/:id/:name' Component={Kanban_screen}/>
-        
-      </Routes>
+        <Routes>
+          <Route path='/screen' Component={Screen}/>
+          <Route path='/project_screen' Component={ProjectScreen}/>
+          <Route path='/' Component={Home_page}/>
+          <Route path='/screen' Component={Screen}/>
+          <Route path='/iso' Component={IsoScreen}/>
+          <Route path='/kanban/:id/:name' Component={Kanban_screen}/>
+          
+        </Routes>
     </Router> 
 
     // <New_task></New_task>
