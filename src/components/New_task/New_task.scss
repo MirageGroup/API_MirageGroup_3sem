@@ -9,7 +9,7 @@
 .form-container{
         
     margin: 1em;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,7 @@
                 gap: 0.2em; 
             }
 
-            textarea::placeholder, input::placeholder,  {
+            textarea::placeholder, input::placeholder  {
                 font-size: 1.1em; 
 
                 color: white;

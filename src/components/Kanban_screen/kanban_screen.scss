@@ -1,31 +1,27 @@
-body {
-    height: 99%;
-    overflow: hidden;
 
-    .background-wrapper {
-      
-        padding-top: 7vh;
-        padding-right: 3vw;
-        
-        margin: 2em;
+    .background-wrapper_kanban {
+        padding: 2% 3%;
         background-color: #58595B;
         filter: brightness(110%);
-        border-radius: 20px;
-        position: relative;
         display: flex;
-        
-        flex-direction: row;    
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        max-width: 94vw;
 
-        justify-content: space-evenly;
-        width: 80%;
-        height: 85%;
+        h2{
+          font-weight: bold;
+        }
         
         .title-wrapper {
-            width: fit-content;
-            height: fit-content;
+            width: 100%;
+            display: flex;
+            gap: 1em;
+            align-items: center;
 
             .project-name {
-                position: absolute;
+
                 left: 2vw;
                 top: -1vh;
                 font-size: 1.9em;
@@ -35,26 +31,13 @@ body {
             }
 
             .new-column-button {
-                position: absolute;
+
                 left: 8.5vw;
                 top: 1.2vh;
             }
         }
 
-        .close-button{
-            position: absolute;
-            padding: 1.5em;
-            right: -0.6vw;
-            top: -1.5vh;
 
-            border: none;
-            background-color: #58595B;
-
-            cursor: pointer;
-
-            color: white;
-            
-        }
 
         .content-wrapper {
             margin-left: 3em;
@@ -88,7 +71,6 @@ body {
         }
         
         .form-wrapper {
-          
           position: absolute;
           top: 50%;
           left: 73%;
@@ -99,5 +81,5 @@ body {
 
         }
     }
-}
+
     

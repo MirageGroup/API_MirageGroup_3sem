@@ -62,17 +62,14 @@ export function Kanban_screen () {
     };
 
     return (
-        <body className="background-wrapper">
+        <div className="background-wrapper_kanban">
             {/* title */}
             <div className='title-wrapper'> 
-                <p className='project-name'>{params.name}</p>
+                <h2 className='project-name'>{params.name}</h2>
 
                 <div className='new-column-button'><New_column column_list={column_list} set_column = {set_column_list}></New_column></div>
             </div>
-            {/* close button */}
-            <button className='close-button'>
-                <IoMdClose size={40} className='button'/>
-            </button>
+
             {/* content */}
             <div className='content-wrapper'>
 
@@ -85,6 +82,6 @@ export function Kanban_screen () {
                     </div>
                 )}
             </div>
-        </body>
+        </div>
     )
 }

@@ -3,6 +3,7 @@
 .navbar {
     background-color: #292A2D;
     height: 80px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,6 +35,7 @@
 .nav-menu.active {
     left: 0;
     transition: 350ms;
+
 }
 
 .nav-text {

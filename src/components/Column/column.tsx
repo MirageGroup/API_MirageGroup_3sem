@@ -46,7 +46,7 @@ export function Column (props : interfaceProps) {
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
-                        {card_list.map ((item:TaskInterface, index:number) => (<Card cardName={item.name} key={index}></Card>))}
+                        {props.nome == "a fazer"?card_list.map ((item:TaskInterface, index:number) => (<Card cardName={item.name} key={index}></Card>)):null}
                         <Add_card openModal={props.openModal}></Add_card>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ export function Dropdown_menu(props: props) {
 
     return (
         <>
-            <ul>
+            <ul className='kanban_list'>
                 {options_list.map ((item, index) => (
                 <li key={index} onClick={props.opensMenu}>{item.nome}</li>
                 ))}
