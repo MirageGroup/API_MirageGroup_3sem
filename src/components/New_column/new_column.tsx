@@ -57,7 +57,6 @@ export function New_column (props:new_column_props) {
                                 </div>
                                 <div className='button_line'>
 
-                                    
                                 </div>
                                 <button className='button_cancel' onClick={closeModal}>Cancelar</button>
                                 <button className='button_create_column' onClick={handle_column_form}>Criar coluna</button>
