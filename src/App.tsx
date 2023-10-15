@@ -22,9 +22,10 @@ function App() {
       <Routes>
         <Route path='/screen' Component={Screen}/>
         <Route path='/project_screen' Component={ProjectScreen}/>
-        <Route path='/' Component={IsoScreen}/>
+        <Route path='/' Component={Home_page}/>
         <Route path='/screen' Component={Screen}/>
         <Route path='/card' Component={Card}/>
+        <Route path='/iso' Component={IsoScreen}/>
       </Routes>
     </Router> 
 
