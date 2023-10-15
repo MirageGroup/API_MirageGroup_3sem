@@ -2,11 +2,11 @@ import {IoMdClose} from 'react-icons/io'
 import './kanban_screen.scss'
 import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
-import { New_task } from '../New_task/new_task'
+import { New_task } from '../New_task/New_task'
 import { useState } from 'react'
-import { FiX } from 'react-icons/fi'
 
 export function Background () {
+
     
     const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
 

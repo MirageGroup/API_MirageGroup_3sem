@@ -5,16 +5,61 @@ import { Process_card } from "../Process_Card/process_card";
 import * as FaIcons from "react-icons/fa";
 import { FiX } from "react-icons/fi";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+
+interface process{
+  "id": string,
+  "name": string,
+  "description": string,
+  "created_at": string,
+  "updated_at": string,
+  "deadline": string,
+  "state": string,
+  "deleted_at": null,
+  "progress":number|null
+  "tasks": 
+    {
+      "name": string
+      "description": string,
+      "deadline": string,
+      "state": string,
+      "deleted_at": null,
+      "id": number,
+      "created_at": string,
+      "updated_at": string
+    }[]
+    
+  
+}
+
+
 
 export function ProjectScreen(){
 
 
+    // função para definir porcentagem de progresso para todos
 
+    function calculate_progress(process_list:process[]){
+      process_list.forEach((process) => {
+        const totalTasks = process.tasks.length;
+        const completedTasks = process.tasks.filter((task: { state: string; }) => task.state === "completo").length;
+        
+        if (totalTasks > 0) {
+          const progress = (completedTasks / totalTasks) * 100;
+          process.progress = progress
+          console.log(process.progress)
+        } else {
+          console.log(`O processo "${process.name}" não possui tarefas.`);
+        }
+      });
+    }
 
 
     const fetchProcesses = async () => {
         try {
           const response = await axios.get('http://localhost:8000/process/findall');
+          console.log(response.data)
           return response.data;
         } catch (error) {
           console.error('Error fetching processes:', error);
@@ -29,6 +74,9 @@ export function ProjectScreen(){
         const updateProcesses = async () => {
           try {
             const updatedProcesses = await fetchProcesses();
+            calculate_progress(updatedProcesses)
+            // updatedProcesses = 
+
             setProcesses(updatedProcesses);
           } catch (error) {
             // Handle any errors
@@ -36,19 +84,13 @@ export function ProjectScreen(){
         };
       
         // Poll for updates every 5 seconds (adjust the interval as needed)
-        const pollInterval = setInterval(updateProcesses, 300);
+        const pollInterval = setInterval(updateProcesses, 1000);
       
         // Clean up the interval when the component unmounts
         return () => clearInterval(pollInterval);
       }, []); // The empty dependency array ensures this effect runs only once on component mount
     
 
-      const finished_process = [
-        {name: "projeto opera"},
-        {name: "projeto blues"},
-        {name: "projeto sky"},
-        {name: "projeto flag"},
-      ]
 
     const [isModalOpen, setIsModalOpen] = useState(false); 
 
@@ -78,8 +120,9 @@ export function ProjectScreen(){
                 <h3>Em andamento</h3>
                 <span></span>
                 <div className="project_list">
+
                     {processes.map(
-                        (projeto) =><ProjectCard name={projeto.name}></ProjectCard>
+                        (projeto) => projeto.progress != 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
                         )
                     }
             </div>
@@ -90,8 +133,8 @@ export function ProjectScreen(){
                 <h3>Concluidos</h3>
                 <span></span>
                 <div className="project_list">
-                    {finished_process.map(
-                        (projeto) => <ProjectCard name={projeto.name}></ProjectCard>  
+                    {processes.map(
+                         (projeto) => projeto.progress == 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
                         )
                     }
                 </div>

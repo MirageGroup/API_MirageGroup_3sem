@@ -14,6 +14,7 @@
         font-weight: bold;
     }
     margin-bottom: 2%;
+    margin:1.8%
 }
 
 
@@ -22,6 +23,14 @@
     width: 100%;
     height: 90%;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    
+
+
+
 }
 
 .icons{
@@ -31,3 +40,18 @@
         padding: 0.6em;
     }
 }
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+  }
+  
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: #53C4CD; /* Cor da barra de progresso */
+    border-radius: 10px;
+    transition: width 0.5s; /* Adiciona uma animação de transição suave */
+  }

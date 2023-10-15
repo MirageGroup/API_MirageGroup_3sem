@@ -5,7 +5,6 @@ import {AiFillFileAdd} from 'react-icons/ai'
 
 interface props {
     cardName: string,
-    
 }
 
 export function Card (props : props) {
