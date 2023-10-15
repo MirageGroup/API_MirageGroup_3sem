@@ -72,6 +72,7 @@ export function ProjectScreen(){
           try {
             const updatedProcesses = await fetchProcesses();
             calculate_progress(updatedProcesses)
+            console.log('foi');
             // updatedProcesses = 
 
             setProcesses(updatedProcesses);
