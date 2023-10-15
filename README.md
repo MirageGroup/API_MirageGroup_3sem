@@ -141,7 +141,7 @@ Cada entrega foi realizada a partir da criação de uma **tag**. Observe a rela�
 </li>
 </ul>
 
-<h2>Equipe<h2>
+<h3>Equipe<h3>
   
 <!-- ![API Sprint 3 (2)](https://user-images.githubusercontent.com/111614142/204145671-e6198771-efa2-400a-8b8d-9d443c0abd9b.png) -->
 
