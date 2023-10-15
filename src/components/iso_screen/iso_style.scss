@@ -1,0 +1,116 @@
+    .iso_screen_wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background-color: #0D0E12;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+
+    }
+
+    .iso_list_container{
+        max-height: 80%; /* Defina a altura máxima desejada */
+        overflow-y: auto; /* Adicione rolagem vertical quando necessário */
+        width: 40%;
+        padding: 2%;
+
+
+          
+            /* Estilizando a barra de rolagem */
+            &::-webkit-scrollbar {
+              width: 12px; /* Largura da barra de rolagem */
+            }
+          
+            /* Estilizando o polegar da barra de rolagem */
+            &::-webkit-scrollbar-thumb {
+              background-color: #888; /* Cor do polegar */
+              border-radius: 5px; /* Cantos arredondados do polegar */
+            }
+          
+            /* Estilizando a trilha da barra de rolagem */
+            &::-webkit-scrollbar-track {
+              background-color: #f1f1f1; /* Cor da trilha */
+              border-radius: 5px; /* Cantos arredondados da trilha */
+            }
+          }
+
+
+
+    .iso_list{
+        display: flex;
+        flex-direction: column;
+        gap: 1.4em;
+
+        align-items: center;
+
+
+        button{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%; /* Isso cria a forma redonda */
+            background-color: white; /* Cor de fundo branca */
+            border: 1px solid #000; /* Uma borda preta opcional */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+
+
+
+            svg{
+                color: #000;
+            
+            }
+        }
+
+        button:hover{
+            border: 5px solid #53C4CD ;
+            transition: 0.5s;
+
+            
+            svg{
+                color: #53C4CD ;
+                transition: 0.5s;
+            }
+        }
+    }
+
+    .iso_card{
+        border-radius: 10px;
+        background-color: #D9D9D9;
+        width: 80%;
+        cursor: pointer;
+
+        h3{
+            margin: 0px;
+            padding: 2%;
+        }
+        hr{
+            color: black;
+            border: 1px solid black;
+            margin-top: 0px;
+        }
+        p{
+            padding: 2%;
+        }
+
+
+    }
+
+    .iso_card:hover{
+    scale: 1.05;
+    transition: 0.5s;
+    }
+
+    .iso_selected{
+        background-color:#D9D9D9;
+        width: 40%;
+        height: 80%;
+        border-radius: 25px;
+        padding: 2%;
+    }
+    .selected{
+        border: 5px solid #53C4CD;
+    }
