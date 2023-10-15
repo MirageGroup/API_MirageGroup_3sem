@@ -6,32 +6,7 @@ import * as FaIcons from "react-icons/fa";
 import { FiX } from "react-icons/fi";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
-
-interface process{
-  "id": string,
-  "name": string,
-  "description": string,
-  "created_at": string,
-  "updated_at": string,
-  "deadline": string,
-  "state": string,
-  "deleted_at": null,
-  "progress":number|null
-  "tasks": 
-    {
-      "name": string
-      "description": string,
-      "deadline": string,
-      "state": string,
-      "deleted_at": null,
-      "id": number,
-      "created_at": string,
-      "updated_at": string
-    }[]
-    
-  
-}
+import ProcessInterface from '../../Interfaces/Interfaces'
 
 
 
@@ -40,7 +15,7 @@ export function ProjectScreen(){
 
     // função para definir porcentagem de progresso para todos
 
-    function calculate_progress(process_list:process[]){
+    function calculate_progress(process_list:ProcessInterface[]){
       process_list.forEach((process) => {
         const totalTasks = process.tasks.length;
         const completedTasks = process.tasks.filter((task: { state: string; }) => task.state === "completo").length;

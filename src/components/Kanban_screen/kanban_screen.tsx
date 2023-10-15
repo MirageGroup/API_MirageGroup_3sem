@@ -3,12 +3,52 @@ import './kanban_screen.scss'
 import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
 import { New_task } from '../New_task/New_task'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import {useParams} from 'react-router-dom';
+import axios from 'axios'
+
 
 
 export function Kanban_screen () {
 
+    const params = useParams();
+
+    let process_id = params.id
+
+    const [tasks, setTasks] = useState<any[]>([]);
+
+    const fetchProcessInfo = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8000/task/${process_id}/getall`);
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching processes:', error);
+          throw error;
+        }
+      };
+
     
+
+    useEffect(() => {
+        // Function to fetch and update processes
+        const updateProcesses = async () => {
+          try {
+            const ProcessInfo = await fetchProcessInfo();
+            setTasks(ProcessInfo)
+
+          } catch (error) {
+            // Handle any errors
+          }
+        };
+      
+        // Poll for updates every 5 seconds (adjust the interval as needed)
+        const pollInterval = setInterval(updateProcesses, 1000);
+      
+        // Clean up the interval when the component unmounts
+        return () => clearInterval(pollInterval);
+      }, []); // The empty dependency array ensures this effect runs only once on component mount
+
+
     const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +65,7 @@ export function Kanban_screen () {
         <body className="background-wrapper">
             {/* title */}
             <div className='title-wrapper'> 
-                <p className='project-name'>Projeto 1</p>
+                <p className='project-name'>{params.name}</p>
 
                 <div className='new-column-button'><New_column column_list={column_list} set_column = {set_column_list}></New_column></div>
             </div>
@@ -36,12 +76,12 @@ export function Kanban_screen () {
             {/* content */}
             <div className='content-wrapper'>
 
-                {column_list.map((item, index) => (<Column nome={item.nome} openModal={openModal}  key={index}></Column>))}
+                {column_list.map((item, index) => (<Column nome={item.nome} openModal={openModal} tasks={tasks}  key={index}></Column>))}
 
 
                 {isModalOpen && (
                     <div className='form-wrapper'>
-                        <New_task closeModal={closeModal}></New_task>
+                        <New_task closeModal={closeModal} process_id={process_id}></New_task>
                     </div>
                 )}
             </div>

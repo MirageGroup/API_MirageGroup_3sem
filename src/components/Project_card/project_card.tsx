@@ -14,7 +14,7 @@ export function ProjectCard(props:ProjectCardProps){
 
     return(
         <div className='card_wrapper'>
-        <Link to={`/kanban/${props.id}`}>
+        <Link to={`/kanban/${props.id}/${props.name}`}>
           <div className='main_card'>
             <h4>{props.name}</h4>
             <div className="progress-bar">

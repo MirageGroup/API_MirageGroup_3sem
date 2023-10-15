@@ -4,15 +4,17 @@ import {Add_card} from '../Add_card/add_card';
 import {Card} from '../Card/card'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 import { Dropdown_menu } from '../Dropdown_menu/dropdown_menu';
+import TaskInterface from '../../Interfaces/Interfaces';
 
 interface interfaceProps {
     nome:string,
+    tasks:any
     openModal : () => void;
     
 }
 
 export function Column (props : interfaceProps) {
-    const [card_list, set_card_list] = useState([{nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}])
+    let card_list = props.tasks
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -44,7 +46,7 @@ export function Column (props : interfaceProps) {
                 <div className='card-container'>
 
                     <div className='card-wrapper'>
-                        {card_list.map ((item, index) => (<Card cardName={item.nome} key={index}></Card>))}
+                        {card_list.map ((item:TaskInterface, index:number) => (<Card cardName={item.name} key={index}></Card>))}
                         <Add_card openModal={props.openModal}></Add_card>
                     </div>
                 </div>

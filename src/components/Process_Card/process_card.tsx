@@ -16,7 +16,6 @@ export function Process_card({close_modal_function}:any){
     const [endDate, setEndDate] = useState(''); // State for the end date
     const contributorOptions = ["Gustavo", "Pedro", "Hugo", "Vinicius", "Victor", "Jaqueline", "Hugo", "Gustavo Henrique", "Thiago"];
 
-    console.log(endDate)
 
     const handleSubmit = async () => {
 

@@ -25,7 +25,7 @@ function App() {
         <Route path='/' Component={Home_page}/>
         <Route path='/screen' Component={Screen}/>
         <Route path='/iso' Component={IsoScreen}/>
-        <Route path='/kanban/:id' Component={Kanban_screen}/>
+        <Route path='/kanban/:id/:name' Component={Kanban_screen}/>
         
       </Routes>
     </Router> 
