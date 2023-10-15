@@ -12,7 +12,7 @@ interface interfaceProps {
 }
 
 export function Column (props : interfaceProps) {
-    const [card_list, set_card_list] = useState([{nome:"tarefa 1"}, {nome:"tarefa 2"}])
+    const [card_list, set_card_list] = useState([{nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}, {nome:"tarefa 1"}, {nome:"tarefa 2"}])
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
