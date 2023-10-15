@@ -48,9 +48,7 @@ export function ProjectScreen(){
         if (totalTasks > 0) {
           const progress = (completedTasks / totalTasks) * 100;
           process.progress = progress
-          console.log(process.progress)
         } else {
-          console.log(`O processo "${process.name}" não possui tarefas.`);
         }
       });
     }
@@ -59,7 +57,6 @@ export function ProjectScreen(){
     const fetchProcesses = async () => {
         try {
           const response = await axios.get('http://localhost:8000/process/findall');
-          console.log(response.data)
           return response.data;
         } catch (error) {
           console.error('Error fetching processes:', error);
