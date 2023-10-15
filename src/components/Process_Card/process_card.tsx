@@ -94,7 +94,7 @@ export function Process_card({close_modal_function}:any){
 
             </div>
 
-                <div className='icons_container'>
+                {/* <div className='icons_container'>
                     <div className='icons_line'>
                         <img src={vetor}></img>
                         <img src={vetor}></img>
@@ -107,7 +107,7 @@ export function Process_card({close_modal_function}:any){
                         Procedimentos:
                     </div>
                     
-                </div>
+                </div> */}
 
                 <div className='concluir'>
                     <button onClick={close_modal_function}>Cancelar</button>
