@@ -3,6 +3,7 @@ body {
     overflow: hidden;
 
     .background-wrapper {
+      
         padding-top: 7vh;
         padding-right: 3vw;
         
@@ -86,12 +87,17 @@ body {
               }
         }
         
-        
+        .form-wrapper {
+          
+          position: absolute;
+          top: 50%;
+          left: 73%;
+          transform: translate(-50%, -50%);
 
-        
+          width: 80%;
+          height: 70%;
 
-
-        
+        }
     }
 }
     

@@ -2,40 +2,48 @@
 
 * {
     font-family: 'Poppins', sans-serif;
+    
 }
 
 
 .form-container{
-        margin: 1em;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 30%;
-        height: 75%;
-        padding: 0.5em 3em 1em;
+        
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    padding: 0.5em 3em 1em;
 
-        border-radius: 3.5%;
+    border-radius: 3.5%;
+    border: 0.5px solid #fff;
 
-        background-color: #292A2D;
 
-        justify-content: flex-start;
+    background-color: #292A2D;
+    filter: brightness(120%);
+    justify-content: flex-start;
+
+    &:hover {
+       
+    }
 
         h3 {
             font-weight: 500;
             font-size: 1.4em;
-            margin-bottom: -15px;
+            margin-bottom: -2em;
             caret-color: transparent;
-
+            
             color: white;
         }
 
-        .close-button {
+        .close-button-form {
             position: relative;
-            left: 29.7vw;
-            top: -4.5vh;
+            left: 99%;
+            top: -2%;
             border: none;
 
             font-weight: 700;
@@ -44,6 +52,10 @@
             color: white;
 
             cursor: pointer;
+
+            &:active {
+                color: aqua;
+            }
         }
 
         form {
@@ -139,6 +151,26 @@
                 background-color: #58595B;
                 color: white;
             }
+
+            .submit-button {
+                background-color: #58595B;
+                color: #FFF;
+                border: 1px solid #fff;
+                border-radius: 5px;
+                filter: brightness(80%);
+
+                margin-left: 50%;
+                width: 12em;
+                height: 3em;
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+
+                &:active {
+                  border-color: aqua;
+                  color: aqua;
+                }
+            }
         }
-    
 }

@@ -1,0 +1,33 @@
+ ul {
+    list-style: none;
+    border-radius: 5px;
+    
+    padding-left: 0.3em;
+
+    li {
+        width:  max-content;
+        border-bottom: 1px solid black;
+        font-weight: 600;
+        text-align: left;
+
+        padding: 0.2em;
+
+        &:hover {
+            cursor: pointer;
+            color: aqua;
+        }
+
+    }
+    color: #58595B;
+    background-color: #f1f1f1;
+
+    position: absolute;
+    top: 9%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+
+    width: 37%;
+    height: 14%;
+
+    z-index: 1; /* Adicionando um valor de z-index */
+}

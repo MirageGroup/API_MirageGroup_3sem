@@ -1,15 +1,22 @@
 import './New_task.scss';
 import {AiOutlineClose} from 'react-icons/ai'
 import {IoMdClose} from 'react-icons/io'
+import React, { useState } from 'react';
 
+interface props {
+    closeModal : () => void;
+    
+}
 
-export function New_task() {
+export function New_task(props : props) {
+
+    
+
     return (
         <>
-            
             <div className='form-container'>
                 <div className='form-title'><h3>Nova Tarefa</h3></div>
-                <button className='close-button'><IoMdClose size={35} className='button'/></button>
+                <button className='close-button-form' onClick={props.closeModal}><IoMdClose size={35} className='button'/></button>
                 <form>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa'/>
 
@@ -34,10 +41,12 @@ export function New_task() {
                         <input type="date" />
                     </div>
 
-                    <textarea placeholder='Descrição' rows={15} cols={30}></textarea>
+                    <textarea placeholder='Descrição' rows={5} cols={30}></textarea>
                     
+                    <button type ="button" className='submit-button' onClick={props.closeModal}>Adicionar Tarefa</button>
                 </form>
             </div>
+            
         </>
     )
 }

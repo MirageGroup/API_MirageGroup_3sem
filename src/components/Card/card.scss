@@ -16,7 +16,13 @@
 
     background-color: #58595D;
 
-    
+    cursor: pointer;
+
+    &:hover {
+        transition: 3ms;
+        filter: brightness(120%);
+    }
+
     .color {
         position: absolute;
         left: 0.5vw;
