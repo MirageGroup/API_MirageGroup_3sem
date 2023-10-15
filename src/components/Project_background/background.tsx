@@ -8,35 +8,19 @@ import { FiX } from 'react-icons/fi'
 
 export function Background () {
     
-
-    const [isFormVisible, setIsFormVisible] = useState(false);
-
-    const handleToggleForm  = () => {
-        setIsFormVisible(!isFormVisible);
-    }
-      
-
     const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
 
-
-
-
-
-
-    
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
         setIsModalOpen(true);
-      };
+    };
     
-      const closeModal = () => {
+    const closeModal = () => {
         setIsModalOpen(false);
-      };
+    };
 
     return (
-        
-
         <body className="background-wrapper">
             {/* title */}
             <div className='title-wrapper'> 
@@ -53,18 +37,12 @@ export function Background () {
 
                 {column_list.map((item, index) => (<Column nome={item.nome} openModal={openModal}  key={index}></Column>))}
 
-                
-        
 
                 {isModalOpen && (
                     <div className='form-wrapper'>
                         <New_task closeModal={closeModal}></New_task>
                     </div>
                 )}
-
-           
-
-                
             </div>
         </body>
     )

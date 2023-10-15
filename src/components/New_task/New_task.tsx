@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 interface props {
     closeModal : () => void;
+    
 }
 
 export function New_task(props : props) {
@@ -42,8 +43,7 @@ export function New_task(props : props) {
 
                     <textarea placeholder='Descrição' rows={5} cols={30}></textarea>
                     
-                    <button className='submit-button'>Adicionar Tarefa</button>
-
+                    <button type ="button" className='submit-button' onClick={props.closeModal}>Adicionar Tarefa</button>
                 </form>
             </div>
             
