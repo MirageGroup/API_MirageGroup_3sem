@@ -1,5 +1,5 @@
 import {IoMdClose} from 'react-icons/io'
-import './background.scss'
+import './kanban_screen.scss'
 import { Column } from '../Column/column'
 import { New_column } from '../New_column/new_column'
 import { New_task } from '../New_task/new_task'
