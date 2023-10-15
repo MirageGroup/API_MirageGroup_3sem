@@ -48,9 +48,13 @@ export function ProjectScreen(){
         if (totalTasks > 0) {
           const progress = (completedTasks / totalTasks) * 100;
           process.progress = progress
-        } else {
-        }
-      });
+        } 
+
+        
+      }
+      
+      );
+      return process_list
     }
 
 
@@ -70,11 +74,10 @@ export function ProjectScreen(){
         // Function to fetch and update processes
         const updateProcesses = async () => {
           try {
-            const updatedProcesses = await fetchProcesses();
-            calculate_progress(updatedProcesses)
-            // updatedProcesses = 
-
+            let updatedProcesses = await fetchProcesses();
+            updatedProcesses = calculate_progress(updatedProcesses)
             setProcesses(updatedProcesses);
+            console.log(processes)
           } catch (error) {
             // Handle any errors
           }
@@ -131,7 +134,7 @@ export function ProjectScreen(){
                 <span></span>
                 <div className="project_list">
                     {processes.map(
-                         (projeto) => projeto.progress == 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
+                         (projeto) => projeto.progress == 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null
                         )
                     }
                 </div>
