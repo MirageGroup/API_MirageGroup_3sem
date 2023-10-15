@@ -6,7 +6,7 @@ import { New_task } from '../New_task/new_task'
 import { useState } from 'react'
 import { FiX } from 'react-icons/fi'
 
-export function Background () {
+export function Kanban_screen () {
     
     const [column_list, set_column_list] = useState([{nome:"a fazer"}, {nome:"fazendo"}, {nome:"feito"}]);
 
