@@ -1,28 +1,39 @@
-import './card.scss'
-import {BiSolidUserCircle} from 'react-icons/bi'
-import {FaRegTrashCan} from 'react-icons/fa6'
-import {AiFillFileAdd} from 'react-icons/ai'
+import React from 'react'
+import { Draggable } from 'react-beautiful-dnd'
+import { styled } from '../stiches.config'
 
-interface props {
-    cardName: string,
+interface ItemProps {
+  text: string
+  index: number
 }
 
-export function Card (props : props) {
-    return (
-        <>
-            <section className='super-container'>
-                <div className='color'></div>
-                <div className='card-container'>
-                    <div className='name-paragraph'><p>{props.cardName}</p></div>
-                    <div className='date'><p>dd/mm/aaaa hh:mm</p></div>
-                    <div className='picture'><BiSolidUserCircle size={29}/></div>
-                </div>
+const StyledItem = styled('div', {
+  backgroundColor: '#eee',
+  borderRadius: 4,
+  padding: '4px 8px',
+  transition: 'background-color .8s ease-out',
+  marginTop: 8,
 
-                <div className='icons-container'>
-                    <div className='add-file'><AiFillFileAdd size={25}/></div>
-                    <div className='trash'><FaRegTrashCan size={19}/></div>
-                </div>
-            </section>
-        </>
-    )
+  ':hover': {
+    backgroundColor: '#fff',
+    transition: 'background-color .1s ease-in'
+  }
+})
+
+const Item: React.FC<ItemProps> = ({ text, index }) => {
+  return (
+    <Draggable draggableId={text} index={index}>
+      {provided => (
+        <StyledItem
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          {text}
+        </StyledItem>
+      )}
+    </Draggable>
+  )
 }
+
+export default Item

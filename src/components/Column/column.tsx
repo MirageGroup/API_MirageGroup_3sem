@@ -1,56 +1,55 @@
-import { useState } from 'react';
-import './column.scss';
-import {Add_card} from '../Add_card/add_card';
-import {Card} from '../Card/card'
-import {BiDotsHorizontalRounded} from 'react-icons/bi'
-import { Dropdown_menu } from '../Dropdown_menu/dropdown_menu';
-import TaskInterface from '../../Interfaces/Interfaces';
+import React from "react";
+import { Droppable } from "react-beautiful-dnd";
+import Item from '../Card/card'
 
-interface interfaceProps {
-    nome:string,
-    tasks:any
-    openModal : () => void;
-    
+// https://codesandbox.io/s/reverent-antonelli-6296o?file=/src/components/Item.tsx:74-116
+// https://dev.to/imjoshellis/codealong-multi-column-drag-and-drop-in-react-3781
+
+interface ColumnProps {
+  col: {
+    id: string;
+    list: string[];
+  };
 }
 
-export function Column (props : interfaceProps) {
-    let card_list = props.tasks
+const StyledColumn = styled("div", {
+  padding: "24px 0",
+  display: "flex",
+  flexDirection: "column",
+  marginTop: 8,
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+  h2: {
+    margin: 0,
+    padding: "0 16px"
+  }
+});
 
-    const opensMenu = () => {setIsMenuOpen(!isMenuOpen)}
-    
+const StyledList = styled("div", {
+  backgroundColor: "#ddd",
+  borderRadius: 8,
+  padding: 16,
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: 1,
+  marginTop: 8
+});
 
-    const [scrollPercentage, setScrollPercentage] = useState(0);
+const Column: React.FC<ColumnProps> = (col: { list: any, id: any } ) => {
+  return (
+    <Droppable droppableId={col.id}>
+      {(provided: { droppableProps: any; innerRef: any; placeholder: any; }) => (
+        <StyledColumn>
+          <h2>{id}</h2>
+          <StyledList {...provided.droppableProps} ref={provided.innerRef}>
+            {col.list.map((text: any, index: any) => (
+              <Item key={text} text={text} index={index} />
+            ))}
+            {provided.placeholder}
+          </StyledList>
+        </StyledColumn>
+      )}
+    </Droppable>
+  );
+};
 
-    const handleScroll = (e: any) => {
-        const element = e.target;
-        const scrollHeight = element.scrollHeight - element.clientHeight;
-        const percentage = (element.scrollTop / scrollHeight) * 100;
-        setScrollPercentage(percentage);
-    };
-
-    return (
-        
-        <>
-            <div className='container' onScroll={handleScroll}>
-                <section className='title-container'>
-                    <h4 className='title'>{props.nome}</h4>
-                    <div className='dots-menu'>
-                        <BiDotsHorizontalRounded size={35} onClick={opensMenu}/>
-                    </div>
-                    
-                </section>
-                {isMenuOpen && <div className='menu-wrapper'><Dropdown_menu opensMenu={opensMenu}/></div>}
-                <hr className='horizontal-line'/>
-                <div className='card-container'>
-
-                    <div className='card-wrapper'>
-                        {props.nome == "a fazer"?card_list.map ((item:TaskInterface, index:number) => (<Card cardName={item.name} key={index}></Card>)):null}
-                        <Add_card openModal={props.openModal}></Add_card>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+export default Column;
