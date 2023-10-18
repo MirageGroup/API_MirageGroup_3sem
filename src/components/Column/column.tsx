@@ -1,55 +1,36 @@
-import React from "react";
-import { Droppable } from "react-beautiful-dnd";
-import Item from '../Card/card'
+// src/components/Column.tsx
+import React from 'react'
+import { Droppable } from 'react-beautiful-dnd';
+import Card from '../Card/card';
+import './column.scss'
 
-// https://codesandbox.io/s/reverent-antonelli-6296o?file=/src/components/Item.tsx:74-116
-// https://dev.to/imjoshellis/codealong-multi-column-drag-and-drop-in-react-3781
-
+// TypeScript only
 interface ColumnProps {
-  col: {
-    id: string;
-    list: string[];
-  };
-}
-
-const StyledColumn = styled("div", {
-  padding: "24px 0",
-  display: "flex",
-  flexDirection: "column",
-  marginTop: 8,
-
-  h2: {
-    margin: 0,
-    padding: "0 16px"
+    col: {
+      id: string
+      list: string[]
+    }
   }
-});
 
-const StyledList = styled("div", {
-  backgroundColor: "#ddd",
-  borderRadius: 8,
-  padding: 16,
-  display: "flex",
-  flexDirection: "column",
-  flexGrow: 1,
-  marginTop: 8
-});
 
-const Column: React.FC<ColumnProps> = (col: { list: any, id: any } ) => {
-  return (
-    <Droppable droppableId={col.id}>
-      {(provided: { droppableProps: any; innerRef: any; placeholder: any; }) => (
-        <StyledColumn>
-          <h2>{id}</h2>
-          <StyledList {...provided.droppableProps} ref={provided.innerRef}>
-            {col.list.map((text: any, index: any) => (
-              <Item key={text} text={text} index={index} />
-            ))}
-            {provided.placeholder}
-          </StyledList>
-        </StyledColumn>
-      )}
-    </Droppable>
-  );
-};
 
-export default Column;
+  const Column: React.FC<ColumnProps> = ({ col: { list, id } }) => {
+    return (
+      <Droppable droppableId={id}>
+        {provided => (
+          <div
+          className='column_container'>
+            <h2 className='column_title'>{id}</h2>
+            <div className='column_list' {...provided.droppableProps} ref={provided.innerRef} >
+              {list.map((text, index) => (
+                <Card key={text} text={text} index={index} />
+              ))}
+              {provided.placeholder}
+            </div>
+          </div>
+        )}
+      </Droppable>
+    )
+  }
+
+export default Column

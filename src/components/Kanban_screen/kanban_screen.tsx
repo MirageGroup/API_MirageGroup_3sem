@@ -1,18 +1,10 @@
-import {IoMdClose} from 'react-icons/io'
+import { useState } from 'react'
+import Column from '../Column/column'
+import {DragDropContext, DropResult} from 'react-beautiful-dnd'
 import './kanban_screen.scss'
-import { Column } from '../Column/column'
-import { New_column } from '../New_column/new_column'
-import { New_task } from '../New_task/New_task'
-import { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom';
-import axios from 'axios'
-import {DragDropContext} from 'react-beautiful-dnd'
-import TaskInterface from '../../Interfaces/Interfaces';
 
-
-
-export default function App () {
-  const initialColumns = {
+export default function Kanban_screen () {
+  const initialColumns: { [key: string]: { id: string, list: string[] } }= {
     todo: {
       id: 'todo',
       list: ['item 1', 'item 2', 'item 3']
@@ -98,13 +90,15 @@ export default function App () {
     }
   }
 
+
+  
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <StyledColumns>
-        {Object.values(columns).map(col => (
-          <Column col={col} key={col.id} />
-        ))}
-      </StyledColumns>
+      <div className='kanban_background'>
+          {Object.values(columns).map(col => (
+            <Column col={col} key={col.id} />
+          ))}
+      </div>
     </DragDropContext>
   )
 }

@@ -1,100 +1,26 @@
-$scrollPercentage: 10;
-
-.container {
-    overflow-y: hidden;
-    overflow-x: hidden;
-
-    caret-color: transparent;
-
-    margin:0px;
-    position: relative;
-    width: 26%;
-    max-width: 45%;
-    min-width: 30%;
-    height: 100%;
-    background-color: #292A2D;
-
-    border-radius: 0.5em;
-    border: none;
-    box-shadow: 2px 2px 3px;
-
-    //deals with the scroll
-    max-height: 80vh; /* Define a altura máxima da coluna */
-    overflow-y: auto;
-    transition: height 0.3s; /* Adicionando uma transição para suavizar a mudança de altura */
-    height: calc(20% + #{scrollPercentage}%); /* Use a porcentagem de rolagem aqui */
-
-
-    /* Estilização da barra de rolagem */
-    &::-webkit-scrollbar {
-        height: 0.3em; /* Altura da barra de rolagem */
-        width: 0.6em; /* Largura da barra de rolagem */
-      }
-    
-      &::-webkit-scrollbar-track {
-        background: #f1f1f1; /* Cor da área de fundo da barra de rolagem */
-        border-radius: 6px; /* Borda da área de fundo */
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background: #888; /* Cor do "ponteiro" da barra de rolagem */
-        border-radius: 6px; /* Borda do "ponteiro" */
-      }
-    
-      &::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Cor do "ponteiro" quando o mouse passa por cima */
-      }
-      
-    .title-container {
-        width: 100%;
-        height: 4vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-
-        margin: 0.5vh 0vh;
-
-        .title {
-            padding: 0.8em;
-            margin:0px;
-            text-align: left;
-            
-            color:white;
-
-            font-weight: 400;
-            font-size: 1.1em;
-        }
-
-        .dots-menu {
-            display: flex;
-            align-items: center;
-            justify-items: center;
-            color:white;
-            margin: 0em 0.7em;
-
-            cursor: pointer;
-
-          .menu-wrapper {
-            
-          }
-        }
-
-        
-    }
-    .horizontal-line {
-        width: 92%;
-
-        margin-top: 0.01vh;
-    }
-    .card-container {
-        
-        .card-wrapper {
-            width: 100%;
-
-            
-        }
-    }
-    
+.column_title{
+  color: white;
 }
-    
+
+.column_container{
+  display: 'flex';
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 10%;
+  padding: 10px;
+
+
+  h2{
+    text-align: center;
+  }
+}
+
+.column_list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
