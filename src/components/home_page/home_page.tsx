@@ -22,7 +22,7 @@ export function Home_page(){
             <div className='main_title'>
                 <h2>Bem Vindo ao</h2>
                 <h1>SHORTS</h1>
-                <h2>Soluções para Heuristicas Organizadas em Projetos</h2>
+                <h2>Sistema Harmonizado de Organização de Rotinas e Tarefas</h2>
                 <FaIcons.FaCheckCircle></FaIcons.FaCheckCircle>
                 <button onClick={openModal}>Criar novo projeto</button>
 
