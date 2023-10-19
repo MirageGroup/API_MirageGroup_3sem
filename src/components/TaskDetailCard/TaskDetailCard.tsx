@@ -28,10 +28,10 @@ export function TaskDetailCard( props : TaskDetailCardProps) {
         setIsConfirmModalOpen(false);
     };
 
-    async function handle_delete_confirmation(){
-        setDeleteConfirmed(true)
-        if (props.task != null && deleteConfirmed == true){
-            const response = await axios.delete(`http://localhost:8000/task/${props.task.id}/delete`);
+     function handle_delete_confirmation(){
+    
+        if (props.task != null){
+            const response = axios.delete(`http://localhost:8000/task/${props.task.id}/delete`);
             console.log('deletado')
             props.closeCardModal()      
         }   

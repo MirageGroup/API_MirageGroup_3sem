@@ -181,7 +181,7 @@ export default function Kanban_screen () {
         {isCardModalOpen && (
           <div className="cardModalBackdrop">
             <div className="cardModalCenter">
-                <div className="cardModal">
+                <div className="cardDetailModal">
                     <TaskDetailCard closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
                 </div>
             </div>
