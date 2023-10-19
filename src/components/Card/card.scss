@@ -8,12 +8,13 @@
 .super-container {
     display: flex;
     flex-direction: column;
-    
+    justify-content: fle;
     border-radius: 0.7em;
     position: relative;
     margin: 0.7em 0.8em;
     box-shadow: 2px 2px 2px;
-    width: 90%;
+    width: 100%;
+    padding: 3%;
 
     background-color: #58595D;
 
@@ -40,7 +41,7 @@
         display: flex;
         flex-direction: row;
         align-content: center;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         gap: 6em;
         height: 7vh;
@@ -69,24 +70,32 @@
         
     }
 
-    .icons-container {
+    .icons-container_card {
         display: flex;
-        
-        flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        align-content: center;
-        gap: 83%;
-        margin-left: 1em;
-        margin-bottom: 1%;;
+        gap: 6%;
 
-        .add-file {
-            display: none;
-        }
+        button{
+            background-color: #58595B; 
 
-        .trash {
-            margin: 0em 0.6em;
-            color: white;
+            border-radius: 10px;
+            border: none;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            margin: 0.2em;
+
+            height: 5vh;
+            cursor: pointer;
+            
+            &:hover {
+                filter: brightness(120%);
+            }
         }
+        
     }
 }

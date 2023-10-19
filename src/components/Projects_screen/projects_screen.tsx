@@ -18,7 +18,7 @@ export function ProjectScreen(){
     function calculate_progress(process_list:ProcessInterface[]){
       process_list.forEach((process) => {
         const totalTasks = process.tasks.length;
-        const completedTasks = process.tasks.filter((task: { state: string; }) => task.state === "completo").length;
+        const completedTasks = process.tasks.filter((task: { state: string; }) => task.state === "done").length;
         
         if (totalTasks > 0) {
           const progress = (completedTasks / totalTasks) * 100;

@@ -13,6 +13,7 @@ export default function Kanban_screen () {
 
     const params = useParams();
     let process_id = params.id
+    let process_name = params.name
     const [tasks, setTasks] = useState<TaskInterface[]>([]);
 
     const fetchProcessInfo = async () => {
@@ -132,7 +133,7 @@ export default function Kanban_screen () {
       <div className="background-wrapper_kanban">
               {/* title */}
               <div className='title-wrapper'> 
-                  <h2 className='project-name'>Kanban Screen</h2>
+                  <h2 className='project-name'>{process_name}</h2>
 
                   {/* <div className='new-column-button'>
                     <New_column column_list={column_list} set_column = {set_column_list}></New_column>

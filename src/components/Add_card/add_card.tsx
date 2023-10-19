@@ -16,10 +16,6 @@ export function Add_card(props : AddCardProps) {
                         <div className='plus-icon'><AiOutlinePlus size={30} /></div>
                         <p className='text'>adicionar nova tarefa</p>
                     </button>
-
-                    <button className='file-button'>
-                        <AiFillFileAdd size={22}/>
-                    </button>
                 </div>
                 
             </div>

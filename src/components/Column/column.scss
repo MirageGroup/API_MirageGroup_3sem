@@ -12,8 +12,6 @@
   width: 100%;
   padding: 20px;
   height: 70vh;
-  overflow-x: hidden;
-
   //deals with the scroll
   max-height: 80vh; /* Define a altura máxima da coluna */
   overflow-y: auto;
@@ -95,11 +93,9 @@
 
   margin-top: 0.01vh;
 }
-.card-container {
-  
+
   .card-wrapper {
       width: 100%;
 
       
   }
-}
