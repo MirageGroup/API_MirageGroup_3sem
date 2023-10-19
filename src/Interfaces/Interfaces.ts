@@ -7,7 +7,8 @@ export default interface TaskInterface{
         "deleted_at": null,
         "id": number,
         "created_at": string,
-        "updated_at": string
+        "updated_at": string,
+        "priority":string
       
 }
 

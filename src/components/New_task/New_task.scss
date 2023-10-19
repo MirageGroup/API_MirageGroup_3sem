@@ -27,8 +27,22 @@
     filter: brightness(120%);
     justify-content: flex-start;
 
-    &:hover {
-       
+    .priority_Dropdown{
+        width: 40%;
+        height: 8%;
+        margin-bottom: 1em;
+        background-color: #D9D9D9 ;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        font-weight: bolder;
+        
+        select{
+            outline: none;
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }
     }
 
         h3 {
