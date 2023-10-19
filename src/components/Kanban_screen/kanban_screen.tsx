@@ -49,7 +49,7 @@ export default function Kanban_screen () {
         };
       
         // Poll for updates every 5 seconds (adjust the interval as needed)
-        const pollInterval = setInterval(updateProcesses, 1000);
+        const pollInterval = setInterval(updateProcesses, 500);
       
         // Clean up the interval when the component unmounts
         return () => clearInterval(pollInterval);

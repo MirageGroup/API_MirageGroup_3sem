@@ -90,7 +90,7 @@
 .background-wrapper_kanban {
   z-index: 0;
   padding: 2% 3%;
-  background-color: #58595B;
+  background-color: #0D0E12;
   filter: brightness(110%);
   display: flex;
   flex-direction: column;
@@ -98,6 +98,11 @@
   width: 100%;
   height: 100%;
   max-width: 94vw;
+
+  hr{
+    width: 100%;
+    margin: 1em 0;
+  }
 
 
 .kanban_background{ margin-left: 3em;
@@ -112,10 +117,11 @@
     
   }
 
-  hr{
-    width: 100%;
-    margin: 20px;
+  .project-name{
+    color: #53C4CD;
+    font-weight: bolder;
   }
+
 
   .form-wrapper {
     position: absolute;

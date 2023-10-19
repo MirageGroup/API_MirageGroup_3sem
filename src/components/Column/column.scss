@@ -1,12 +1,13 @@
 .column_title{
-  color: white;
+  color: #53C4CD;
+  font-weight: bolder;
 }
 
 .column_container{
   display: 'flex';
   flex-direction: column;
   align-items: center;
-  background-color: gray;
+  background-color: #292A2D;
   border: 1px solid black;
   border-radius: 10px;
   width: 100%;
@@ -15,8 +16,12 @@
   //deals with the scroll
   max-height: 80vh; /* Define a altura máxima da coluna */
   overflow-y: auto;
-  transition: height 0.3s; /* Adicionando uma transição para suavizar a mudança de altura */
+  transition: height 0.3s;
+   /* Adicionando uma transição para suavizar a mudança de altura */
 
+   hr{
+    margin: 0;
+    }
 
   /* Estilização da barra de rolagem */
   &::-webkit-scrollbar {
@@ -57,6 +62,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+
+  svg{
+    color: #53C4CD;
+  }
 
   hr{
     width: 100%;

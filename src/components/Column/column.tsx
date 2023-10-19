@@ -20,7 +20,7 @@ const Column: React.FC<ColumnProps> = (props) => {
   return (
     <div className='column_container'>
       <section className='title-container'>
-        <h4 className='title'>{props.col.name}</h4>
+        <h4 className='column_title'>{props.col.name}</h4>
         <div className='dots-menu'>
           <BiDotsHorizontalRounded size={35} />
         </div>
