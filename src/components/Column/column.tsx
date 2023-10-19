@@ -8,6 +8,7 @@ import TaskInterface from '../../Interfaces/Interfaces';
 
 interface ColumnProps {
   col: {
+    name: string;
     id: string;
     list: TaskInterface[];
   };
@@ -18,7 +19,7 @@ const Column: React.FC<ColumnProps> = (props) => {
   return (
     <div className='column_container'>
       <section className='title-container'>
-        <h4 className='title'>{props.col.id}</h4>
+        <h4 className='title'>{props.col.name}</h4>
         <div className='dots-menu'>
           <BiDotsHorizontalRounded size={35} />
         </div>

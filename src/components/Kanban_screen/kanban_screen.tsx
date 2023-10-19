@@ -35,9 +35,9 @@ export default function Kanban_screen () {
             const ProcessInfo: TaskInterface[] = await fetchProcessInfo();           
             setTasks(ProcessInfo)           
             const initialColumns = {
-              todo: { id: 'todo', list: ProcessInfo.filter(tasks=> tasks.state === 'todo') },
-              doing: { id: 'doing', list: ProcessInfo.filter(task => task.state === 'doing') },
-              done: { id: 'done', list: ProcessInfo.filter(task => task.state === 'done') },
+              todo: { id: 'todo',name: 'A fazer', list: ProcessInfo.filter(tasks=> tasks.state === 'todo') },
+              doing: { id: 'doing',name: 'Em progresso', list: ProcessInfo.filter(task => task.state === 'doing') },
+              done: { id: 'done',name: 'Finalizado', list: ProcessInfo.filter(task => task.state === 'done') },
             };
             setColumns(initialColumns);
 
@@ -57,16 +57,19 @@ export default function Kanban_screen () {
 
 
 
-  const initialColumns: { [key: string]: { id: string, list: TaskInterface[] } }= {
+  const initialColumns: { [key: string]: { name: string; id: string, list: TaskInterface[] } }= {
     todo: {
+      name: 'A fazer',
       id: 'todo',
       list: []	
     },
     doing: {
+      name: 'Em progresso',
       id: 'doing',
       list: []
     },
     done: {
+      name: 'Finalizado',
       id: 'done',
       list: []
     }
@@ -143,7 +146,7 @@ export default function Kanban_screen () {
         <div className='kanban_background'>
         {Object.values(columns).map(col => (
               <div key={col.id} className='column_wrapper'>
-                <Column col={col} openModal={openModal} />
+                <Column col={col} openModal={openModal}/>
 
                 {isModalOpen && (
                   <div className='form-wrapper'>

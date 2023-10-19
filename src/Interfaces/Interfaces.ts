@@ -23,6 +23,7 @@ export default interface ProcessInteface{
     "deleted_at": null,
     "progress":number|null
     "tasks": TaskInterface[]
+    "progress_string": string
     
   
 }

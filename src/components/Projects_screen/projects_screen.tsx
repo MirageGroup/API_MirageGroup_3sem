@@ -22,7 +22,13 @@ export function ProjectScreen(){
         
         if (totalTasks > 0) {
           const progress = (completedTasks / totalTasks) * 100;
+          const progressString = `${completedTasks}/${totalTasks}`;
+          process.progress_string = progressString
           process.progress = progress
+        }
+        else {
+          process.progress_string = "0/0"
+          process.progress = 0
         } 
 
         
@@ -52,7 +58,6 @@ export function ProjectScreen(){
             let updatedProcesses = await fetchProcesses();
             updatedProcesses = calculate_progress(updatedProcesses)
             setProcesses(updatedProcesses);
-            console.log(processes)
           } catch (error) {
             // Handle any errors
           }
@@ -97,7 +102,7 @@ export function ProjectScreen(){
                 <div className="project_list">
 
                     {processes.map(
-                        (projeto) => projeto.progress != 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
+                        (projeto) => projeto.progress != 100? <ProjectCard progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
                         )
                     }
             </div>
@@ -109,7 +114,7 @@ export function ProjectScreen(){
                 <span></span>
                 <div className="project_list">
                     {processes.map(
-                         (projeto) => projeto.progress == 100? <ProjectCard name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null
+                         (projeto) => projeto.progress == 100? <ProjectCard progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null
                         )
                     }
                 </div>
