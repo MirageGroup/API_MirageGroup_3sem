@@ -31,9 +31,14 @@ export default function Kanban_screen () {
         // Function to fetch and update processes
         const updateProcesses = async () => {
           try {
-            const ProcessInfo = await fetchProcessInfo();
-            setTasks(ProcessInfo)
-            console.log(tasks)
+            const ProcessInfo: TaskInterface[] = await fetchProcessInfo();           
+            setTasks(ProcessInfo)           
+            const initialColumns = {
+              todo: { id: 'todo', list: ProcessInfo.filter(tasks=> tasks.state === 'todo') },
+              doing: { id: 'doing', list: ProcessInfo.filter(task => task.state === 'doing') },
+              done: { id: 'done', list: ProcessInfo.filter(task => task.state === 'done') },
+            };
+            setColumns(initialColumns);
 
           } catch (error) {
             // Handle any errors
@@ -54,7 +59,7 @@ export default function Kanban_screen () {
   const initialColumns: { [key: string]: { id: string, list: TaskInterface[] } }= {
     todo: {
       id: 'todo',
-      list: tasks
+      list: []	
     },
     doing: {
       id: 'doing',
@@ -67,79 +72,46 @@ export default function Kanban_screen () {
   }
   const [columns, setColumns] = useState(initialColumns)
 
-  console.log(columns)
 
-  const onDragEnd = ({ source, destination }: DropResult) => {
-    // Make sure we have a valid destination
-    if (destination === undefined || destination === null) return null
-
-    // Make sure we're actually moving the item
-    if (
-      source.droppableId === destination.droppableId &&
-      destination.index === source.index
-    )
-      return null
-
-    // Set start and end variables
-    const start = columns[source.droppableId]
-    const end = columns[destination.droppableId]
-
-    // If start is the same as end, we're in the same column
-    if (start === end) {
-      // Move the item within the list
-      // Start by making a new list without the dragged item
-      const newList = start.list.filter(
-        (_: any, idx: number) => idx !== source.index
-      )
-
-      // Then insert the item at the right location
-      newList.splice(destination.index, 0, start.list[source.index])
-
-      // Then create a new copy of the column object
-      const newCol = {
-        id: start.id,
-        list: newList
-      }
-
-      // Update the state
-      setColumns(state => ({ ...state, [newCol.id]: newCol }))
-      return null
-    } else {
-      // If start is different from end, we need to update multiple columns
-      // Filter the start list like before
-      const newStartList = start.list.filter(
-        (_: any, idx: number) => idx !== source.index
-      )
-
-      // Create a new start column
-      const newStartCol = {
-        id: start.id,
-        list: newStartList
-      }
-
-      // Make a new end list array
-      const newEndList = end.list
-
-      // Insert the item into the end list
-      newEndList.splice(destination.index, 0, start.list[source.index])
-
-      // Create a new end column
-      const newEndCol = {
-        id: end.id,
-        list: newEndList
-      }
-
-      // Update the state
-      setColumns(state => ({
-        ...state,
-        [newStartCol.id]: newStartCol,
-        [newEndCol.id]: newEndCol
-      }))
-      return null
-    }
+  async function att_tasks(task: TaskInterface) {
+    console.log(task)
+    const response = await axios.patch(`http://localhost:8000/task/${process_id}/${task.id}/update`, task);
+    console.log('Data sent successfully:', response.data);
   }
 
+  const onDragEnd = async ({ source, destination }: DropResult) => {
+    if (!destination) return; // If no valid destination, do nothing
+  
+    const sourceColumn = columns[source.droppableId];
+    const destinationColumn = columns[destination.droppableId];
+    const draggedTask = sourceColumn.list[source.index];
+  
+    // Create new lists for source and destination columns
+    const newSourceList = [...sourceColumn.list];
+    const newDestinationList = [...destinationColumn.list];
+  
+    // Remove the task from the source list
+    newSourceList.splice(source.index, 1);
+  
+    // Insert the task into the destination list
+    newDestinationList.splice(destination.index, 0, draggedTask);
+  
+    // Update the state with the new lists
+    setColumns(state => ({
+      ...state,
+      [sourceColumn.id]: { ...sourceColumn, list: newSourceList },
+      [destinationColumn.id]: { ...destinationColumn, list: newDestinationList }
+    }));
+  
+    try {
+      await att_tasks({ ...draggedTask, state: destinationColumn.id }); // Update the task's column in the database
+      console.log('Task column updated successfully');
+    } catch (error) {
+      console.error('Error updating task column:', error);
+    }
+  };
 
+  
   //MODAL
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -168,14 +140,17 @@ export default function Kanban_screen () {
               </div>
               <hr></hr>
         <div className='kanban_background'>
-            {Object.values(columns).map(col => (
-              <Column col={col} key={col.id} openModal={openModal} />
+        {Object.values(columns).map(col => (
+              <div key={col.id} className='column_wrapper'>
+                <Column col={col} openModal={openModal} />
+
+                {isModalOpen && (
+                  <div className='form-wrapper'>
+                    <New_task closeModal={closeModal} process_id={process_id}/>
+                  </div>
+                )}
+              </div>
             ))}
-            {isModalOpen && (
-                    <div className='form-wrapper'>
-                        <New_task closeModal={closeModal} process_id={process_id}></New_task>
-                    </div>
-              )}
         </div>
       </div>
     </DragDropContext>
