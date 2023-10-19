@@ -102,7 +102,7 @@ export function ProjectScreen(){
                 <div className="project_list">
 
                     {processes.map(
-                        (projeto) => projeto.progress != 100? <ProjectCard progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
+                        (projeto,index) => projeto.progress != 100? <ProjectCard key={index} progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
                         )
                     }
             </div>

@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { New_task } from '../New_task/New_task';
 import TaskInterface from '../../Interfaces/Interfaces';
+import TaskDetailCard from '../TaskDetailCard/TaskDetailCard';
+import { FiX } from 'react-icons/fi';
 
 export default function Kanban_screen () {
 
@@ -129,6 +131,26 @@ export default function Kanban_screen () {
     };
 
 
+    // CARD DETAILS MODAL
+
+    const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+    const [selectedTask, setSelectedTask] = useState<TaskInterface | null>(null);
+    const openModalCard = (task: TaskInterface|null) => {
+      console.log("openModalCard", task)
+      if (task !== null){
+        setSelectedTask(task);
+      } 
+        setIsCardModalOpen(true);
+    };
+    
+    const closeModalCard = () => {
+        setIsCardModalOpen(false);
+    };
+
+
+
+
+
   
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -146,7 +168,7 @@ export default function Kanban_screen () {
         <div className='kanban_background'>
         {Object.values(columns).map(col => (
               <div key={col.id} className='column_wrapper'>
-                <Column col={col} openModal={openModal}/>
+                <Column col={col} openModal={openModal}  openModalCard={openModalCard}/>
 
                 {isModalOpen && (
                   <div className='form-wrapper'>
@@ -156,7 +178,19 @@ export default function Kanban_screen () {
               </div>
             ))}
         </div>
+        {isCardModalOpen && (
+          <div className="cardModalBackdrop">
+            <div className="cardModalCenter">
+                <div className="cardModal">
+                    <TaskDetailCard closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
+                </div>
+            </div>
+          </div>
+                  
+                                
+        )}
       </div>
+      
     </DragDropContext>
   )
 }

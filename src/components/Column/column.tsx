@@ -13,6 +13,7 @@ interface ColumnProps {
     list: TaskInterface[];
   };
   openModal: () => void;
+  openModalCard: (task: TaskInterface|null) => void;
 }
 
 const Column: React.FC<ColumnProps> = (props) => {
@@ -29,7 +30,7 @@ const Column: React.FC<ColumnProps> = (props) => {
         {(provided) => (
           <div className='column_list' ref={provided.innerRef}>
             {props.col.list.map((task, index) => (
-              <Card key={task.id} text={task.name} index={index} task={task} />
+              <Card key={task.id} text={task.name} openModalCard={props.openModalCard} index={index} task={task} />
             ))}
             {provided.placeholder}
             {props.col.id === 'todo' && <Add_card openModal={props.openModal} />}

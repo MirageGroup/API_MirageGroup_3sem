@@ -20,6 +20,7 @@
 
     cursor: pointer;
 
+
     &:hover {
         transition: 3ms;
         filter: brightness(120%);
@@ -37,15 +38,16 @@
         height:80%;
     }
 
+    .date{
+        margin: 0 6%;
+    }
+
     .card-container {
         display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: flex-end;
         align-items: center;
         gap: 6em;
         height: 7vh;
-        
+        justify-content: self-end;
         font-weight: 400;
         color: white;
 
@@ -98,4 +100,5 @@
         }
         
     }
+
 }

@@ -1,0 +1,43 @@
+.confirm_delete_wrapper{
+    background-color: #58595B;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-items: center;
+    padding: 3%;
+
+
+    .confirm_buttons{
+        display: flex;
+        gap: 10%;
+        width: 50%;
+        
+
+
+        button{
+            
+            color: black;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 2px 2px 2px black;
+            font-weight: 900;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            margin: 0.2em;
+
+            width: 50%;
+            height: 5vh;
+            cursor: pointer;
+            
+            &:hover {
+                filter: brightness(120%);
+            }
+        }
+    }
+}
