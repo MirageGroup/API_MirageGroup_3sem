@@ -6,8 +6,7 @@ import axios from 'axios';
 
 interface props {
     closeModal : () => void;
-    process_id:any
-    
+    process_id:any;
 }
 
 export function New_task(props : props) {
@@ -20,11 +19,12 @@ export function New_task(props : props) {
 
     const handleSubmit = async () => {
 
+        
         const data = {
             name: taskName,
             description: description,
             deadline: limitDate, 
-            state: "Não iniciado"
+            state: 'todo'
         };
       console.log(data)
   

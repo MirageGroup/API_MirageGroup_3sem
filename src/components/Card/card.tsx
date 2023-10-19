@@ -1,19 +1,29 @@
+// src/Item.tsx
+import React from 'react'
+import { Draggable } from 'react-beautiful-dnd'
 import './card.scss'
 import {BiSolidUserCircle} from 'react-icons/bi'
 import {FaRegTrashCan} from 'react-icons/fa6'
 import {AiFillFileAdd} from 'react-icons/ai'
 
-interface props {
-    cardName: string,
+// TypeScript only
+interface ItemProps {
+  text: string
+  index: number
 }
 
-export function Card (props : props) {
-    return (
-        <>
-            <section className='super-container'>
+// ": React.FC<ItemProps>" is TypeScript only
+const Card: React.FC<ItemProps> = ({ text, index }) => {
+  return (
+    <Draggable draggableId={text} index={index}>
+      {provided => (
+        <section className='super-container'
+        ref={provided.innerRef}
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}>
                 <div className='color'></div>
                 <div className='card-container'>
-                    <div className='name-paragraph'><p>{props.cardName}</p></div>
+                    <div className='name-paragraph'><p>{text}</p></div>
                     <div className='date'><p>dd/mm/aaaa hh:mm</p></div>
                     <div className='picture'><BiSolidUserCircle size={29}/></div>
                 </div>
@@ -23,6 +33,9 @@ export function Card (props : props) {
                     <div className='trash'><FaRegTrashCan size={19}/></div>
                 </div>
             </section>
-        </>
-    )
+      )}
+    </Draggable>
+  )
 }
+
+export default Card
