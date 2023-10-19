@@ -29,10 +29,10 @@ const Column: React.FC<ColumnProps> = (props) => {
         {(provided) => (
           <div className='column_list' ref={provided.innerRef}>
             {props.col.list.map((task, index) => (
-              <Card key={task.id} text={task.name} index={index}  task = {task} />
+              <Card key={task.id} text={task.name} index={index} task={task} />
             ))}
             {provided.placeholder}
-            <Add_card openModal={props.openModal}></Add_card>
+            {props.col.id === 'todo' && <Add_card openModal={props.openModal} />}
           </div>
         )}
       </Droppable>
