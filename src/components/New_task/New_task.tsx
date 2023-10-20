@@ -19,8 +19,6 @@ export function New_task(props : props) {
 
 
     const handleSubmit = async () => {
-
-        
         const data = {
             name: taskName,
             description: description,
@@ -28,7 +26,6 @@ export function New_task(props : props) {
             priority:priority,
             state: 'todo'
         };
-      console.log(data)
   
       try {
         const response = await axios.post(`http://localhost:8000/task/${props.process_id}/create`, data);
@@ -55,7 +52,7 @@ export function New_task(props : props) {
             <div className='form-container'>
                 <div className='form-title'><h3>Nova Tarefa</h3></div>
                 <button className='close-button-form' onClick={props.closeModal}><IoMdClose size={35} className='button'/></button>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa' onChange={(e) => setTaskName(e.target.value)}  required/>
 
                     <input type="text" name="responsible-name" className='responsible-name' placeholder='Responsável principal'  required />
@@ -80,7 +77,7 @@ export function New_task(props : props) {
 
                     <textarea placeholder='Descrição' rows={5} cols={30} onChange={(e) => setDescription(e.target.value)}></textarea>
                     
-                    <button type ="button" className='submit-button' onSubmit={handleSubmit}>Adicionar Tarefa</button>
+                    <button type ="submit" className='submit-button' >Adicionar Tarefa</button>
                 </form>
             </div>
             
