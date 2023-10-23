@@ -93,8 +93,8 @@ export function IsoScreen(){
             </div>
 
             {isModalOpen && (
-                <div className="modalBackdrop">
-                    <div className="modalCenter">
+                <div className="isomodalBackdrop">
+                    <div className="isomodalCenter">
                         <div className="modal">
                             <div className="modal_icons">
                                 <FiX onClick={closeModal} size={30}></FiX>
