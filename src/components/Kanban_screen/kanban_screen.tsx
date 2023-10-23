@@ -49,7 +49,7 @@ export default function Kanban_screen () {
         };
       
         // Poll for updates every 5 seconds (adjust the interval as needed)
-        const pollInterval = setInterval(updateProcesses, 500);
+        const pollInterval = setInterval(updateProcesses, 1000);
       
         // Clean up the interval when the component unmounts
         return () => clearInterval(pollInterval);
@@ -84,36 +84,48 @@ export default function Kanban_screen () {
     const response = await axios.patch(`http://localhost:8000/task/${process_id}/${task.id}/update`, task);
     console.log('Data sent successfully:', response.data);
   }
-
+  
   const onDragEnd = async ({ source, destination }: DropResult) => {
     if (!destination) return; // If no valid destination, do nothing
-  
+    
+    console.log(source)
+    console.log(destination)
+    
     const sourceColumn = columns[source.droppableId];
     const destinationColumn = columns[destination.droppableId];
     const draggedTask = sourceColumn.list[source.index];
-  
+    
     // Create new lists for source and destination columns
     const newSourceList = [...sourceColumn.list];
     const newDestinationList = [...destinationColumn.list];
   
     // Remove the task from the source list
     newSourceList.splice(source.index, 1);
-  
+    
     // Insert the task into the destination list
     newDestinationList.splice(destination.index, 0, draggedTask);
-  
+    
     // Update the state with the new lists
+    if(destination.droppableId == source.droppableId){
+      console.log("ta fazendo nada")
+      return
+    }
+    
     setColumns(state => ({
       ...state,
       [sourceColumn.id]: { ...sourceColumn, list: newSourceList },
       [destinationColumn.id]: { ...destinationColumn, list: newDestinationList }
     }));
-  
-    try {
-      await att_tasks({ ...draggedTask, state: destinationColumn.id }); // Update the task's column in the database
-      console.log('Task column updated successfully');
-    } catch (error) {
-      console.error('Error updating task column:', error);
+    
+
+    if (source.droppableId != destination.droppableId){
+        try {
+          await att_tasks({ ...draggedTask, state: destinationColumn.id }); // Update the task's column in the database
+          console.log('Task column updated successfully');
+        } catch (error) {
+          console.error('Error updating task column:', error);
+        }
+
     }
   };
 
