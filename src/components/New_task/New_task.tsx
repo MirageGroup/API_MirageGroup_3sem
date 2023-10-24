@@ -7,6 +7,7 @@ import axios from 'axios';
 interface props {
     closeModal : () => void;
     process_id:any;
+    column_length:number
 }
 
 export function New_task(props : props) {
@@ -19,19 +20,20 @@ export function New_task(props : props) {
 
 
     const handleSubmit = async () => {
+
+        console.log(props.column_length)
         const data = {
             name: taskName,
             description: description,
             deadline: limitDate, 
             priority:priority,
-            state: 'todo'
+            state: 'todo',
+            list_index:props.column_length + 1
         };
   
       try {
         const response = await axios.post(`http://localhost:8000/task/${props.process_id}/create`, data);
         console.log('Data sent successfully:', response.data);
-
-
         props.closeModal()
         // Optionally, reset the form fields and state
         setTaskName('');

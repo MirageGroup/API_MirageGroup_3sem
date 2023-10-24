@@ -63,7 +63,7 @@ const Card: React.FC<ItemProps> = (props) => {
 
   return (
     <>
-    <Draggable key={props.task.id} draggableId={props.text} index={props.index}>
+    <Draggable  draggableId={props.text} index={props.index}>
       {provided => (
         <section className='super-container'
         

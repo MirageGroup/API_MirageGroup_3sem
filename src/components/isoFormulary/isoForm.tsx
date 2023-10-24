@@ -18,8 +18,6 @@ export function IsoForm({close_modal_function}:any){
             description: description
 
         };
-      console.log(data)
-  
       try {
         close_modal_function()
 

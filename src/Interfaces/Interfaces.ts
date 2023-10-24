@@ -9,6 +9,7 @@ export default interface TaskInterface{
         "created_at": string,
         "updated_at": string,
         "priority":string
+        "list_index":number
       
 }
 
