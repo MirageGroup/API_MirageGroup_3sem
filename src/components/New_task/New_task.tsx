@@ -16,7 +16,7 @@ export function New_task(props : props) {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
     const [limitDate, setLimitDate] = useState('');
-    const [priority, setPriority] = useState('')
+    const [priority, setPriority] = useState('verde')
 
 
     const handleSubmit = async () => {
