@@ -20,7 +20,6 @@ interface ItemProps {
 
 const getPriorityColor = (priority:string) => {
 
-  console.log(priority)
   switch (priority) {
     case 'vermelho':
       return '#FF0000'; // Vermelho
@@ -64,7 +63,7 @@ const Card: React.FC<ItemProps> = (props) => {
 
   return (
     <>
-    <Draggable draggableId={props.text} index={props.index}>
+    <Draggable  draggableId={props.text} index={props.index}>
       {provided => (
         <section className='super-container'
         
