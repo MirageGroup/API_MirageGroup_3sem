@@ -85,8 +85,6 @@ export function ProjectScreen(){
         setIsModalOpen(false);
       };
 
-
-
     return(
         <div className="screen_wrapper">
 
@@ -102,7 +100,7 @@ export function ProjectScreen(){
                 <div className="project_list">
 
                     {processes.map(
-                        (projeto,index) => projeto.progress != 100? <ProjectCard key={index} progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null  
+                        (projeto,index) => projeto.progress != 100? <ProjectCard key={index} progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id} deadline={projeto.deadline}  users={projeto.users.length} ></ProjectCard>:null  
                         )
                     }
             </div>
@@ -114,7 +112,7 @@ export function ProjectScreen(){
                 <span></span>
                 <div className="project_list">
                     {processes.map(
-                         (projeto) => projeto.progress == 100? <ProjectCard progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id}></ProjectCard>:null
+                         (projeto) => projeto.progress == 100? <ProjectCard progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id}  deadline={projeto.deadline} users={projeto.users.length}></ProjectCard>:null
                         )
                     }
                 </div>

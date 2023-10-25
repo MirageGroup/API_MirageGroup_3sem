@@ -5,18 +5,18 @@
 }
 
 .card_wrapper{
-    width: 12%;
+    a{
+        text-decoration: none;
+    }
+    width: 14%;
     border-radius: 10px;
-    height: 230px;
     text-align: center;
     h4{
         color: #53C4CD;
         font-weight: bold;
     }
-    margin-bottom: 2%;
     margin:1.8%;
-
-
+    
     .process_card_lower{
         display: flex;
         flex-direction: column;
@@ -24,23 +24,28 @@
         justify-content: center;
         gap: 2%;
     }
-
+    
 }
 
+.main_card:hover{
+    transform: scale(1.05);
+    border: 2px solid #53C4CD;
+    transition: 0.1s;
+}
 
 .main_card{
-    background-color: #292A2D;
-    width: 100%;
-    height: 90%;
+    background: rgb(41,42,45);
+    background: linear-gradient(180deg, rgba(41,42,45,1) 0%, rgba(33,33,46,1) 49%, rgba(63,63,84,1) 100%);
+    width: 120%;
+    height: 105%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
     
-
-
-
+    .projectName {
+        font-size: 120%;
+    }
 }
 
 .icons{
@@ -52,13 +57,14 @@
 }
 
 .progress-bar {
-    width: 100%;
+    width: 90%;
+    margin-bottom: 5%;
     background-color: #ddd;
     height: 20px;
     border-radius: 10px;
-  }
+}
   
-  .progress {
+.progress {
     width: 0;
     height: 100%;
     background-color: #53C4CD; /* Cor da barra de progresso */
