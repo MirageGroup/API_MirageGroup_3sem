@@ -1,11 +1,11 @@
-
 import { useState } from 'react'
 import React from 'react'
 import './login_style.scss'
 import { Recovery_screen } from '../Recovery_screen/screen'
 
+const loginAuthentication = async () => {
 
-
+}
 
 export function Login(){
 
@@ -22,20 +22,18 @@ export function Login(){
                 {/* <button className='mode_button' onClick={() => setLoginMode("login")}>Login</button>
                 <button className='mode_button' onClick={() => setLoginMode("cadastro")}>Cadastro</button> */}
                 </div>
-                <h1>Login</h1>
+                <h1>SHORTS</h1>
+                <hr></hr>
                 <form>
                     <div className='input_wrapper'>
-                        <label htmlFor='input_email'>Email Institucional</label>
-                        <input placeholder='digite seu email' id='input_email'></input>
+                        <label htmlFor='input_email'>Email Corporativo</label>
+                        <input type='email' placeholder='digite seu email' id='input_email'></input>
                     </div>
                     <div className='input_wrapper'>
                         <label htmlFor='input_senha'>Senha</label>
-                        <input placeholder='digite sua senha' id='input_senha'></input>
+                        <input type='password' placeholder='digite sua senha' id='input_senha'></input>
                     </div>
-                    <button>Confirmar</button>
-                    <div className='paragraph'>
-                        <p>Não possui cadastro? <span onClick={() => setLoginMode("cadastro")}>Cadastrar</span></p>
-                    </div>            
+                    <button>Entrar</button>         
                 </form>
             </div>
         )
