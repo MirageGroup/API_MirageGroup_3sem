@@ -14,14 +14,15 @@ function App() {
 
   return (
     <Router>
-      <Sidebar></Sidebar>
         <Routes>
           <Route path='/' Component={LoginScreen}/>
+        </Routes>
+      <Sidebar></Sidebar>
+        <Routes>
           <Route path='/home' Component={Home_page}/>
           <Route path='/iso' Component={IsoScreen}/>
           <Route path='/project_screen' Component={ProjectScreen}/>
           <Route path='/kanban/:id/:name' Component={Kanban_screen}/>
-          
         </Routes>
     </Router> 
 

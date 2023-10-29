@@ -9,7 +9,5 @@ export function LoginScreen(){
         <div className="screen">
             <Login></Login>
         </div>
-
-        
     )
 }
