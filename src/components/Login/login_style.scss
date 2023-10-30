@@ -4,14 +4,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    overflow: hidden;
+}
+
 .login_wrapper{
     border-radius: 40px;
     width: 25%;
     height: 70%;
+    margin-bottom: 5%;
     display: flex;
     flex-direction: column;
     background-color: #58595B;
-    border: 1px solid;
+    border: #53C4CD 1px solid;
     justify-content: center;
     align-content: center;
     padding: 4em;
@@ -38,7 +43,12 @@
     h1 {
         color: #53C4CD;
         font-family: 'Poppins', sans-serif;
+        font-size: 390%;
         font-weight: bolder;
+    }
+
+    hr {
+        width:98%;
     }
     .titulo{
         color: white;
@@ -68,6 +78,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 40%;
 
         .input_wrapper{
             display: flex;
@@ -88,6 +99,7 @@
             }
             input{
                 background-color: #292A2D;
+                color: #89dce2;
                 border-radius: 8px;
                 outline: none;
                 padding: 1em;
@@ -114,15 +126,17 @@
 
         button{
             margin: 0.5em;
+            margin-top: 6em;
             border-radius: 5px;
             background-color: #53C4CD;
             border: 1px solid;
-            width: 20%;
-            height: 2.5em;
+            width: 30%;
+            height: 3em;
             transition: 0.5s;
             cursor: pointer;
             min-width: 80px;
             font-family: 'Poppins', sans-serif;
+            font-size: 100%;
             font-weight: bold;
 
              

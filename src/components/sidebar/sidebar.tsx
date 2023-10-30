@@ -9,46 +9,51 @@ import * as IoIcons from "react-icons/io";
 import  logoionic from '../../img/logoionic.png'
 
 export function Sidebar() {
-  const [navbar, setnavbar] = useState(false)
+    const [navbar, setnavbar] = useState(false)
 
-  const showNavbar = () => setnavbar(!navbar)
-  return(
+    const showNavbar = () => setnavbar(!navbar)
+
+    const checkUserLogin = async () => {
+        
+    }
+  
+    return(
     <>
     <IconContext.Provider value={{color: '#53C4CD'}}>
-      <div className='navbar'>
+        <div className='navbar'>
         <Link to="#" className='menu-bars'>
-          <FaIcons.FaBars onClick={showNavbar}/>
+            <FaIcons.FaBars onClick={showNavbar}/>
         </Link>
         <img src={logoionic}/>
         <Link className="icone_cadastro" to="/screen">
-          <IoIcons.IoMdPeople />
+            <IoIcons.IoMdPeople />
         </Link>
-      </div>
-      <nav className={navbar ? 'nav-menu active' : 'nav-menu'}>
+        </div>
+        <nav className={navbar ? 'nav-menu active' : 'nav-menu'}>
         <ul className='nav-menu-itens' onClick={showNavbar}>
-          <li className="navbar-toggle">
+            <li className="navbar-toggle">
             <Link to="#" className='menu-bars'>
-              <AiIcons.AiOutlineClose/>
+                <AiIcons.AiOutlineClose/>
             </Link>
-          </li>
-          {sidebarData.map((item, index) => {
+            </li>
+            {sidebarData.map((item, index) => {
             return (
-              <li key={index} className={item.cName}>
+                <li key={index} className={item.cName}>
                 <Link to={item.path}>
 
                 {item.icon}
                 <span>{item.title}</span>
                 </Link>
                 
-              </li>
+                </li>
             )
-          }
-          )}
+            }
+            )}
         </ul>
-      </nav>
+        </nav>
     </IconContext.Provider>
-  </>
-  )
+    </>
+    )
 }
 
 export default Sidebar;

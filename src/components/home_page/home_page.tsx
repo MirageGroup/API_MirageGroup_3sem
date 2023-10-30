@@ -8,7 +8,6 @@ export function Home_page(){
 
     const [isModalOpen, setIsModalOpen] = useState(false); 
 
-
     const openModal = () => {
         setIsModalOpen(true);
       };
