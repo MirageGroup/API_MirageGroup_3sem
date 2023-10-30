@@ -20,34 +20,35 @@ function App() {
                 </Routes>
                 <Sidebar />
                 <Routes>
-                    <Route path="/home" element={protectedRoute(<Home_page />)} />
-                    <Route path="/iso" element={<IsoScreen />} />
-                    <Route path="/project_screen" element={<ProjectScreen />} />
-                    <Route path="/kanban/:id/:name" element={<Kanban_screen />} />
+                    <Route path="/home" element={<ProtectedRoute><Home_page/></ProtectedRoute>} />
+                    <Route path="/iso" element={<ProtectedRoute><IsoScreen/></ProtectedRoute>} />
+                    <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
+                    <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
                 </Routes>
             </Router>
         </UserProvider>
     );
 }
 
-const protectedRoute = (children) => {  
-    const [isAuthenticated, setIsAuthenticated] = useState(false)
+const ProtectedRoute = ({ children }) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const { user, setUser } = useUser(); // Use useUser dentro de um componente funcional
 
     useEffect(() => {
         const checkAuthentication = async () => {
-            const loggedUser = await useAuth()            
-            setIsAuthenticated(loggedUser)
+            const loggedUser = await useAuth(); // Certifique-se de que useAuth seja importado corretamente
+            setIsAuthenticated(loggedUser);
         }
 
         checkAuthentication()
     }, [])
 
-    if(isAuthenticated === null) {
+    if (isAuthenticated === null) {
         return <Navigate to="/login" />
-    }else{
-        return children
+    } else {
+        setUser(isAuthenticated);
+        return children;
     }
-
 }
 
 export default App
