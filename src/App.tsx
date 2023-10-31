@@ -16,7 +16,8 @@ function App() {
         <UserProvider>
             <Router>
                 <Routes>
-                    <Route path="/login" element={<LoginScreen />} />
+                    <Route path='*' element={<InvalidRoute></InvalidRoute>} />
+                    <Route path="/login" element={<LoginCheck> <LoginScreen /> </LoginCheck>} />
                 </Routes>
                 <Sidebar />
                 <Routes>
@@ -25,6 +26,8 @@ function App() {
                     <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
                     <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
                 </Routes>
+                <Routes>
+                </Routes>
             </Router>
         </UserProvider>
     );
@@ -32,15 +35,15 @@ function App() {
 
 const ProtectedRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const { user, setUser } = useUser(); // Use useUser dentro de um componente funcional
+    const { user, setUser } = useUser();
 
     useEffect(() => {
-        const checkAuthentication = async () => {
-            const loggedUser = await useAuth(); // Certifique-se de que useAuth seja importado corretamente
+        const CheckAuthentication = async () => {
+            const loggedUser = await useAuth();
             setIsAuthenticated(loggedUser);
         }
 
-        checkAuthentication()
+        CheckAuthentication()
     }, [])
 
     if (isAuthenticated === null) {
@@ -48,6 +51,30 @@ const ProtectedRoute = ({ children }) => {
     } else {
         setUser(isAuthenticated);
         return children;
+    }
+}
+
+const InvalidRoute = ({ }) => {
+    return <Navigate to="/home" />
+}
+
+const LoginCheck = ({ children }) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const { user, setUser } = useUser();
+    
+    useEffect(() => {
+        const CheckAuthentication = async () => {
+            const loggedUser = await useAuth();
+            setIsAuthenticated(loggedUser);
+        }
+
+        CheckAuthentication()
+    }, [])
+
+    if(isAuthenticated){
+        return <Navigate to="/home" />
+    }else{
+        return children
     }
 }
 

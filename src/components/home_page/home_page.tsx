@@ -3,10 +3,15 @@ import * as FaIcons from "react-icons/fa";
 import { useState } from "react";
 import { Process_card } from "../Process_Card/process_card";
 import { FiX } from "react-icons/fi";
+import { useUser } from '../../contexts/UserContext';
 
 export function Home_page(){
 
     const [isModalOpen, setIsModalOpen] = useState(false); 
+
+    const { user } = useUser()
+    console.log("tela HOME ", user);
+    
 
     const openModal = () => {
         setIsModalOpen(true);
