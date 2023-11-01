@@ -9,10 +9,6 @@ export function Home_page(){
 
     const [isModalOpen, setIsModalOpen] = useState(false); 
 
-    const { user } = useUser()
-    console.log("tela HOME ", user);
-    
-
     const openModal = () => {
         setIsModalOpen(true);
       };

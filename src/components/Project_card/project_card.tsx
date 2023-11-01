@@ -26,7 +26,6 @@ function formatarData(data: string): string {
 }
 
 export function ProjectCard(props:ProjectCardProps){
-  console.log(props.users)
 
     return(
         <div className='card_wrapper'>
