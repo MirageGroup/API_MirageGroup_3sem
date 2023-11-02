@@ -10,6 +10,8 @@ import Kanban_screen from './components/Kanban_screen/kanban_screen'
 import React, { useEffect, useState } from 'react';
 import useAuth from './middlewares/auth';
 import { UserProvider, useUser } from './contexts/UserContext';
+import { RegisterScreen } from './components/RegisterScreen/RegisterScreen';
+import UsersScreen from './components/UsersScreen/UsersScreen';
 
 function App() {
     return (
@@ -24,6 +26,7 @@ function App() {
                     <Route path="/iso" element={<ProtectedRoute><IsoScreen/></ProtectedRoute>} />
                     <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
                     <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
+                    <Route path="/users" element={<ProtectedRoute><UsersScreen /></ProtectedRoute>} />
                 </Routes>
                 <Routes>
                 </Routes>
