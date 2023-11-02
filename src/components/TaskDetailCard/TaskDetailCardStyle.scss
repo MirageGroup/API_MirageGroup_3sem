@@ -3,26 +3,26 @@
     border: 1px solid #ccc;
     padding: 0.5em 1em;
     border-radius: 15px;
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     .task-title {
       font-size: 2.3rem;
       margin: 0;
-      color: whitesmoke;
+      color: #53C4CD;
       
    
     }
     .task-description{
-      color: white;
+      color: #53C4CD;
     }
 
 
     .task-details{
       p{
-        color:black;
+        color:white;
       }
     }
 
@@ -34,7 +34,7 @@
 
     p {
     margin: 10px 0;
-    color: #555;
+    color: white;
     }
 
     // PARTE INFERIOR DO CARD

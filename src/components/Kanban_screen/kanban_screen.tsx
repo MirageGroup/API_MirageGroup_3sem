@@ -3,7 +3,7 @@ import Column from '../Column/column'
 import {DragDropContext, DropResult} from 'react-beautiful-dnd'
 import './kanban_screen.scss'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { New_task } from '../New_task/New_task';
 import TaskInterface from '../../Interfaces/Interfaces';
 import TaskDetailCard from '../TaskDetailCard/TaskDetailCard';
@@ -233,6 +233,12 @@ export default function Kanban_screen () {
 
       <div className="background-wrapper_kanban">
               {/* title */}
+              <div className='back'>
+                <Link to='/project_screen'>
+                  <button>Voltar</button>
+                </Link>
+              
+              </div>
               <div className='title-wrapper'> 
                   <h2 className='project-name'>{process_name}</h2>
 
