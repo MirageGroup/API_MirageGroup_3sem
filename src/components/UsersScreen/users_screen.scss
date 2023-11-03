@@ -34,28 +34,32 @@ html {
     }
 }
 
-.table-container {
-    height: 600px;
-    overflow-y: auto;
+.table_container {
+    height: 700px;
+    overflow: auto;
+    position: relative;
     padding-bottom: 10px;
 }
 
 table {
-    width: 90%;
+    width: 70%;
     border-collapse: collapse;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-td {
-    border: 2px solid rgb(27, 27, 29);
-    padding: 8px;
-    text-align: left;
-}
 
 th {
-    border: 2px solid rgb(33, 33, 36);
+    border-bottom: 2px solid rgb(33, 33, 36);
     position: sticky;
     top: 0;
     background-color: rgb(81, 81, 85);
+}
+
+td {
+    padding: 8px;
+    text-align: left;
 }
 
 tr:nth-child(even) {
@@ -68,4 +72,15 @@ tr:nth-child(odd) {
 
 h1 {
     font-size: 24px;
+}
+
+.register-btn {
+    border: 1px solid black;
+    margin-left: 75.66%;
+    margin-top: 1%;
+    background-color: orange;
+    color: #000000;
+    font-weight: bolder;
+    padding: 3px;
+    font-size: 17px;
 }

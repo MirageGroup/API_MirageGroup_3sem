@@ -27,6 +27,7 @@ function App() {
                     <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
                     <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
                     <Route path="/users" element={<ProtectedRoute><UsersScreen /></ProtectedRoute>} />
+                    <Route path="/users/register" element={<ProtectedRoute><RegisterScreen /></ProtectedRoute>} />
                 </Routes>
                 <Routes>
                 </Routes>

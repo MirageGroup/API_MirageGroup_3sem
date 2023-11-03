@@ -60,9 +60,6 @@ export function Login() {
                         <label htmlFor='input_senha'>Senha</label>
                         <input type='password' placeholder='digite sua senha' id='input_senha' onChange={(e) => setPassword(e.target.value)}></input>
                     </div>
-                    <div className='paragraph'>
-                        <p>não tem uma conta? <span onClick={() => setLoginMode("cadastro")}>Realizar Cadastro</span></p>
-                    </div>
                     <button onClick={login}>Entrar</button>         
                 </form>
             </div>

@@ -8,88 +8,75 @@ html {
     overflow: hidden;
 }
 
-.register_wrapper{
-    border-radius: 40px;
-    height: 70%;
+.register_wrapper {
+    border-radius: 20px;
+    border: #292A2D solid 5px;
+    height: 75%;
     width: 40%;
-    display: flex;
-    flex-direction: column;
     background-color: #58595B;
-    border: #53C4CD 1px solid;
     justify-content: center;
     align-items: center;
     padding: 4em;
     margin-bottom: 4%;
 
-    .buttons{
+    .form_wrapper {
         display: flex;
-        justify-content: space-around   ;
-
-        .mode_button{
-            margin: 0.5em;
-            border-radius: 5px;
-            background-color: #53C4CD;
-            border: 1px solid;
-            width: 30%;
-            height: 2.5em;
-            transition: 0.5s;
-            cursor: pointer;
-            min-width: 80px;
-            }
+        flex-direction: row;
+        width: 110%;
     }
+
+    .checkbox_wrapper {
+        display: flex;
+        font-size: 110%;
+        margin-top: 4%;
+        width: 100%;
+        justify-content: space-evenly;
+
+        label {
+            padding: 4%;
+        }
+    }
+
+    .btn_wrapper {
+        display: flex;
+        flex-direction: row;
+        padding-right: 10%;
+        width: 80%;
+        margin-left: 40%;
+        margin-bottom: 20%;
+
+        button {
+            margin-left: 1%;
+            margin-right: 2%;
+        }
+
+        .cancel {
+            background-color: rgb(158, 152, 150);
+        }
+    }
+
     h1 {
         color: #53C4CD;
         font-family: 'Poppins', sans-serif;
-        font-size: 300%;
+        margin-left: 22.9%;
+        font-size: 220%;
         font-weight: bolder;
-        
     }
 
-    hr {
-        width:100%;
-    }
-    .titulo{
-        color: white;
-        display: flex;
-        justify-content: center;
-        @keyframes blink {
-            0% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0.5;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
-            animation: blink 1s step-start infinite;
-        }
-    img {
-        border-radius: 50%;
-        width: 180px; /* Defina um tamanho adequado para a imagem */
-        height: 180px; /* Mantenha a mesma altura para manter a proporção */
-        align-self: center; /* Para centralizar a imagem horizontalmente */
-    }
-
-    form{
+    form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-
-        .input_wrapper{
+        .input_wrapper {
             display: flex;
             flex-direction: column;
             margin: 1em;
             width: 100%;
             min-width: 150px;
-  
-            
-        
-        
-            label{
+
+            label {
                 color: #53C4CD;
                 margin-bottom: 0.5em;
                 text-align: left;
@@ -97,7 +84,8 @@ html {
                 font-family: 'Poppins', sans-serif;
                 font-weight: bold;
             }
-            input{
+
+            input {
                 background-color: #292A2D;
                 color: #89dce2;
                 border-radius: 8px;
@@ -107,26 +95,25 @@ html {
                 cursor: pointer;
                 transition: 0.5s;
                 font-family: 'Poppins', sans-serif;
-
             }
-            input:hover{
+
+            input:hover {
                 filter: brightness(140%);
             }
-            
         }
 
         span {
             color: #53C4CD;
             font-weight: 700;
-            cursor:pointer;
+            cursor: pointer;
         }
 
-        button{
-
+        button {
             border-radius: 5px;
             background-color: #53C4CD;
             border: 1px solid;
-            width: 50%;
+            margin-top: 5%;
+            width: 30%;
             height: 3em;
             transition: 0.5s;
             cursor: pointer;
@@ -134,37 +121,31 @@ html {
             font-family: 'Poppins', sans-serif;
             font-size: 100%;
             font-weight: bold;
-
-             
         }
+
         button:hover {
             filter: brightness(140%);
         }
-
-        
     }
 
-    .dropdown_wrapper{
+    .dropdown_wrapper {
         width: 100%;
         padding: 1em;
-        background-color: #292A2D ;
+        background-color: #292A2D;
         border-radius: 10px;
         border: 1px solid rgba(0, 0, 0, 0.6);
         color: gray;
-        
-        select{
+
+        select {
             outline: none;
-            border:1px solid rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.6);
             padding: 1em;
             cursor: pointer;
             transition: 0.5s;
-
         }
 
-        option{
+        option {
             color: white;
         }
     }
-
 }
-
