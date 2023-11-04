@@ -10,47 +10,40 @@ const Dropzone = (props) => {
     const [selectedFile, setSelectedFile] = useState(null);
 
     const { id } = useParams()
-    const taskId = props.taskId  
-    
-    const formData = new FormData()
+    const taskId = props.taskId
 
     const onDrop = useCallback(acceptedFiles => {
         const file = acceptedFiles[0];
         setSelectedFile(file)
     }, [])
 
-    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         const formData = new FormData()
         formData.append('file', selectedFile)
 
-        console.log("filé: ", selectedFile);
-        console.log("formdata: ", formData.values);
-        
-        try{
-            await axios.post(`http://localhost:8000/task/${id}/${taskId}/addevidence`, 
-            formData, {
+        try {
+            await axios.post(`http://localhost:8000/task/${id}/${taskId}/addevidence`,
+                formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-        }catch(error){
+        } catch (error) {
             console.log(error);
         }
     }
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop })
-
     return (
         <div className='dropzone'{...getRootProps()}>
             <input type='file' required {...getInputProps()} />
-            { <p>
+                <p>
                     <FiUpload />
                     Clique ou arraste arquivos para anexar evidencias
                 </p>
-            }
-            <button type='submit' onClick={handleSubmit}>Enviar Evidência</button>
+            <button type='submit' className='submit-btn' onClick={handleSubmit}>Enviar Evidência</button>
         </div>
     )
 }

@@ -1,5 +1,7 @@
 .dropzone {
     height: 300px;
+    width: 58%;
+    margin-left: 25%;
     background: #58595B;
     border-radius: 10px;
     justify-content: center;
@@ -33,4 +35,8 @@
     width: 24px;
     height: 24px;
     margin-bottom: 8px;
+}
+
+.submit-btn {
+    margin-left: 30%;
 }

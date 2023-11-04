@@ -2,135 +2,134 @@
     background-color: #58595B;
     border: 1px solid #ccc;
     padding: 0.5em 1em;
+    margin-left: 21%;
     border-radius: 15px;
-    height: 90%;
-    width: 80%;
+    height: 88%;
+    width: 55%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     .task-title {
-      font-size: 2.3rem;
-      margin: 0;
-      color: #53C4CD;
-      
-   
-    }
-    .task-description{
-      color: #53C4CD;
+        font-size: 2.3rem;
+        margin: 0;
+        color: #53C4CD;
     }
 
+    .task-description {
+        color: #53C4CD;
+    }
 
-    .task-details{
-      p{
-        color:white;
-      }
+    .task-details {
+        p {
+            color: white;
+        }
     }
 
     hr {
-      margin: 15px 0;
-      border: none;
-      border-top: 1px solid #ccc;
+        margin: 15px 0;
+        border: none;
+        border-top: 1px solid #ccc;
     }
 
     p {
-    margin: 10px 0;
-    color: white;
+        margin: 10px 0;
+        color: white;
     }
 
     // PARTE INFERIOR DO CARD
 
-    .lower_card{
-      display: flex;
-      height: 75%;
-      flex-direction: column;
-      justify-content: space-between;
+    .lower_card {
+        display: flex;
+        height: 75%;
+        flex-direction: column;
+        justify-content: space-between;
 
-          // Conteudo Inferior
+        // Conteudo Inferior
 
-          .task-details {
+        .task-details {
             display: flex;
             width: 20%;
             flex-direction: column;
             justify-content: space-between;
 
 
-            .detail_item{
-              margin: 10px;
-              
-              h3{
-                margin: 0;
-              }
-              h4{
-                margin: 0;
-              }
+            .detail_item {
+                margin: 10px;
+
+                h3 {
+                    margin: 0;
+                }
+
+                h4 {
+                    margin: 0;
+                }
             }
-            
-          }
+
+        }
 
 
-          // Botões inferiores
-          .lower_buttons{
+        // Botões inferiores
+        .lower_buttons {
             display: flex;
             justify-content: flex-end;
             align-items: center;
             width: 100%;
             height: 10%;
-      
-            button{
-              background-color: #58595B; 
-        
-              border-radius: 10px;
-              border: none;            
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              gap: 2em;
 
-              cursor: pointer;
-              
-              svg{
-                 
-                &:hover {
-                  color: #53C4CD;
-                    filter: brightness(120%);
+            button {
+                background-color: #58595B;
+
+                border-radius: 10px;
+                border: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 2em;
+
+                cursor: pointer;
+
+                svg {
+
+                    &:hover {
+                        color: #53C4CD;
+                        filter: brightness(120%);
+                    }
                 }
-              }
-      
-            }
-          }
 
-          .cardModal {
+            }
+        }
+
+        .cardModal {
             position: fixed;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Slightly dark background */
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999; /* Ensure it's above other content */
-          }
-      
+            z-index: 999;
+            /* Ensure it's above other content */
+        }
+
     }
 
 
-    .CardModalIcon{
-      display: flex;
-      justify-content: end;
-      svg{
-          color: #53C4CD;
-          align-self: flex-end;  
-      }
-      svg:hover{
-          cursor: pointer;
-          filter: brightness(130%);
-      }
-      
-  }
+    .CardModalIcon {
+        display: flex;
+        justify-content: end;
 
-  }
-  
+        svg {
+            color: #53C4CD;
+            align-self: flex-end;
+        }
 
-  
- 
-  
+        svg:hover {
+            cursor: pointer;
+            filter: brightness(130%);
+        }
+
+    }
+
+}
