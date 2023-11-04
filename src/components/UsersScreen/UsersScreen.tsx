@@ -21,6 +21,7 @@ export default function UsersScreen() {
                     <td>{user.id}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
+                    <td>{user.phone}</td>
                     <td>{user.role.name}</td>
                 </tr>
             )
@@ -45,6 +46,7 @@ export default function UsersScreen() {
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Email</th>
+                        <th>Telefone</th>
                         <th>Cargo</th>
                     </tr>
                     <tbody>{renderTable()}</tbody>

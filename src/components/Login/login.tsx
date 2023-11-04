@@ -8,14 +8,7 @@ import useAuth from '../../middlewares/auth'
 import { useUser } from '../../contexts/UserContext'
 import Register from '../Register/register'
 
-export function Login() {
-
-    const { user } = useUser()
-
-    console.log("DENTRO DO LOGIN ", user);
-    
-    
-    const navigate = useNavigate()
+export function Login() {   
 
     const login = async () => {
         const data = {

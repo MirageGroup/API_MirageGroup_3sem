@@ -1,7 +1,8 @@
-import { Component, useState } from "react"
+import { Component, useRef, useState } from "react"
 import './register_style.scss'
 import { useNavigate } from 'react-router-dom'
 import ReactInputMask from 'react-input-mask'
+import MaskedInput from 'react-text-mask';
 import axios from 'axios'
 
 
@@ -23,9 +24,11 @@ export default function Register() {
         const data = {
             name: name + ' ' + surname,
             email: email,
+            phone: phone,
+            cpf: cpf,
             password: password,
             role: Number.parseInt(role)
-        }        
+        }
 
         try {
             await axios.post("http://localhost:8000/user/create", data).then(() => {
@@ -78,11 +81,11 @@ export default function Register() {
                 <div className="form_wrapper">
                     <div className="input_wrapper">
                         <label htmlFor='phone'>Telefone</label>
-                        <PhoneInput></PhoneInput>
+                        <PhoneInput setPhone={setPhone} phone={phone} />
                     </div>
                     <div className="input_wrapper">
                         <label htmlFor='cpf'>CPF</label>
-                        <CpfInput></CpfInput>
+                        <CpfInput setCpf={setCpf} cpf={cpf} />
                     </div>
                 </div>
                 <div className="form_wrapper">
@@ -147,43 +150,47 @@ export default function Register() {
         );
     }
 
-    function PhoneInput(props) {
 
-        const handleChange = (event) => {
-            setPhone(event.target.value)
-        }
+}
 
-        return (
-            <ReactInputMask
-                mask={'+99 (99) 99999-9999'}
-                value={props.value}
-                onChange={props.onChange}
-                placeholder='digite o telefone'
-                id='phone'
+function PhoneInput(props) {
 
-            >
-            </ReactInputMask>
-        )
+    const setPhone = props.setPhone
+    const phone = props.phone
+
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
+    };
+
+    return (
+        <ReactInputMask
+            mask="+99 (99) 99999-9999"
+            value={phone}
+            onChange={handlePhoneChange}
+            placeholder="digite o telefone"
+            required
+        >
+        </ReactInputMask>
+    );
+}
+
+function CpfInput(props) {
+
+    const setCpf = props.setCpf
+    const cpf = props.cpf
+
+    const handleCpfChange = (event) => {
+        setCpf(event.target.value)
     }
 
-    function CpfInput(props) {
-
-        const handleChange = (event) => {
-            console.log(event.target.value);
-            
-            setCpf(event.target.value)
-        }
-
-        return (
-            <ReactInputMask
-                mask={'999.999.999-99'}
-                value={props.value}
-                onChange={props.onChange}
-                placeholder='digite o cpf'
-                id='cpf'
-
-            >
-            </ReactInputMask>
-        )
-    }
+    return (
+        <ReactInputMask
+            mask={'999.999.999-99'}
+            value={cpf}
+            onChange={handleCpfChange}
+            placeholder='digite o cpf'
+            id='cpf'
+        >
+        </ReactInputMask>
+    )
 }
