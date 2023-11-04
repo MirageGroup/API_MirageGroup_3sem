@@ -1,38 +1,58 @@
-import React, {useCallback, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useCallback, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import './dropzone.scss';
 import { FiUpload } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 
-interface Props {
-    onFileUploaded: (file: File) => void;
-}
+const Dropzone = (props) => {
 
-const Dropzone: React.FC<Props> = ({onFileUploaded}) => {
-    const [selectedFileURL, setSelectedFileUrl] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
 
-  const onDrop = useCallback(acceptedFiles => {
-    const file = acceptedFiles[0];
+    const { id } = useParams()
+    const taskId = props.taskId  
+    
+    const formData = new FormData()
 
-    const fileUrl = URL.createObjectURL(file);
+    const onDrop = useCallback(acceptedFiles => {
+        const file = acceptedFiles[0];
+        setSelectedFile(file)
+    }, [])
 
-    setSelectedFileUrl(fileUrl);
-    onFileUploaded(file);
-  }, [])
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
 
-  return (
-    <div className='dropzone'{...getRootProps()}>
-      <input type='file' {...getInputProps()} />
-      { selectedFileURL
-        ? selectedFileURL
-        : <p>
-            <FiUpload/>
-            Clique ou arraste arquivos para anexar evidencias
-        </p>
-      }
-    </div>
-  )
+        const formData = new FormData()
+        formData.append('file', selectedFile)
+
+        console.log("filé: ", selectedFile);
+        console.log("formdata: ", formData.values);
+        
+        try{
+            await axios.post(`http://localhost:8000/task/${id}/${taskId}/addevidence`, 
+            formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    const { getRootProps, getInputProps } = useDropzone({ onDrop })
+
+    return (
+        <div className='dropzone'{...getRootProps()}>
+            <input type='file' required {...getInputProps()} />
+            { <p>
+                    <FiUpload />
+                    Clique ou arraste arquivos para anexar evidencias
+                </p>
+            }
+            <button type='submit' onClick={handleSubmit}>Enviar Evidência</button>
+        </div>
+    )
 }
 
 export default Dropzone;

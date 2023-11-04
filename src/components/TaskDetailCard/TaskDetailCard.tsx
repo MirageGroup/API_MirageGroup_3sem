@@ -30,9 +30,6 @@ export function TaskDetailCard( props : TaskDetailCardProps) {
         setIsConfirmModalOpen(false);
     };
 
-    let {id} = useParams();
-        console.log(id);
-
      function handle_delete_confirmation(){
     
         if (props.task != null){
@@ -91,7 +88,7 @@ export function TaskDetailCard( props : TaskDetailCardProps) {
                         </div>                    
                     </div>
                     
-                    <Dropzone>
+                    <Dropzone taskId={props.task.id}>
                         <Form encType='multipart/form-data' method='post' action=''></Form>
                     </Dropzone>
                     
