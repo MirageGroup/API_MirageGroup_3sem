@@ -8,14 +8,7 @@ import useAuth from '../../middlewares/auth'
 import { useUser } from '../../contexts/UserContext'
 import Register from '../Register/register'
 
-export function Login() {
-
-    const { user } = useUser()
-
-    console.log("DENTRO DO LOGIN ", user);
-    
-    
-    const navigate = useNavigate()
+export function Login() {   
 
     const login = async () => {
         const data = {
@@ -59,9 +52,6 @@ export function Login() {
                     <div className='input_wrapper'>
                         <label htmlFor='input_senha'>Senha</label>
                         <input type='password' placeholder='digite sua senha' id='input_senha' onChange={(e) => setPassword(e.target.value)}></input>
-                    </div>
-                    <div className='paragraph'>
-                        <p>não tem uma conta? <span onClick={() => setLoginMode("cadastro")}>Realizar Cadastro</span></p>
                     </div>
                     <button onClick={login}>Entrar</button>         
                 </form>

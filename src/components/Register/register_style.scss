@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    overflow: hidden;
+}
+
+.register_wrapper {
+    border-radius: 20px;
+    border: #292A2D solid 5px;
+    height: 75%;
+    width: 40%;
+    background-color: #58595B;
+    justify-content: center;
+    align-items: center;
+    padding: 4em;
+    margin-bottom: 4%;
+
+    .form_wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 110%;
+    }
+
+    .checkbox_wrapper {
+        display: flex;
+        font-size: 110%;
+        margin-top: 4%;
+        width: 100%;
+        justify-content: space-evenly;
+
+        label {
+            padding: 4%;
+        }
+    }
+
+    .btn_wrapper {
+        display: flex;
+        flex-direction: row;
+        padding-right: 10%;
+        width: 80%;
+        margin-left: 40%;
+        margin-bottom: 20%;
+
+        button {
+            margin-left: 1%;
+            margin-right: 2%;
+        }
+
+        .cancel {
+            background-color: rgb(158, 152, 150);
+        }
+    }
+
+    h1 {
+        color: #53C4CD;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 22.9%;
+        font-size: 220%;
+        font-weight: bolder;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .input_wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 1em;
+            width: 100%;
+            min-width: 150px;
+
+            label {
+                color: #53C4CD;
+                margin-bottom: 0.5em;
+                text-align: left;
+                margin-left: 5px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: bold;
+            }
+
+            input {
+                background-color: #292A2D;
+                color: #89dce2;
+                border-radius: 8px;
+                outline: none;
+                padding: 1em;
+                border: 1px solid;
+                cursor: pointer;
+                transition: 0.5s;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            input:hover {
+                filter: brightness(140%);
+            }
+        }
+
+        span {
+            color: #53C4CD;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: #53C4CD;
+            border: 1px solid;
+            margin-top: 5%;
+            width: 30%;
+            height: 3em;
+            transition: 0.5s;
+            cursor: pointer;
+            min-width: 80px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            filter: brightness(140%);
+        }
+    }
+
+    .dropdown_wrapper {
+        width: 100%;
+        padding: 1em;
+        background-color: #292A2D;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        color: gray;
+
+        select {
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            padding: 1em;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        option {
+            color: white;
+        }
+    }
+}

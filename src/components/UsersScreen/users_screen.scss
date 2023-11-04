@@ -1,0 +1,86 @@
+html {
+    background-color: #0D0E12;
+    color: white;
+}
+
+.screen_title {
+    font-family: 'Poppins', sans-serif;
+
+    h1 {
+        color: #53C4CD;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bolder;
+    }
+
+    p {
+        color: #53C4CD;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+        border-radius: 5px;
+        background-color: #53C4CD;
+        border: 1px solid;
+        width: 10%;
+        height: 3em;
+        transition: 0.5s;
+        cursor: pointer;
+        min-width: 80px;
+        font-weight: bolder;
+    }
+
+    button:hover {
+        filter: brightness(140%);
+    }
+}
+
+.table_container {
+    height: 700px;
+    overflow: auto;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+th {
+    border-bottom: 2px solid rgb(33, 33, 36);
+    position: sticky;
+    top: 0;
+    background-color: rgb(81, 81, 85);
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(63, 63, 84, 1);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(45, 45, 48);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.register-btn {
+    border: 1px solid black;
+    margin-left: 78.2%;
+    margin-top: 1%;
+    background-color: orange;
+    color: #000000;
+    font-weight: bolder;
+    padding: 3px;
+    font-size: 17px;
+}

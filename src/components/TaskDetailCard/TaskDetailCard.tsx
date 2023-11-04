@@ -6,6 +6,8 @@ import {AiFillFileAdd} from 'react-icons/ai';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import axios from 'axios';
 import Confirm_delete from '../Confirm_delete/Confirm_delete';
+import Dropzone from '../dropzone/dropzone';
+import { Form, useParams } from 'react-router-dom';
 
 interface TaskDetailCardProps {
     task: TaskInterface | null;
@@ -27,6 +29,9 @@ export function TaskDetailCard( props : TaskDetailCardProps) {
     const closeConfirmModal = () => {
         setIsConfirmModalOpen(false);
     };
+
+    let {id} = useParams();
+        console.log(id);
 
      function handle_delete_confirmation(){
     
@@ -85,11 +90,12 @@ export function TaskDetailCard( props : TaskDetailCardProps) {
                             </h4>                       
                         </div>                    
                     </div>
-
+                    
+                    <Dropzone>
+                        <Form encType='multipart/form-data' method='post' action=''></Form>
+                    </Dropzone>
+                    
                     <div className='lower_buttons'>
-                        <button >
-                                <AiFillFileAdd size={30}></AiFillFileAdd>
-                        </button>
                         <button onClick={(e)=>openConfirmModal()}>
                             <div className='trash'><FaRegTrashCan size={28}/></div>
                         </button>
