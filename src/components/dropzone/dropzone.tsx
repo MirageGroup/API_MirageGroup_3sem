@@ -17,9 +17,9 @@ const Dropzone = (props) => {
         setSelectedFile(file)
     }, [])
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-
+    const handleSubmit = async () => {
+        // e.preventDefault()
+        console.log('a');
         const formData = new FormData()
         formData.append('file', selectedFile)
 
@@ -37,13 +37,19 @@ const Dropzone = (props) => {
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop })
     return (
-        <div className='dropzone'{...getRootProps()}>
+        <div className='dropzone'>
+          <div {...getRootProps()}>
             <input type='file' required {...getInputProps()} />
-                <p>
-                    <FiUpload />
-                    Clique ou arraste arquivos para anexar evidencias
-                </p>
-            <button type='submit' className='submit-btn' onClick={handleSubmit}>Enviar Evidência</button>
+                  <p>
+                      <FiUpload />
+                      Clique ou arraste arquivos para anexar evidencias
+                  </p>
+          </div>
+          <div>
+            <button type='submit' className='submit-btn' onClick={() => handleSubmit()}>Enviar Evidência</button>
+            
+          </div>
+            
         </div>
     )
 }
