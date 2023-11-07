@@ -20,7 +20,7 @@ export default function Kanban_screen () {
 
     const fetchProcessInfo = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/task/${process_id}/getall`);
+          const response = await axios.get(`http://localhost:8000/task/${process_id}/getall`);          
           return response.data;
         } catch (error) {
           console.error('Error fetching processes:', error);

@@ -1,21 +1,20 @@
 import './process_card_style.scss'
 import vetor from '../../assets/Vector.png';
-import { useState } from 'react';
-import { FiX } from "react-icons/fi";
+import { useEffect, useState } from 'react';
+import Select from 'react-select';
 import axios from 'axios';
 
 
-export function Process_card({close_modal_function}:any){
+export function Process_card({ close_modal_function }: any) {
 
 
     const [projectName, setProjectName] = useState('');
     const [responsible, setResponsible] = useState('');
     const [description, setDescription] = useState('');
-    const [selectedContributor, setSelectedContributor] = useState('');
     const [startDate, setStartDate] = useState(''); // State for the start date
     const [endDate, setEndDate] = useState(''); // State for the end date
-    const contributorOptions = ["Gustavo", "Pedro", "Hugo", "Vinicius", "Victor", "Jaqueline", "Hugo", "Gustavo Henrique", "Thiago"];
-
+    const [contributors, setContributors] = useState([]);
+    const [techleads, setTechleads] = useState([]) 
 
     const handleSubmit = async () => {
 
@@ -25,37 +24,79 @@ export function Process_card({close_modal_function}:any){
             deadline: endDate,   // Use endDate as date_finish
             state: "Não iniciado"
         };
-      console.log(data)
-  
-      try {
-        close_modal_function()
-        const response = await axios.post('http://localhost:8000/process/create', data);
-        console.log('Data sent successfully:', response.data);
-  
-        // Optionally, reset the form fields and state
-        setProjectName('');
-        setResponsible('');
-        setDescription('');
-        setSelectedContributor('');
-        setStartDate('');
-        setEndDate('');
-      } catch (error) {
-        console.error('Error sending data:', error);
-        close_modal_function()
-      }
+        console.log(data)
 
-      
+        try {
+            close_modal_function()
+            const response = await axios.post('http://localhost:8000/process/create', data);
+            console.log('Data sent successfully:', response.data);
+
+            // Optionally, reset the form fields and state
+            setProjectName('');
+            setResponsible('');
+            setDescription('');
+            setStartDate('');
+            setEndDate('');
+        } catch (error) {
+            console.error('Error sending data:', error);
+            close_modal_function()
+        }
+
     };
 
+    const [contributorsArray, setContributorsArray] = useState<any[]>([]);
+    const [TechleadArray, setTechleadArray] = useState<any[]>([]);
 
-    return(
+    const fetchContributors = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/user/fetchall')
+            return response.data
+        } catch (error) {
+            console.log('Error fetching contributors', error);
+        }
+    }
+
+    useEffect(() => {
+        const updateUsers = async () => {
+            try {
+                let users = await fetchContributors();
+
+                const contributorArray: any[] = [];
+                const techLeadArray: any[] = [];
+
+                users.forEach((item) => {
+                    const roleId = item.role.id;
+                    if (roleId == 4) {
+                        contributorArray.push({ value: item.id, label: item.name });
+                    } else if (roleId == 3) {
+                        techLeadArray.push({ value: item.id, label: item.name });
+                    }
+                });
+
+                setContributorsArray(contributorArray);
+                setTechleadArray(techLeadArray);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        // Chame updateUsers apenas uma vez no início
+        updateUsers();
+
+        // Clean up the interval when the component unmounts
+        return () => {
+            // Não é mais necessário clearInterval
+        };
+    }, []);
+
+    return (
         <div className="card_wrapper_process">
             <h1>Novo Projeto</h1>
 
             <div className='input_line'>
                 <div className="input_wrapper">
                     <label htmlFor="input_nome">Nome do Projeto</label>
-                    <input id="input_nome" onChange={(e)=>setProjectName(e.target.value)}></input>
+                    <input id="input_nome" onChange={(e) => setProjectName(e.target.value)}></input>
                 </div>
 
                 <div className='date_input'>
@@ -71,69 +112,49 @@ export function Process_card({close_modal_function}:any){
             <div className='lower_card_container'>
 
                 <div className='description_wrapper'>
-                    
-                    <label htmlFor="responsavel">Responsavel</label>
-                    <select className='dropdown_wrapper' id="contribuidores" value={selectedContributor} onChange={(e) => setSelectedContributor(e.target.value)}>
-                        <option value=""></option>
-                        {contributorOptions.map((contributor, index) => (
-                            <option key={index} value={contributor}>
-                            {contributor}
-                            </option>
-                        ))}
-                        
-                    </select>
 
-
+                    <label htmlFor="contributors">Contribuidores</label>
+                    <UsersSelect selectedOptions={contributors} setSelectedOptions={setContributors} options={contributorsArray} placeholder={"Escolha os contribuidores"} />
+                    <br></br>
+                    <label htmlFor='techleads'>Tech-Leads</label>
+                    <UsersSelect selectedOptions={techleads} setSelectedOptions={setTechleads} options={TechleadArray} placeholder={"Escolha os tech-leads"} />
+                    <br></br>
                     <div className="input_wrapper">
                         <label htmlFor="contribuidores">Descrição</label>
-                        <input id="Descrição" onChange={(e)=>setDescription(e.target.value)} ></input>
+                        <input id="Descrição" onChange={(e) => setDescription(e.target.value)} ></input>
                     </div>
-
-                    
-
-            </div>
-
-                {/* <div className='icons_container'>
-                    <div className='icons_line'>
-                        <img src={vetor}></img>
-                        <img src={vetor}></img>
-                        <img src={vetor}></img>
-                        <img src={vetor}></img>
-                        <img src={vetor}></img>
-                    </div>
-
-                    <div className='procedimentos'>
-                        Procedimentos:
-                    </div>
-                    
-                </div> */}
-
+                </div>
                 <div className='concluir'>
                     <button onClick={close_modal_function}>Cancelar</button>
                     <button onClick={handleSubmit}>Concluir</button>
                 </div>
-                
-
-                
-
-                {/* {isModalOpen && (
-                <div className="modalBackdrop">
-                    <div className="modalCenter">
-                        <div className="modal">
-                            <div className="modal_icons">
-                                <FiX onClick={closeModal} size={30}></FiX>
-
-                            </div>
-                        <Process_card></Process_card>
-                        </div>
-                    </div>
-                </div>
-            )} */}
-            
             </div>
-
         </div>
-
-    
     )
+
 }
+
+const UsersSelect = (props) => {
+
+    const selectedOptions = props.selectedOptions
+    const setSelectedOptions = props.setSelectedOptions
+    const options = props.options
+
+    const handleSelectChange = (selectedOptions) => {
+        setSelectedOptions(selectedOptions);
+    };
+
+    return (
+        <div>
+            <Select
+                isMulti
+                options={options}
+                value={selectedOptions}
+                onChange={handleSelectChange}
+                className='contributor_select'
+                placeholder={props.placeholder}
+                id='contributors'
+            />
+        </div>
+    );
+};

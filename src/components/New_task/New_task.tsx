@@ -18,6 +18,9 @@ export function New_task(props : props) {
     const [limitDate, setLimitDate] = useState('');
     const [priority, setPriority] = useState('verde')
 
+    console.log(description);
+    
+
 
     const handleSubmit = async () => {
 
