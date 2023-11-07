@@ -17,10 +17,11 @@ export default function Kanban_screen () {
     let process_id = params.id
     let process_name = params.name
     const [tasks, setTasks] = useState<TaskInterface[]>([]);
+    const [contributors, setContributors] = useState([])        
 
     const fetchProcessInfo = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/task/${process_id}/getall`);          
+          const response = await axios.get(`http://localhost:8000/process/${process_id}/fetch`);          
           return response.data;
         } catch (error) {
           console.error('Error fetching processes:', error);
@@ -28,32 +29,28 @@ export default function Kanban_screen () {
         }
       };
 
-    
-
     useEffect(() => {
-        // Function to fetch and update processes
         const updateProcesses = async () => {
           try {
-            const ProcessInfo: TaskInterface[] = await fetchProcessInfo();           
-            setTasks(ProcessInfo)           
+            const ProcessInfo = await fetchProcessInfo();           
+            setTasks(ProcessInfo.tasks)
+            setContributors(ProcessInfo.users)           
             const initialColumns = {
-              todo: { id: 'todo',name: 'A fazer', list: ProcessInfo.filter(tasks=> tasks.state === 'todo').sort((a, b) => a.list_index - b.list_index) },
-              doing: { id: 'doing',name: 'Em progresso', list: ProcessInfo.filter(task => task.state === 'doing').sort((a, b) => a.list_index - b.list_index) },
-              done: { id: 'done',name: 'Finalizado', list: ProcessInfo.filter(task => task.state === 'done').sort((a, b) => a.list_index - b.list_index) },
+              todo: { id: 'todo',name: 'A fazer', list: ProcessInfo.tasks.filter(tasks=> tasks.state === 'todo').sort((a, b) => a.list_index - b.list_index) },
+              doing: { id: 'doing',name: 'Em progresso', list: ProcessInfo.tasks.filter(task => task.state === 'doing').sort((a, b) => a.list_index - b.list_index) },
+              done: { id: 'done',name: 'Finalizado', list: ProcessInfo.tasks.filter(task => task.state === 'done').sort((a, b) => a.list_index - b.list_index) },
             };
             setColumns(initialColumns);
 
           } catch (error) {
-            // Handle any errors
+
           }
         };
       
-        // Poll for updates every 5 seconds (adjust the interval as needed)
-        const pollInterval = setInterval(updateProcesses, 1000);
+        updateProcesses()
       
-        // Clean up the interval when the component unmounts
-        return () => clearInterval(pollInterval);
-      }, []); // The empty dependency array ensures this effect runs only once on component mount
+        return () => {}
+      }, []);
 
 
 
@@ -254,7 +251,7 @@ export default function Kanban_screen () {
 
                 {isModalOpen && (
                   <div className='form-wrapper'>
-                    <New_task closeModal={closeModal} column_length={columns.todo.list.length} process_id={process_id}/>
+                    <New_task closeModal={closeModal} column_length={columns.todo.list.length} process_id={process_id} contributors={contributors}/>
                   </div>
                 )}
               </div>

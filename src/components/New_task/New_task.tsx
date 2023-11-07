@@ -2,25 +2,28 @@ import './New_task.scss';
 import {AiOutlineClose} from 'react-icons/ai'
 import {IoMdClose} from 'react-icons/io'
 import React, { useState } from 'react';
+import Select from 'react-select';
 import axios from 'axios';
 
 interface props {
     closeModal : () => void;
     process_id:any;
-    column_length:number
+    column_length:number;
+    contributors: any[]
 }
 
-export function New_task(props : props) {
-
+export function New_task(props : props) {    
 
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
     const [limitDate, setLimitDate] = useState('');
     const [priority, setPriority] = useState('verde')
-
-    console.log(description);
+    const [contributors, setContributors] = useState('')
     
+    const processContributors = props.contributors
 
+    console.log(processContributors);
+    
 
     const handleSubmit = async () => {
 
@@ -60,7 +63,7 @@ export function New_task(props : props) {
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa' onChange={(e) => setTaskName(e.target.value)}  required/>
 
-                    <input type="text" name="responsible-name" className='responsible-name' placeholder='Responsável principal'  required />
+                    <UsersSelect options={processContributors} />
                     
                     <label >Nível de Prioridade</label>
                     
@@ -89,3 +92,28 @@ export function New_task(props : props) {
         </>
     )
 }
+
+const UsersSelect = (props) => {
+
+    const selectedOptions = props.selectedOptions
+    const setSelectedOptions = props.setSelectedOptions
+    const options = props.options.map(item => ({ value: item.id, label: item.name }));
+
+    const handleSelectChange = (selectedOptions) => {
+        setSelectedOptions(selectedOptions);
+    };
+
+    return (
+        <div>
+            <Select
+                isMulti
+                options={options}
+                value={selectedOptions}
+                onChange={handleSelectChange}
+                className='contributor_select'
+                placeholder={props.placeholder}
+                id='contributors'
+            />
+        </div>
+    );
+};
