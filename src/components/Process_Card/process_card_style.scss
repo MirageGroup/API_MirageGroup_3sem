@@ -108,6 +108,10 @@
     }
 
     .concluir {
+
+        margin-top: 72%;
+        margin-left: 18%;
+
         button {
             border-radius: 5px;
             background-color: #53C4CD;
@@ -127,6 +131,10 @@
             filter: brightness(140%);
         }
 
+        .cancel {
+            background-color: rgb(158, 152, 150);
+        }
+
         .procedimentos {
             p {
                 font-family: 'Poppins', sans-serif;
@@ -140,6 +148,10 @@
         display: flex;
         width: 50%;
         gap: 2%;
+
+        #data_fim {
+            width: 120%;
+        }
     }
 
 }

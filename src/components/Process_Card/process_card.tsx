@@ -14,15 +14,23 @@ export function Process_card({ close_modal_function }: any) {
     const [startDate, setStartDate] = useState(''); // State for the start date
     const [endDate, setEndDate] = useState(''); // State for the end date
     const [contributors, setContributors] = useState([]);
-    const [techleads, setTechleads] = useState([]) 
+    const [techleads, setTechleads] = useState([])
 
     const handleSubmit = async () => {
 
+        const techleadUsers = techleads.map(item => ({ id: item.value }));
+        const contributorUsers = contributors.map(item => ({ id: item.value }));
+
+        const users = techleadUsers.concat(contributorUsers);
+
+        console.log("users: ", users);
+
         const data = {
             name: projectName,
-            description,
-            deadline: endDate,   // Use endDate as date_finish
-            state: "Não iniciado"
+            description: description,
+            deadline: endDate,
+            state: "Não iniciado",
+            users: users
         };
         console.log(data)
 
@@ -125,8 +133,8 @@ export function Process_card({ close_modal_function }: any) {
                     </div>
                 </div>
                 <div className='concluir'>
-                    <button onClick={close_modal_function}>Cancelar</button>
-                    <button onClick={handleSubmit}>Concluir</button>
+                    <button className='cancel' onClick={close_modal_function}>Cancelar</button>
+                    <button className='submit' onClick={handleSubmit}>Concluir</button>
                 </div>
             </div>
         </div>
