@@ -18,14 +18,16 @@ export function New_task(props : props) {
     const [description, setDescription] = useState('');
     const [limitDate, setLimitDate] = useState('');
     const [priority, setPriority] = useState('verde')
-    const [contributors, setContributors] = useState('')
-    
-    const processContributors = props.contributors
+    const [contributors, setContributors] = useState([])
 
-    console.log(processContributors);
+    console.log(contributors);
     
+    
+    const processContributors = props.contributors    
 
     const handleSubmit = async () => {
+
+        const contributorUsers = contributors.map(item => ({ id: item.value }));
 
         console.log(props.column_length)
         const data = {
@@ -34,7 +36,8 @@ export function New_task(props : props) {
             deadline: limitDate, 
             priority:priority,
             state: 'todo',
-            list_index:props.column_length + 1
+            list_index:props.column_length + 1,
+            users: contributorUsers
         };
   
       try {
@@ -63,7 +66,7 @@ export function New_task(props : props) {
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="task-name" className='task-name'  placeholder='Nome da tarefa' onChange={(e) => setTaskName(e.target.value)}  required/>
 
-                    <UsersSelect options={processContributors} />
+                    <UsersSelect selectedOptions={contributors} setSelectedOptions={setContributors} options={processContributors} placeholder={"Escolha os contribuidores"} />
                     
                     <label >Nível de Prioridade</label>
                     

@@ -12,10 +12,8 @@ import { Form, useParams } from 'react-router-dom';
 interface TaskDetailCardProps {
     task: TaskInterface | null;
     closeCardModal: () => void;
-
+    
 }
-
-
 
 export function TaskDetailCard(props: TaskDetailCardProps) {
 
