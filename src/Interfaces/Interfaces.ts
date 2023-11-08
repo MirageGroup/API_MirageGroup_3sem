@@ -26,6 +26,7 @@ export default interface ProcessInteface{
     "progress":number|null
     "tasks": TaskInterface[]
     "progress_string": string
+    "users": {name:string}[]
     
   
 }

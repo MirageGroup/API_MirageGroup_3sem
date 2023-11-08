@@ -21,9 +21,12 @@ export function Login() {
                 window.location.href = '/home'
             })
         } catch (error) {
+            window.alert("Email ou senha inválidos")
             console.log(error);
             throw error
         }
+        
+        
     }
 
     const [email, setEmail] = useState('')

@@ -261,7 +261,7 @@ export default function Kanban_screen () {
           <div className="cardModalBackdrop">
             <div className="cardModalCenter">
                 <div className="cardDetailModal">
-                    <TaskDetailCard closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
+                    <TaskDetailCard users={selectedTask.users} closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
                 </div>
             </div>
           </div>

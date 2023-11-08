@@ -11,11 +11,14 @@ import { Form, useParams } from 'react-router-dom';
 
 interface TaskDetailCardProps {
     task: TaskInterface | null;
+    users: any[]
     closeCardModal: () => void;
     
 }
 
 export function TaskDetailCard(props: TaskDetailCardProps) {
+
+    console.log(props.task)
 
     const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
     const [deleteConfirmed, setDeleteConfirmed] = useState(false)
@@ -61,6 +64,11 @@ export function TaskDetailCard(props: TaskDetailCardProps) {
 
 
                     <p className="task-description">{props.task.description}</p>
+
+
+                    {props.task.users.map((user) => (
+                        <p>{user.name}</p>
+                    ))}
 
                     <hr />
                     <div className='lower_card'>
