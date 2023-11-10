@@ -96,8 +96,9 @@ export function ProjectScreen(){
         <div className="screen_wrapper">
 
             <div className="screen_title">
-                <h1>Bem vindo(a) {user.name}</h1>
-                <p>Aqui você pode ver seus processos</p>
+                <h1>Bem vindo(a) {user.role.name} {user.name}</h1>
+                {user.role.create_process && <p>Aqui você pode visualizar e criar processos</p>}
+                {!user.role.create_process && <p>Aqui você visualizar seus processos</p>}
 
                 {user.role.create_process && <button onClick={openModal}>Criar processo</button>}
 
