@@ -18,8 +18,14 @@ interface TaskDetailCardProps {
 
 export function TaskDetailCard(props: TaskDetailCardProps) {
 
-    console.log(props.task)
+    let evidence
+    props.task.evidences.map((item) => {
+        evidence = item
+    })
 
+    console.log(evidence);
+    
+    
     const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
     const [deleteConfirmed, setDeleteConfirmed] = useState(false)
 
@@ -103,9 +109,18 @@ export function TaskDetailCard(props: TaskDetailCardProps) {
                             </div>
                         </div>
 
-                        <Dropzone taskId={props.task.id}>
-                            <Form encType='multipart/form-data' method='post' action=''></Form>
-                        </Dropzone>
+                        {evidence && 
+                        <div className='evidence_list'>
+                            <a href={evidence.url}><span>{evidence.name}</span></a>
+                        </div>
+                        }
+
+                        {props.task.has_evidence && props.task.evidences.length === 0 && (
+                            <Dropzone taskId={props.task.id}>
+                                <Form encType='multipart/form-data' method='post' action=''></Form>
+                            </Dropzone>
+                        )}
+
 
                         <div className='lower_buttons'>
                             <button onClick={(e) => openConfirmModal()}>

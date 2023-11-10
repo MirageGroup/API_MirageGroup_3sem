@@ -43,7 +43,6 @@ export default function Kanban_screen () {
             setColumns(initialColumns);
 
           } catch (error) {
-
           }
         };
       
@@ -54,6 +53,7 @@ export default function Kanban_screen () {
 
 
 
+console.log(tasks);
 
 
   const initialColumns: { [key: string]: { name: string; id: string, list: TaskInterface[] } }= {

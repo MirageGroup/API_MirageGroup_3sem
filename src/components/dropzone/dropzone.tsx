@@ -30,6 +30,7 @@ const Dropzone = (props) => {
                     'Content-Type': 'multipart/form-data'
                 }
             })
+            window.location.reload()
         } catch (error) {
             console.log(error);
         }

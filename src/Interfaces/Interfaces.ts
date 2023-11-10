@@ -3,6 +3,9 @@ export default interface TaskInterface{
         "name": string
         "description": string,
         "deadline": string,
+        "has_evidence": true,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        "evidences": any[],
         "state": string,
         "deleted_at": null,
         "id": number,

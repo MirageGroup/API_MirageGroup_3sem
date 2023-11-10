@@ -133,3 +133,18 @@
     }
 
 }
+
+.evidence_list {
+    font-size: 130%;
+    color: #53C4CD;
+    align-self: center;
+
+    a {
+        text-decoration: none;
+        color: #53C4CD;
+    }
+
+    a:hover{
+        filter: brightness(130%);
+    }
+}
