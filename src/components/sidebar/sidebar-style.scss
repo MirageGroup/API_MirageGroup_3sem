@@ -20,6 +20,15 @@
     background: none;
 }
 
+.exit-btn {
+    width: 5%;  
+    svg{
+        width: 50%;  
+        height: 50%;
+    }
+    cursor: pointer;
+}
+
 .nav-menu {
     background-color: #292A2D;
     width: 220px;
