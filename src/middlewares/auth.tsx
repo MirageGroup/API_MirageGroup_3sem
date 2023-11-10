@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default async function useAuth() {
     const token = getCookie('access_token');
-    if (!token) {        
+    if (!token) {
         return null
     }
 
@@ -14,7 +14,9 @@ export default async function useAuth() {
             },
         });
 
-        if (response.status === 200) {            
+        if (response.status === 200) {
+            axios.defaults.withCredentials = true
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             return response.data;
         } else {
             throw new Error('Falha na autenticação');

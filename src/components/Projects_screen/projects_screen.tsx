@@ -42,12 +42,17 @@ export function ProjectScreen(){
 
 
     const fetchProcesses = async () => {
-        try {
-          const response = await axios.get('http://localhost:8000/process/findall');
-          return response.data;
+        try {            
+            if(user.role.id == 2){
+                const response = await axios.get('http://localhost:8000/process/findall')
+                return response.data
+            }else{
+                const response = await axios.get('http://localhost:8000/user/fetchprocesses')
+                return response.data
+            }
         } catch (error) {
-          console.error('Error fetching processes:', error);
-          throw error;
+            console.error('Error fetching processes:', error);
+            throw error;
         }
       };
 
