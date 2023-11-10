@@ -18,10 +18,8 @@ export function New_task(props : props) {
     const [description, setDescription] = useState('');
     const [limitDate, setLimitDate] = useState('');
     const [priority, setPriority] = useState('verde')
-    const [contributors, setContributors] = useState([])
-
-    console.log(contributors);
-    
+    const [contributors, setContributors] = useState([])    
+    const [evidence, setEvidence] = useState(false)    
     
     const processContributors = props.contributors    
 
@@ -33,11 +31,12 @@ export function New_task(props : props) {
         const data = {
             name: taskName,
             description: description,
+            has_evidence: evidence,
             deadline: limitDate, 
             priority:priority,
             state: 'todo',
             list_index:props.column_length + 1,
-            users: contributorUsers
+            users: contributorUsers 
         };
   
       try {
@@ -68,6 +67,7 @@ export function New_task(props : props) {
 
                     <UsersSelect selectedOptions={contributors} setSelectedOptions={setContributors} options={processContributors} placeholder={"Escolha os contribuidores"} />
                     
+
                     <label >Nível de Prioridade</label>
                     
                     <select
@@ -80,6 +80,8 @@ export function New_task(props : props) {
                         <option value="amarelo">Razoavel</option>
                         <option value="vermelho">Alto</option>
                     </select>
+
+                    <EvidenceCheckbox setEvidence={setEvidence} />
 
                     <div className='date-container'>
                         <label>Data Limite:</label>
@@ -108,6 +110,7 @@ const UsersSelect = (props) => {
 
     return (
         <div>
+            <label>Contribuidores</label>
             <Select
                 isMulti
                 options={options}
@@ -120,3 +123,25 @@ const UsersSelect = (props) => {
         </div>
     );
 };
+
+const EvidenceCheckbox = (props) => {
+
+    const [isChecked, setChecked] = useState(false)
+    const setEvidence = props.setEvidence
+  
+    const handleCheckboxChange = () => {
+        setChecked(!isChecked)
+        setEvidence(!isChecked);
+    };
+  
+    return (
+      <div className='evidence_checkbox'>
+        <label>Evidência</label>
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+      </div>
+    );
+  }
