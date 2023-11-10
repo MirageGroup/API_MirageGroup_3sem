@@ -231,7 +231,7 @@ export default function Kanban_screen () {
       <div className="background-wrapper_kanban">
               {/* title */}
               <div className='back'>
-                <Link to='/project_screen'>
+                <Link to='/home'>
                   <button>Voltar</button>
                 </Link>
               

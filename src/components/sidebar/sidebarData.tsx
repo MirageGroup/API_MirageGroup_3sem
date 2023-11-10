@@ -6,22 +6,18 @@ import './sidebar-style.scss';
 
 export const sidebarData = [
     {
-        title: 'Página Inicial',
+        title: 'Processos',
         path: '/home',
-        icon: <AiIcons.AiFillHome/>,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Projetos',
-        path: '/project_screen',
         icon: <IoIcons.IoIosPaper/>,
-        cName: 'nav-text'
+        cName: 'nav-text',
+        allowedUserTypes: [1, 2, 3, 4]
     },
     {
         title: 'ISOs',
         path: '/iso',
         icon: <IoIcons.IoMdClipboard/>,
-        cName: 'nav-text'
+        cName: 'nav-text',
+        allowedUserTypes: [1, 2]
     },
     // {
     //     title: 'Tarefas',
@@ -33,6 +29,7 @@ export const sidebarData = [
         title: 'Usuários',
         path: '/users',
         icon: <IoIcons.IoMdPeople/>,
-        cName: 'nav-text'
+        cName: 'nav-text',
+        allowedUserTypes: [2, 3]
     }
 ]

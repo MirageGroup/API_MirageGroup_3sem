@@ -20,17 +20,16 @@ function App() {
                 <Routes>
                     <Route path="/login" element={<LoginCheck> <LoginScreen /> </LoginCheck>} />
                 </Routes>
+                <ProtectedRoute>
                 <Sidebar />
                 <Routes>
-                    <Route path="/home" element={<ProtectedRoute><Home_page/></ProtectedRoute>} />
-                    <Route path="/iso" element={<ProtectedRoute><IsoScreen/></ProtectedRoute>} />
-                    <Route path="/project_screen" element={<ProtectedRoute><ProjectScreen /></ProtectedRoute>} />
-                    <Route path="/kanban/:id/:name" element={<ProtectedRoute><Kanban_screen /></ProtectedRoute>} />
-                    <Route path="/users" element={<ProtectedRoute><UsersScreen /></ProtectedRoute>} />
-                    <Route path="/users/register" element={<ProtectedRoute><RegisterScreen /></ProtectedRoute>} />
+                    <Route path="/home" element={<ProjectScreen/>} />
+                    <Route path="/iso" element={<IsoScreen/>} />
+                    <Route path="/kanban/:id/:name" element={<Kanban_screen />} />
+                    <Route path="/users" element={<UsersScreen />} />
+                    <Route path="/users/register" element={<RegisterScreen />} />
                 </Routes>
-                <Routes>
-                </Routes>
+                </ProtectedRoute>
             </Router>
         </UserProvider>
     );
@@ -42,23 +41,16 @@ const ProtectedRoute = ({ children }) => {
 
     useEffect(() => {
         const CheckAuthentication = async () => {
-            const loggedUser = await useAuth();
-            setIsAuthenticated(loggedUser);
+            if(!user){
+                const loggedUser = await useAuth();
+                setUser(loggedUser);
+            }
         }
 
         CheckAuthentication()
     }, [])
 
-    if (isAuthenticated === null) {
-        return <Navigate to="/login" />
-    } else {
-        setUser(isAuthenticated);
-        return children;
-    }
-}
-
-const InvalidRoute = ({ }) => {
-    return <Navigate to="/home" />
+    return user ? children : <Navigate to="/login" />
 }
 
 const LoginCheck = ({ children }) => {

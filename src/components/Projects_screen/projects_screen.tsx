@@ -7,12 +7,14 @@ import { FiX } from "react-icons/fi";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ProcessInterface from '../../Interfaces/Interfaces'
+import { useUser } from '../../contexts/UserContext';
 
 
 
 export function ProjectScreen(){
 
-
+    const { user } = useUser()    
+    
     // função para definir porcentagem de progresso para todos
 
     function calculate_progress(process_list:ProcessInterface[]){
@@ -89,9 +91,10 @@ export function ProjectScreen(){
         <div className="screen_wrapper">
 
             <div className="screen_title">
-                <h1>Bem vindo a lista de projetos</h1>
-                <p>Aqui você pode ver todas as listas de projetos</p>
-                <button onClick={openModal}>Criar projeto</button>
+                <h1>Bem vindo(a) {user.name}</h1>
+                <p>Aqui você pode ver seus processos</p>
+
+                {user.role.create_process && <button onClick={openModal}>Criar processo</button>}
 
             </div>
             <div className="list_container">

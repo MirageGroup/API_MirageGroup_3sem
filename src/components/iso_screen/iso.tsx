@@ -6,8 +6,9 @@ import { useEffect, useState } from 'react';
 import { IsoForm } from '../isoFormulary/isoForm';
 import {BsPlus} from 'react-icons/bs'
 import axios from 'axios';
+import { useUser } from '../../contexts/UserContext';
 
-export function IsoScreen(){
+export function IsoScreen(){    
 
     const [iso_list,set_iso_list] = useState<any[]>([])
 
@@ -20,7 +21,6 @@ export function IsoScreen(){
           throw error;
         }
       };
-
 
     useEffect(() => {
         // Function to fetch and update processes
