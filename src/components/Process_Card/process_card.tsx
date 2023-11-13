@@ -23,8 +23,6 @@ export function Process_card({ close_modal_function }: any) {
 
         const users = techleadUsers.concat(contributorUsers);
 
-        console.log("users: ", users);
-
         const data = {
             name: projectName,
             description: description,
@@ -99,11 +97,11 @@ export function Process_card({ close_modal_function }: any) {
 
     return (
         <div className="card_wrapper_process">
-            <h1>Novo Projeto</h1>
+            <h1>Novo Processo</h1>
 
             <div className='input_line'>
                 <div className="input_wrapper">
-                    <label htmlFor="input_nome">Nome do Projeto</label>
+                    <label htmlFor="input_nome">Nome do Processo</label>
                     <input id="input_nome" onChange={(e) => setProjectName(e.target.value)}></input>
                 </div>
 
