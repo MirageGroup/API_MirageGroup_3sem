@@ -58,14 +58,12 @@ export default function ChartScreen() {
        processLabels = processes.map((process) => process.name);
        totalTasks = processes.map((process) => process.tasks.length)
        completedTasksData = processes.map((process) =>
-        process.tasks.filter((task) => task.state === 'concluído').length
+        process.tasks.filter((task) => task.state === 'done').length
     );
     incompletedTasksData = processes.map((process) =>
-    process.tasks.filter((task) => task.state !== 'concluído').length
+    process.tasks.filter((task) => task.state !== 'done').length
   );
-      console.log("LABELS",processLabels)
-      console.log("Concluidos",completedTasksData)
-      console.log("não concluidos",incompletedTasksData)
+
     }
 
 
@@ -88,11 +86,19 @@ export default function ChartScreen() {
         type: 'bar',
         height: 350
       },
+      theme: {
+        mode: 'dark',
+
+        backgroundColor: '#222',
+      },
       plotOptions: {
         bar: {
           horizontal: false,
           columnWidth: '55%',
-          endingShape: 'rounded'
+          endingShape: 'rounded',
+          dataLabels: {
+            position: 'bottom'
+          }
         },
       },
       dataLabels: {
@@ -100,7 +106,7 @@ export default function ChartScreen() {
       },
       stroke: {
         show: true,
-        width: 2,
+        width: 20,
         colors: ['transparent']
       },
       xaxis: {
@@ -108,12 +114,16 @@ export default function ChartScreen() {
       },
       yaxis: {
         title: {
-          text: '$ (thousands)'
+          text: 'tarefas'
         }
       },
       fill: {
         opacity: 1
       },
+      tooltip: {
+        theme:"dark",
+        followCursor: false
+      }
     }
     
       return(
