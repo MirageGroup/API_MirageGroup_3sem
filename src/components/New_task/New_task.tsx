@@ -23,8 +23,8 @@ export function New_task(props : props) {
     
     const processContributors = props.contributors    
 
-    const handleSubmit = async () => {
-
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         const contributorUsers = contributors.map(item => ({ id: item.value }));
 
         console.log(props.column_length)
@@ -38,11 +38,12 @@ export function New_task(props : props) {
             list_index:props.column_length + 1,
             users: contributorUsers 
         };
-  
+        console.log("payload",data)
       try {
         const response = await axios.post(`http://localhost:8000/task/${props.process_id}/create`, data);
         console.log('Data sent successfully:', response.data);
         props.closeModal()
+        
         // Optionally, reset the form fields and state
         setTaskName('');
         setLimitDate('');

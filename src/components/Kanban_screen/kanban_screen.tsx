@@ -47,8 +47,9 @@ export default function Kanban_screen () {
         };
       
         updateProcesses()
-      
-        return () => {}
+        console.log("pegando")
+        const pollInterval = setInterval(updateProcesses, 3000);
+        return () => clearInterval(pollInterval);
       }, []);
 
 
