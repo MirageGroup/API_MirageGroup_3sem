@@ -12,6 +12,9 @@ import useAuth from './middlewares/auth';
 import { UserProvider, useUser } from './contexts/UserContext';
 import { RegisterScreen } from './components/RegisterScreen/RegisterScreen';
 import UsersScreen from './components/UsersScreen/UsersScreen';
+import  ChartScreen  from './components/ChartScreen/ChartScreen';
+
+
 
 function App() {
     return (
@@ -19,10 +22,13 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/login" element={<LoginCheck> <LoginScreen /> </LoginCheck>} />
+                    
+                    
                 </Routes>
                 <ProtectedRoute>
                 <Sidebar />
                 <Routes>
+                    <Route path="/chart" element={<ChartScreen/>} />
                     <Route path="/home" element={<ProjectScreen/>} />
                     <Route path="/iso" element={<IsoScreen/>} />
                     <Route path="/kanban/:id/:name" element={<Kanban_screen />} />
