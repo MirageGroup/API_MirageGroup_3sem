@@ -18,10 +18,8 @@ function App() {
         <UserProvider>
             <Router>
                 <Routes>
-                    <Route path="/login" element={<LoginCheck> <LoginScreen /> </LoginCheck>} />
+                    <Route path="/login" element={<LoginScreen /> } />
                 </Routes>
-                <ProtectedRoute>
-                <Sidebar />
                 <Routes>
                     <Route path="/home" element={<ProjectScreen/>} />
                     <Route path="/iso" element={<IsoScreen/>} />
@@ -29,7 +27,6 @@ function App() {
                     <Route path="/users" element={<UsersScreen />} />
                     <Route path="/users/register" element={<RegisterScreen />} />
                 </Routes>
-                </ProtectedRoute>
             </Router>
         </UserProvider>
     );

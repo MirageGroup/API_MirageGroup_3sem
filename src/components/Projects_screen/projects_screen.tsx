@@ -8,15 +8,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ProcessInterface from '../../Interfaces/Interfaces'
 import { useUser } from '../../contexts/UserContext';
-
+import Sidebar from "../sidebar/sidebar";
 
 
 export function ProjectScreen(){
-
-    const { user } = useUser()    
+  
+    const { user } = useUser()        
     
-    // função para definir porcentagem de progresso para todos
-
     function calculate_progress(process_list:ProcessInterface[]){
       process_list.forEach((process) => {
         const totalTasks = process.tasks.length;
@@ -93,53 +91,52 @@ export function ProjectScreen(){
       };
 
     return(
-        <div className="screen_wrapper">
 
-            <div className="screen_title">
-                <h1>Bem vindo(a) {user.role.name} {user.name}</h1>
-                {user.role.create_process && <p>Aqui você pode visualizar e criar processos</p>}
-                {!user.role.create_process && <p>Aqui você visualizar seus processos</p>}
+      <><Sidebar /><div className="screen_wrapper">
 
-                {user.role.create_process && <button onClick={openModal}>Criar processo</button>}
+        <div className="screen_title">
+          <h1>Bem vindo(a) {user.role.name} {user.name}</h1>
+          {user.role.create_process && <p>Aqui você pode visualizar e criar processos</p>}
+          {!user.role.create_process && <p>Aqui você visualizar seus processos</p>}
 
-            </div>
-            <div className="list_container">
-                <h3>Em andamento</h3>
-                <span></span>
-                <div className="project_list">
+          {user.role.create_process && <button onClick={openModal}>Criar processo</button>}
 
-                    {processes.map(
-                        (projeto,index) => projeto.progress != 100? <ProjectCard key={index} progress_string={projeto.progress_string}	 name={projeto.name} progress={projeto.progress} id={projeto.id} deadline={projeto.deadline}  users={projeto.users.length} ></ProjectCard>:null  
-                        )
-                    }
-            </div>
-
-            </div>
-
-            <div className="list_container">
-                <h3>Concluidos</h3>
-                <span></span>
-                <div className="project_list">
-                    {processes.map(
-                         (projeto) => projeto.progress == 100? <ProjectCard progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id}  deadline={projeto.deadline} users={projeto.users.length}></ProjectCard>:null
-                        )
-                    }
-                </div>
-
-            </div>
-
-            {isModalOpen && (
-                <div className="modalBackdrop">
-                    <div className="modalCenter">
-                        <div className="modal">
-                            <div className="modal_icons">
-                                <FiX onClick={closeModal} size={30}></FiX>
-                            </div>
-                            <Process_card close_modal_function = {closeModal}></Process_card>
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
+        <div className="list_container">
+          <h3>Em andamento</h3>
+          <span></span>
+          <div className="project_list">
+
+            {processes.map(
+              (projeto, index) => projeto.progress != 100 ? <ProjectCard key={index} progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id} deadline={projeto.deadline} users={projeto.users.length}></ProjectCard> : null
+            )}
+          </div>
+
+        </div>
+
+        <div className="list_container">
+          <h3>Concluidos</h3>
+          <span></span>
+          <div className="project_list">
+            {processes.map(
+              (projeto) => projeto.progress == 100 ? <ProjectCard progress_string={projeto.progress_string} name={projeto.name} progress={projeto.progress} id={projeto.id} deadline={projeto.deadline} users={projeto.users.length}></ProjectCard> : null
+            )}
+          </div>
+
+        </div>
+
+        {isModalOpen && (
+          <div className="modalBackdrop">
+            <div className="modalCenter">
+              <div className="modal">
+                <div className="modal_icons">
+                  <FiX onClick={closeModal} size={30}></FiX>
+                </div>
+                <Process_card close_modal_function={closeModal}></Process_card>
+              </div>
+            </div>
+          </div>
+        )}
+      </div></>
     )
 }
