@@ -2,6 +2,7 @@ import axios from 'axios'
 import './users_screen.scss'
 import { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
+import Sidebar from "../sidebar/sidebar";
 
 export default function UsersScreen() {
 
@@ -34,7 +35,8 @@ export default function UsersScreen() {
     }
 
     return (
-        <div className="screen_wrapper">
+
+        <><Sidebar /><div className="screen_wrapper">
 
             <div className="screen_title">
                 <h1>Usuários</h1>
@@ -54,7 +56,7 @@ export default function UsersScreen() {
             </div>
             <button className='register-btn' onClick={registerUser}>Criar novo usuário</button>
 
-        </div>
+        </div></>
     )
 
 }

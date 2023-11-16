@@ -4,14 +4,15 @@ import './login_style.scss'
 import { Recovery_screen } from '../Recovery_screen/screen'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import useAuth from '../../middlewares/auth'
 import { useUser } from '../../contexts/UserContext'
 import Register from '../Register/register'
 import getCookie from '../../utils/get-cookie'
+import { useAuth } from '../../contexts/AuthContext'
 
 export function Login() {   
 
     const { setUser } = useUser();
+    const { auth } = useAuth()
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -23,18 +24,16 @@ export function Login() {
         try {
           await axios.post('http://localhost:8000/user/login', data, { withCredentials: true });
     
-          // Configura as credenciais e token
           const token = getCookie('access_token');
           axios.defaults.withCredentials = true;
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     
-          // Obtém o perfil do usuário
           const response = await axios.get('http://localhost:8000/user/getprofile');
-    
-          // Define o contexto do usuário
+
           setUser(response.data);
-    
-          // Redireciona para a rota home
+          
+          await auth()
+          
           navigate('/home');
         } catch (error) {
           window.alert('Email ou senha inválidos');
