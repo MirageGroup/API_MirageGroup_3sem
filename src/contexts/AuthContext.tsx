@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
         setUser(null)
         setIsAuthenticated(false);
 
-        authenticate()
+        auth()
     };
 
     return (

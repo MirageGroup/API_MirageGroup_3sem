@@ -13,7 +13,7 @@ import Sidebar from "../sidebar/sidebar";
 
 export function ProjectScreen(){
   
-    const { user } = useUser()        
+    const { user } = useUser()    
     
     function calculate_progress(process_list:ProcessInterface[]){
       process_list.forEach((process) => {

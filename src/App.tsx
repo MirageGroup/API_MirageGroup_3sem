@@ -20,6 +20,7 @@ function App() {
                 <Router>
                     <Fragment>
                         <Routes>
+                            <Route path="/login" element={<LoginScreen />} />
                             <Route path="/" element={<PrivateRoute />} >
                                 <Route path="/home" element={<ProjectScreen />} />
                                 <Route path="/iso" element={<IsoScreen />} />
@@ -27,7 +28,6 @@ function App() {
                                 <Route path="/users" element={<UsersScreen />} />
                                 <Route path="/users/register" element={<RegisterScreen />} />
                             </Route>
-                            <Route path="/login" element={<LoginScreen />} />
                         </Routes>
                     </Fragment>
                 </Router>
@@ -41,6 +41,5 @@ const PrivateRoute = () => {
 
     return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }
-
 
 export default App
