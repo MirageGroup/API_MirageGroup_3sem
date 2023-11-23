@@ -53,10 +53,6 @@ export default function Kanban_screen () {
       }, []);
 
 
-
-console.log(tasks);
-
-
   const initialColumns: { [key: string]: { name: string; id: string, list: TaskInterface[] } }= {
     todo: {
       name: 'A fazer',

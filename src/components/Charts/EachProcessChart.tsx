@@ -29,7 +29,7 @@ export default function EachProcessChart(props:type_props){
       
       };
     return(
-        <div id="chart">
+        <div id="each_chart">
             <ReactApexChart options={state.options} series={state.series} type="donut" />
         </div>
   )

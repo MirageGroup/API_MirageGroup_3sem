@@ -6,6 +6,7 @@ import ProcessInterface from '../../Interfaces/Interfaces'
 import axios from 'axios';
 import GenericChart from '../Charts/GenericChart';
 import EachProcessChart from '../Charts/EachProcessChart';
+import "./ChartScreenStyle.scss"
 
 
 export default function ChartScreen() {
@@ -18,12 +19,12 @@ export default function ChartScreen() {
     try {            
         if(user.role.id == 2){
             const response = await axios.get('http://localhost:8000/process/findall')
+            console.log("user_2",response.data)
 
             
             return response.data
         }else{
             const response = await axios.get('http://localhost:8000/user/fetchprocesses')
-            
             return response.data
         }
 
@@ -47,7 +48,7 @@ export default function ChartScreen() {
     };
   
     // Poll for updates every 5 seconds (adjust the interval as needed)
-    const pollInterval = setInterval(updateProcesses, 1000);
+    const pollInterval = setInterval(updateProcesses, 15000);
   
     // Clean up the interval when the component unmounts
     return () => clearInterval(pollInterval);
@@ -56,27 +57,22 @@ export default function ChartScreen() {
    
 
   return(
-    <div>
+    <div className='chart_screen_wrapper'>
       <h1>Dados Gerais</h1>
-      <GenericChart processes={processes}></GenericChart>
+      <div className='main_chart'>
+        <GenericChart processes={processes}></GenericChart>
+
+      </div>
 
       
       {processes !== undefined && processes.length > 0 && (
         <>
-          <label htmlFor="processSelector">Selecione um processo:</label>
-          <select id="processSelector" onChange={(e)=> setSelectedProcess(e.value)} value={selectedProcess}>
-            <option value="" disabled>
-              Escolha um processo
-            </option>
-            {processes.map((process) => (
-              <option key={process.name} value={process.name}>
-                {process.name}
-              </option>
-            ))}
-          </select>
+          {/* <h1>Dados por processo</h1> */}
 
 
-          <EachProcessChart></EachProcessChart>
+
+
+          {/* <EachProcessChart process={selectedProcess}></EachProcessChart> */}
         </>
       )}
 

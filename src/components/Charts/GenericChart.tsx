@@ -36,7 +36,7 @@ export default function GenericChart(props:props){
           name: 'concluidas',
           data: completedTasksData
         },{
-        name: 'total tasks',
+        name: 'tasks totais',
         data: totalTasks
       }, {
         name: 'não concluidas',
@@ -47,29 +47,35 @@ export default function GenericChart(props:props){
       const options: ApexOptions = {
         chart: {
           type: 'bar',
-          height: 350
+          height: 350,
+          background:'tranparent'
         },
         theme: {
           mode: 'dark',
-          colors: {
-            primary: '#000',
-            secondary: '#ccc',
-            accent: '#fff',
-          },
-          backgroundColor: '#222',
+          monochrome: {
+            enabled: true,
+            color: '#53C4CD',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+          }
         },
         plotOptions: {
           bar: {
             horizontal: false,
+            borderRadius: 6,
             columnWidth: '55%',
-            endingShape: 'rounded',
             dataLabels: {
               position: 'bottom'
             }
+          
           },
         },
         dataLabels: {
-          enabled: false
+          enabled: true,
+          style: {
+            fontSize: "18px",
+            colors: ["#304758"]
+          }
         },
         stroke: {
           show: true,
@@ -80,6 +86,7 @@ export default function GenericChart(props:props){
           categories: processLabels,
         },
         yaxis: {
+
           title: {
             text: 'tarefas'
           }
@@ -94,6 +101,9 @@ export default function GenericChart(props:props){
       }
 
       return(
-        <ReactApexChart options={options} series={series} type="bar" height={350} />
+        <div className="generic_chat_wrapper">
+
+          <ReactApexChart options={options} series={series} type="bar" height={350} />
+        </div>
       )
 }
