@@ -8,11 +8,13 @@ import { IconContext } from 'react-icons';
 import * as IoIcons from "react-icons/io";
 import logoionic from '../../img/logoionic.png'
 import { useUser } from '../../contexts/UserContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 export function Sidebar() {
     const [navbar, setnavbar] = useState(false)
 
     const { user } = useUser()
+    const { logout } = useAuth()
 
     const showNavbar = () => setnavbar(!navbar)
 
@@ -28,7 +30,7 @@ export function Sidebar() {
                         <FaIcons.FaBars onClick={showNavbar} />
                     </Link>
                     <img src={logoionic} />
-                    <span className="exit-btn" onClick={deleteAllCookies}><IoIcons.IoMdExit /></span>
+                    <span className="exit-btn" onClick={logout}><IoIcons.IoMdExit /></span>
                 </div>
                 <nav className={navbar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-itens' onClick={showNavbar}>
@@ -55,16 +57,6 @@ export function Sidebar() {
             </IconContext.Provider>
         </>
     )
-}
-
-function deleteAllCookies() {
-    console.log('apagando cookie');
-    
-    const c = document.cookie.split("; ");
-    for (const i in c) {
-        document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";    
-    } 
-    window.location.href = "/login"
 }
 
 export default Sidebar;

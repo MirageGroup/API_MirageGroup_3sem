@@ -4,30 +4,42 @@ import './login_style.scss'
 import { Recovery_screen } from '../Recovery_screen/screen'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import useAuth from '../../middlewares/auth'
 import { useUser } from '../../contexts/UserContext'
 import Register from '../Register/register'
+import getCookie from '../../utils/get-cookie'
+import { useAuth } from '../../contexts/AuthContext'
 
 export function Login() {   
 
-    const login = async () => {
-        const data = {
-            email: email,
-            password: password
-        }
+    const { setUser } = useUser();
+    const { auth } = useAuth()
+    const navigate = useNavigate();
 
+    const handleLogin = async () => {
+        const data = {
+          email: email,
+          password: password,
+        };
+    
         try {
-            await axios.post('http://localhost:8000/user/login', data, { withCredentials: true }).then(() => {                
-                window.location.href = '/home'
-            })
+          await axios.post('http://localhost:8000/user/login', data, { withCredentials: true });
+    
+          const token = getCookie('access_token');
+          axios.defaults.withCredentials = true;
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    
+          const response = await axios.get('http://localhost:8000/user/getprofile');
+
+          setUser(response.data);
+          
+          await auth()
+          
+          navigate('/home');
         } catch (error) {
-            window.alert("Email ou senha inválidos")
-            console.log(error);
-            throw error
+          window.alert('Email ou senha inválidos');
+          console.error(error);
         }
-        
-        
-    }
+      };
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -56,7 +68,7 @@ export function Login() {
                         <label htmlFor='input_senha'>Senha</label>
                         <input type='password' placeholder='digite sua senha' id='input_senha' onChange={(e) => setPassword(e.target.value)}></input>
                     </div>
-                    <button onClick={login}>Entrar</button>         
+                    <button onClick={handleLogin}>Entrar</button>         
                 </form>
             </div>
         )

@@ -7,6 +7,7 @@ import { IsoForm } from '../isoFormulary/isoForm';
 import {BsPlus} from 'react-icons/bs'
 import axios from 'axios';
 import { useUser } from '../../contexts/UserContext';
+import Sidebar from "../sidebar/sidebar";
 
 export function IsoScreen(){    
 
@@ -68,22 +69,22 @@ export function IsoScreen(){
 
     return(
 
-        <div className="iso_screen_wrapper">
+        <><Sidebar /><div className="iso_screen_wrapper">
 
             <div className="iso_list_container">
                 <div className='iso_list'>
                     <button onClick={openModal}>
-                        <BsPlus size = {35}></BsPlus>
+                        <BsPlus size={35}></BsPlus>
                     </button>
                     {iso_list.map((iso_card, index) => (
-                        <div  key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.name, iso_card.description,index)}>
+                        <div key={index} className={`iso_card ${iso_selected.index === index ? 'selected' : ''}`} onClick={() => handle_iso_click(iso_card.name, iso_card.description, index)}>
                             <div className='iso_card_title'></div>
-                                <h3>{iso_card.name}</h3>
-                                <hr></hr>
+                            <h3>{iso_card.name}</h3>
+                            <hr></hr>
                             <p>{iso_card.description}</p>
-                            </div>
+                        </div>
 
-                            ))}
+                    ))}
                 </div>
             </div>
 
@@ -99,13 +100,13 @@ export function IsoScreen(){
                             <div className="modal_icons">
                                 <FiX onClick={closeModal} size={30}></FiX>
                             </div>
-                            <IsoForm close_modal_function = {closeModal}></IsoForm>
+                            <IsoForm close_modal_function={closeModal}></IsoForm>
                         </div>
                     </div>
                 </div>
             )}
-            
-        </div>
+
+        </div></>
 
 
     )

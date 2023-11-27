@@ -8,6 +8,7 @@ import { New_task } from '../New_task/New_task';
 import TaskInterface from '../../Interfaces/Interfaces';
 import TaskDetailCard from '../TaskDetailCard/TaskDetailCard';
 import { FiX } from 'react-icons/fi';
+import Sidebar from '../sidebar/sidebar';
 
 export default function Kanban_screen () {
 
@@ -223,50 +224,50 @@ export default function Kanban_screen () {
 
   
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
+    <><Sidebar /><DragDropContext onDragEnd={onDragEnd}>
 
-      <div className="background-wrapper_kanban">
+          <div className="background-wrapper_kanban">
               {/* title */}
               <div className='back'>
-                <Link to='/home'>
-                  <button>Voltar</button>
-                </Link>
-              
+                  <Link to='/home'>
+                      <button>Voltar</button>
+                  </Link>
+
               </div>
-              <div className='title-wrapper'> 
+              <div className='title-wrapper'>
                   <h2 className='project-name'>{process_name}</h2>
 
                   {/* <div className='new-column-button'>
-                    <New_column column_list={column_list} set_column = {set_column_list}></New_column>
-                  </div> */}
+      <New_column column_list={column_list} set_column = {set_column_list}></New_column>
+    </div> */}
               </div>
               <hr></hr>
-        <div className='kanban_background'>
-        {Object.values(columns).map(col => (
-              <div key={col.id} className='column_wrapper'>
-                <Column col={col} openModal={openModal}  openModalCard={openModalCard}/>
+              <div className='kanban_background'>
+                  {Object.values(columns).map(col => (
+                      <div key={col.id} className='column_wrapper'>
+                          <Column col={col} openModal={openModal} openModalCard={openModalCard} />
 
-                {isModalOpen && (
-                  <div className='form-wrapper'>
-                    <New_task closeModal={closeModal} column_length={columns.todo.list.length} process_id={process_id} contributors={contributors}/>
-                  </div>
-                )}
+                          {isModalOpen && (
+                              <div className='form-wrapper'>
+                                  <New_task closeModal={closeModal} column_length={columns.todo.list.length} process_id={process_id} contributors={contributors} />
+                              </div>
+                          )}
+                      </div>
+                  ))}
               </div>
-            ))}
-        </div>
-        {isCardModalOpen && (
-          <div className="cardModalBackdrop">
-            <div className="cardModalCenter">
-                <div className="cardDetailModal">
-                    <TaskDetailCard users={selectedTask.users} closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
-                </div>
-            </div>
+              {isCardModalOpen && (
+                  <div className="cardModalBackdrop">
+                      <div className="cardModalCenter">
+                          <div className="cardDetailModal">
+                              <TaskDetailCard users={selectedTask.users} closeCardModal={closeModalCard} task={selectedTask}></TaskDetailCard>
+                          </div>
+                      </div>
+                  </div>
+
+
+              )}
           </div>
-                  
-                                
-        )}
-      </div>
-      
-    </DragDropContext>
+
+      </DragDropContext></>
   )
 }
