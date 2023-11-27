@@ -11,17 +11,22 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { UserProvider, useUser } from './contexts/UserContext';
 import { RegisterScreen } from './components/RegisterScreen/RegisterScreen';
 import UsersScreen from './components/UsersScreen/UsersScreen';
+
+import  ChartScreen  from './components/ChartScreen/ChartScreen';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 
 function App() {
     return (
         <UserProvider>
+Router>
+
             <AuthProvider>
                 <Router>
                     <Fragment>
                         <Routes>
                             <Route path="/login" element={<LoginScreen />} />
                             <Route path="/" element={<PrivateRoute />} >
+                                <Route path="/chart" element={<ChartScreen/>} />
                                 <Route path="/home" element={<ProjectScreen />} />
                                 <Route path="/iso" element={<IsoScreen />} />
                                 <Route path="/kanban/:id/:name" element={<Kanban_screen />} />

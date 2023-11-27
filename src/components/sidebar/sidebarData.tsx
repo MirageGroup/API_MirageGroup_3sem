@@ -19,6 +19,13 @@ export const sidebarData = [
         cName: 'nav-text',
         allowedUserTypes: [1, 2]
     },
+    {
+        title: 'Graficos',
+        path: '/chart',
+        icon: <IoIcons.IoMdClipboard/>,
+        cName: 'nav-text',
+        allowedUserTypes: [1, 2,3,4]
+    },
     // {
     //     title: 'Tarefas',
     //     path: '/card',
