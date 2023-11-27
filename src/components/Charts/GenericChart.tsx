@@ -47,7 +47,7 @@ export default function GenericChart(props:props){
       const options: ApexOptions = {
         chart: {
           type: 'bar',
-          height: 350,
+          height: 500,
           background:'tranparent'
         },
         theme: {
@@ -103,7 +103,7 @@ export default function GenericChart(props:props){
       return(
         <div className="generic_chat_wrapper">
 
-          <ReactApexChart options={options} series={series} type="bar" height={350} />
+          <ReactApexChart options={options} series={series} type="bar" height={'100%'} />
         </div>
       )
 }

@@ -7,6 +7,7 @@ import axios from 'axios';
 import GenericChart from '../Charts/GenericChart';
 import EachProcessChart from '../Charts/EachProcessChart';
 import "./ChartScreenStyle.scss"
+import Sidebar from '../sidebar/sidebar';
 
 
 export default function ChartScreen() {
@@ -48,7 +49,7 @@ export default function ChartScreen() {
     };
   
     // Poll for updates every 5 seconds (adjust the interval as needed)
-    const pollInterval = setInterval(updateProcesses, 15000);
+    const pollInterval = setInterval(updateProcesses, 3000);
   
     // Clean up the interval when the component unmounts
     return () => clearInterval(pollInterval);
@@ -57,27 +58,32 @@ export default function ChartScreen() {
    
 
   return(
-    <div className='chart_screen_wrapper'>
-      <h1>Dados Gerais</h1>
-      <div className='main_chart'>
-        <GenericChart processes={processes}></GenericChart>
+    <>
+      <Sidebar />
+      <div className='chart_screen_wrapper'>
+        
+        <h1>Dados Gerais</h1>
+        <div className='main_chart'>
+          
+          <GenericChart processes={processes}></GenericChart>
+
+        </div>
+
+        
+        {processes !== undefined && processes.length > 0 && (
+          <>
+            {/* <h1>Dados por processo</h1> */}
+
+
+
+
+            {/* <EachProcessChart process={selectedProcess}></EachProcessChart> */}
+          </>
+        )}
+
 
       </div>
-
-      
-      {processes !== undefined && processes.length > 0 && (
-        <>
-          {/* <h1>Dados por processo</h1> */}
-
-
-
-
-          {/* <EachProcessChart process={selectedProcess}></EachProcessChart> */}
-        </>
-      )}
-
-
-    </div>
+    </>
   
   
   )

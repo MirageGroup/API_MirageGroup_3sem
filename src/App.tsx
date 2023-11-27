@@ -18,7 +18,6 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 function App() {
     return (
         <UserProvider>
-Router>
 
             <AuthProvider>
                 <Router>
