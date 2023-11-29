@@ -27,7 +27,10 @@ export function New_task(props : props) {
         event.preventDefault();
         const contributorUsers = contributors.map(item => ({ id: item.value }));
 
+        console.log(contributorUsers);
+        
         console.log(props.column_length)
+        
         const data = {
             name: taskName,
             description: description,
@@ -36,12 +39,20 @@ export function New_task(props : props) {
             priority:priority,
             state: 'todo',
             list_index:props.column_length + 1,
-            users: contributorUsers 
         };
         console.log("payload",data)
       try {
         const response = await axios.post(`http://localhost:8000/task/${props.process_id}/create`, data);
         console.log('Data sent successfully:', response.data);
+        
+        const updateData = {"users": contributorUsers}
+        console.log(response.data.tasks)
+        const tasksRetornadas = response.data.tasks
+        const ultimaTaskId =JSON.stringify( tasksRetornadas[tasksRetornadas.length - 1].id)
+        console.log("ULTIMA TASK: ", ultimaTask);
+        const update = await axios.patch(`http://localhost:8000/task/${props.process_id}/${ultimaTaskId}/update`, updateData);
+
+
         props.closeModal()
         
         // Optionally, reset the form fields and state
@@ -113,6 +124,7 @@ const UsersSelect = (props) => {
         <div>
             <label>Contribuidores</label>
             <Select
+               
                 isMulti
                 options={options}
                 value={selectedOptions}
@@ -120,6 +132,16 @@ const UsersSelect = (props) => {
                 className='contributor_select'
                 placeholder={props.placeholder}
                 id='contributors'
+                theme={(theme) => ({
+                    ...theme,
+                    borderRadius: 0,
+                    colors: {
+                    ...theme.colors,
+                      primary25: 'gray',
+                      primary: 'black',
+                    },
+                  })}
+              
             />
         </div>
     );
